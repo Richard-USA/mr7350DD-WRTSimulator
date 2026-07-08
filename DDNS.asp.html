@@ -18,10 +18,10 @@
 <script type="text/javascript" src="js/window.js"></script>
 <script type="text/javascript" src="js/window_effects.js"></script>
 <title>DD-WRT (build 65498) - Dynamic DNS</title>
-<script type="text/javascript">history.pushState({urlPath:'DDNS.html'}, "DD-WRT (build 65498) - Dynamic DNS", 'DDNS.html')
+<script type="text/javascript">history.pushState({urlPath:'DDNS.asp'}, "DD-WRT (build 65498) - Dynamic DNS", 'DDNS.asp')
 </script><script type="text/javascript">
 //<![CDATA[
-function ddns_check(F,T) {if(F.ddns_enable.value == 0) {return true;}enable = eval("F.ddns_enable");username = eval("F.ddns_username");passwd = eval("F.ddns_passwd");hostname = eval("F.ddns_hostname");if (enable.value != "28" && enable.value != "11") {if(username.value == "") {alert(errmsg.err0);username.focus();return false;}}if (enable.value != "27" && enable.value != "32") {if(passwd.value == "") {alert(errmsg.err6);passwd.focus();return false;}}if(hostname && hostname.value == "") {alert(errmsg.err7);hostname.focus();return false;}return true;}function submitcheck(F) {if(!ddns_check(F,"save"))return;F.change_action.value = "";update.stop();}function to_submit(F) {submitcheck(F);F.save_button.value = sbutton.saving;apply(F);}function to_apply(F) {submitcheck(F);F.apply_button.value = sbutton.applied;applytake(F);}function SelDDNS(num,F) {F.change_action.value="gozila_cgi";F.ddns_enable.value=F.ddns_enable.options[num].value;update.stop();F.submit();}var update;addEvent(window, "load", function() {stickControl(1);update = new StatusUpdate("DDNS.live.html", 3);update.start();});addEvent(window, "unload", function() {update.stop();});
+function ddns_check(F,T) {if(F.ddns_enable.value == 0) {return true;}enable = eval("F.ddns_enable");username = eval("F.ddns_username");passwd = eval("F.ddns_passwd");hostname = eval("F.ddns_hostname");if (enable.value != "28" && enable.value != "11") {if(username.value == "") {alert(errmsg.err0);username.focus();return false;}}if (enable.value != "27" && enable.value != "32") {if(passwd.value == "") {alert(errmsg.err6);passwd.focus();return false;}}if(hostname && hostname.value == "") {alert(errmsg.err7);hostname.focus();return false;}return true;}function submitcheck(F) {if(!ddns_check(F,"save"))return;F.change_action.value = "";update.stop();}function to_submit(F) {submitcheck(F);F.save_button.value = sbutton.saving;apply(F);}function to_apply(F) {submitcheck(F);F.apply_button.value = sbutton.applied;applytake(F);}function SelDDNS(num,F) {F.change_action.value="gozila_cgi";F.ddns_enable.value=F.ddns_enable.options[num].value;update.stop();F.submit();}var update;addEvent(window, "load", function() {stickControl(1);update = new StatusUpdate("DDNS.live.asp", 3);update.start();});addEvent(window, "unload", function() {update.stop();});
 //]]>
 </script></head><body class="gui"><div id="wrapper"><div id="content"><div id="header"><div id="logo"><h1>DD-WRT Control Panel</h1></div><div id="menu">
 <div id="menuMain">
@@ -31,32 +31,32 @@ function ddns_check(F,T) {if(F.ddns_enable.value == 0) {return true;}enable = ev
 <ul id="menuSubList">
 <script type="text/javascript">
 //<![CDATA[
- document.write("<a id=\"logout\" title=\"" + share.logout + "\" aria-label=\"" + share.logout + "\" href=\"dologout.html\">");
+ document.write("<a id=\"logout\" title=\"" + share.logout + "\" aria-label=\"" + share.logout + "\" href=\"dologout.asp\">");
 //]]>
 </script>
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="logout" viewBox="0 0 16 16">
 <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"></path>
-<path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"></path></svg></a><li><a href="index.html.html"><script type="text/javascript">Capture(bmenu.setupbasic)</script></a></li>
-<li><a href="IPV6.html.html"><script type="text/javascript">Capture(bmenu.setupipv6)</script></a></li>
+<path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"></path></svg></a><li><a href="index.asp.html"><script type="text/javascript">Capture(bmenu.setupbasic)</script></a></li>
+<li><a href="IPV6.asp.html"><script type="text/javascript">Capture(bmenu.setupipv6)</script></a></li>
 <li><span><script type="text/javascript">Capture(bmenu.setupddns)</script></span></li>
-<li><a href="WanMAC.html.html"><script type="text/javascript">Capture(bmenu.setupmacclone)</script></a></li>
-<li><a href="Routing.html.html"><script type="text/javascript">Capture(bmenu.setuprouting)</script></a></li>
-<li><a href="Networking.html.html"><script type="text/javascript">Capture(bmenu.networking)</script></a></li>
-<li><a href="eop-tunnel.html.html"><script type="text/javascript">Capture(bmenu.setupeop)</script></a></li>
+<li><a href="WanMAC.asp.html"><script type="text/javascript">Capture(bmenu.setupmacclone)</script></a></li>
+<li><a href="Routing.asp.html"><script type="text/javascript">Capture(bmenu.setuprouting)</script></a></li>
+<li><a href="Networking.asp.html"><script type="text/javascript">Capture(bmenu.networking)</script></a></li>
+<li><a href="eop-tunnel.asp.html"><script type="text/javascript">Capture(bmenu.setupeop)</script></a></li>
 </ul>
 </div>
 </li>
-<li><a href="Wireless_Basic.html.html"><script type="text/javascript">Capture(bmenu.wireless)</script></a></li>
-<li><a href="Services.html.html"><script type="text/javascript">Capture(bmenu.services)</script></a></li>
-<li><a href="Firewall.html.html"><script type="text/javascript">Capture(bmenu.security)</script></a></li>
-<li><a href="Filters.html.html"><script type="text/javascript">Capture(bmenu.accrestriction)</script></a></li>
-<li><a href="ForwardSpec.html.html"><script type="text/javascript">Capture(bmenu.applications)</script></a></li>
-<li><a href="Management.html.html"><script type="text/javascript">Capture(bmenu.admin)</script></a></li>
-<li><a href="Status_Router.html.html"><script type="text/javascript">Capture(bmenu.statu)</script></a></li>
+<li><a href="Wireless_Basic.asp.html"><script type="text/javascript">Capture(bmenu.wireless)</script></a></li>
+<li><a href="Services.asp.html"><script type="text/javascript">Capture(bmenu.services)</script></a></li>
+<li><a href="Firewall.asp.html"><script type="text/javascript">Capture(bmenu.security)</script></a></li>
+<li><a href="Filters.asp.html"><script type="text/javascript">Capture(bmenu.accrestriction)</script></a></li>
+<li><a href="ForwardSpec.asp.html"><script type="text/javascript">Capture(bmenu.applications)</script></a></li>
+<li><a href="Management.asp.html"><script type="text/javascript">Capture(bmenu.admin)</script></a></li>
+<li><a href="Status_Router.asp.html"><script type="text/javascript">Capture(bmenu.statu)</script></a></li>
 </ul>
 </div>
 </div>
-</div><div id="main"><div id="contents"><form name="dyndns" action="apply.cgi" method="post" spellcheck="false"><input type="hidden" name="submit_button" value="DDNS" /><input type="hidden" name="action" value="Apply" /><input type="hidden" name="change_action"/><input type="hidden" name="submit_type" /><h2><script type="text/javascript">Capture(ddns.h2)</script></h2><fieldset><legend><script type="text/javascript">Capture(ddns.legend)</script></legend><div class="setting"><div class="label"><script type="text/javascript">Capture(ddns.srv)</script></div><select name="ddns_enable" onchange="SelDDNS(this.form.ddns_enable.selectedIndex,this.form)"><script type="text/javascript">
+</div><div id="main"><div id="contents"><form name="dyndns" action="./apply.cgi" method="post" spellcheck="false"><input type="hidden" name="submit_button" value="DDNS" /><input type="hidden" name="action" value="Apply" /><input type="hidden" name="change_action"/><input type="hidden" name="submit_type" /><h2><script type="text/javascript">Capture(ddns.h2)</script></h2><fieldset><legend><script type="text/javascript">Capture(ddns.legend)</script></legend><div class="setting"><div class="label"><script type="text/javascript">Capture(ddns.srv)</script></div><select name="ddns_enable" onchange="SelDDNS(this.form.ddns_enable.selectedIndex,this.form)"><script type="text/javascript">
 //<![CDATA[
 document.write("<option value=\"0\" selected >" + share.disable + "</option>");
 //]]>
@@ -76,8 +76,8 @@ document.write("(" + share.deflt + ": 10 " + share.days_genetive + ", " + share.
 //<![CDATA[
 var autoref = sbutton.autorefresh;submitFooterButton(1,1,0,autoref);
 //]]>
-</script></div></form></div></div><div id="helpContainer"><div id="help"><h2><script type="text/javascript">Capture(share.help)</script></h2><dl><dt class="term"><script type="text/javascript">Capture(ddns.hlp)</script>:</dt><dd class="definition"><script type="text/javascript">Capture(hddns.right2)</script></dd><dt class="term"><script type="text/javascript">Capture(ddns.forceupd)</script>:</dt><dd class="definition"><script type="text/javascript">Capture(hddns.right4)</script></dd></dl><br /><a href="javascript:openHelpWindow('HDDNS.html');"><script type="text/javascript">Capture(share.more)</script></a></div></div><div id="floatKiller"></div><div id="statusInfo"><div class="info"><script type="text/javascript">Capture(share.firmware)</script>:&nbsp;<script type="text/javascript">
+</script></div></form></div></div><div id="helpContainer"><div id="help"><h2><script type="text/javascript">Capture(share.help)</script></h2><dl><dt class="term"><script type="text/javascript">Capture(ddns.hlp)</script>:</dt><dd class="definition"><script type="text/javascript">Capture(hddns.right2)</script></dd><dt class="term"><script type="text/javascript">Capture(ddns.forceupd)</script>:</dt><dd class="definition"><script type="text/javascript">Capture(hddns.right4)</script></dd></dl><br /><a href="javascript:openHelpWindow('HDDNS.asp');"><script type="text/javascript">Capture(share.more)</script></a></div></div><div id="floatKiller"></div><div id="statusInfo"><div class="info"><script type="text/javascript">Capture(share.firmware)</script>:&nbsp;<script type="text/javascript">
 //<![CDATA[
 document.write("<a title=\"" + share.about + "\" href=\"javascript:openAboutWindow()\">DD-WRT v3.0-r65498 std (07/02/26)</a>");
 //]]>
-</script></div><div class="info"><script type="text/javascript">Capture(share.time)</script>:  <span id="uptime"> 02:03:41 up  1:03,  load average: 0.00, 0.00, 0.00</span></div><div class="info">WAN<span id="ipinfo">: Disabled</span></div></div></div></div></body></html>
+</script></div><div class="info"><script type="text/javascript">Capture(share.time)</script>:  <span id="uptime"> 02:19:57 up  1:19,  load average: 0.00, 0.00, 0.00</span></div><div class="info">WAN<span id="ipinfo">: Disabled</span></div></div></div></div></body></html>

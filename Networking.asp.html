@@ -18,10 +18,10 @@
 <script type="text/javascript" src="js/window.js"></script>
 <script type="text/javascript" src="js/window_effects.js"></script>
 <title>DD-WRT (build 65498) - Networking</title>
-<script type="text/javascript">history.pushState({urlPath:'Networking.html'}, "DD-WRT (build 65498) - Networking", 'Networking.html')
+<script type="text/javascript">history.pushState({urlPath:'Networking.asp'}, "DD-WRT (build 65498) - Networking", 'Networking.asp')
 </script><style>.visually-hidden {position: absolute;position: absolute !important;width: 1px !important;height: 1px !important;padding: 0 !important;margin: -1px !important;overflow: hidden !important;clip: rect(0,0,0,0) !important;white-space: nowrap !important;border: 0 !important;}</style><script type="text/javascript">
 //<![CDATA[
-function vlan_add_submit(F) {F.change_action.value="gozila_cgi";F.submit_type.value = "add_vlan";F.submit();}function filter_add_submit(F) {F.change_action.value="gozila_cgi";F.submit_type.value = "add_vlanfilter";F.submit();}function mdhcp_add_submit(F) {F.change_action.value="gozila_cgi";F.submit_type.value = "add_mdhcp";F.submit();}function bridge_add_submit(F) {F.change_action.value="gozila_cgi";F.submit_type.value = "add_bridge";F.submit();}function ipvs_add_submit(F) {F.change_action.value="gozila_cgi";F.submit_type.value = "add_ipvs";F.submit();}function ipvstarget_add_submit(F) {F.change_action.value="gozila_cgi";F.submit_type.value = "add_ipvstarget";F.submit();}function bridgeif_add_submit(F) {F.change_action.value="gozila_cgi";F.submit_type.value = "add_bridgeif";F.submit();}function bond_add_submit(F) {F.change_action.value="gozila_cgi";F.submit_type.value = "add_bond";F.submit();}function vlan_del_submit(F,I) {F.change_action.value="gozila_cgi";F.submit_type.value = "del_vlan";F.del_value.value=I;F.submit();}function filter_del_submit(F,I) {F.change_action.value="gozila_cgi";F.submit_type.value = "del_vlanfilter";F.del_value.value=I;F.submit();}function mdhcp_del_submit(F,I) {F.change_action.value="gozila_cgi";F.submit_type.value = "del_mdhcp";F.del_value.value=I;F.submit();}function bridge_del_submit(F,I) {F.change_action.value="gozila_cgi";F.submit_type.value = "del_bridge";F.del_value.value=I;F.submit();}function ipvs_del_submit(F,I) {F.change_action.value="gozila_cgi";F.submit_type.value = "del_ipvs";F.del_value.value=I;F.submit();}function ipvstarget_del_submit(F,I) {F.change_action.value="gozila_cgi";F.submit_type.value = "del_ipvstarget";F.del_value.value=I;F.submit();}function bridgeif_del_submit(F,I) {F.change_action.value="gozila_cgi";F.submit_type.value = "del_bridgeif";F.del_value.value=I;F.submit();}function bond_del_submit(F,I) {F.change_action.value="gozila_cgi";F.submit_type.value = "del_bond";F.del_value.value=I;F.submit();}function setBRCTLTable() {var table = document.getElementById("Bridging_table");var tbody = table.createTBody();var val = arguments;cleanTable(table);if(!val.length) {var cell = tbody.insertRow(-1).insertCell(-1);cell.colSpan = 3;cell.align = "center";cell.innerHTML = "- " + status_router.notavail + " -";return;}for(var i = 0; i < val.length; i = i + 3) {var row = tbody.insertRow(-1);row.insertCell(-1).innerHTML = val[i];row.insertCell(-1).innerHTML = val[i + 1];row.insertCell(-1).innerHTML = val[i + 2];}}function to_submit(F) {F.change_action.value="gozila_cgi";F.submit_type.value = "save_networking";F.save_button.value = sbutton.saving;apply(F);}function to_apply(F) {F.change_action.value="gozila_cgi";F.submit_type.value = "save_networking";F.apply_button.value = sbutton.applied;applytake(F);}var update;addEvent(window, "load", function() {stickControl(1);setBRCTLTable('br0','no','lan1 lan2 lan3 lan4 wan wlan0 wlan1 ');update = new StatusUpdate("Networking.live.html", 3);update.onUpdate("bridges_table", function(u) {eval('setBRCTLTable(' + u.bridges_table + ')');});update.start();});addEvent(window, "unload", function() {update.stop();});
+function vlan_add_submit(F) {F.change_action.value="gozila_cgi";F.submit_type.value = "add_vlan";F.submit();}function filter_add_submit(F) {F.change_action.value="gozila_cgi";F.submit_type.value = "add_vlanfilter";F.submit();}function mdhcp_add_submit(F) {F.change_action.value="gozila_cgi";F.submit_type.value = "add_mdhcp";F.submit();}function bridge_add_submit(F) {F.change_action.value="gozila_cgi";F.submit_type.value = "add_bridge";F.submit();}function ipvs_add_submit(F) {F.change_action.value="gozila_cgi";F.submit_type.value = "add_ipvs";F.submit();}function ipvstarget_add_submit(F) {F.change_action.value="gozila_cgi";F.submit_type.value = "add_ipvstarget";F.submit();}function bridgeif_add_submit(F) {F.change_action.value="gozila_cgi";F.submit_type.value = "add_bridgeif";F.submit();}function bond_add_submit(F) {F.change_action.value="gozila_cgi";F.submit_type.value = "add_bond";F.submit();}function vlan_del_submit(F,I) {F.change_action.value="gozila_cgi";F.submit_type.value = "del_vlan";F.del_value.value=I;F.submit();}function filter_del_submit(F,I) {F.change_action.value="gozila_cgi";F.submit_type.value = "del_vlanfilter";F.del_value.value=I;F.submit();}function mdhcp_del_submit(F,I) {F.change_action.value="gozila_cgi";F.submit_type.value = "del_mdhcp";F.del_value.value=I;F.submit();}function bridge_del_submit(F,I) {F.change_action.value="gozila_cgi";F.submit_type.value = "del_bridge";F.del_value.value=I;F.submit();}function ipvs_del_submit(F,I) {F.change_action.value="gozila_cgi";F.submit_type.value = "del_ipvs";F.del_value.value=I;F.submit();}function ipvstarget_del_submit(F,I) {F.change_action.value="gozila_cgi";F.submit_type.value = "del_ipvstarget";F.del_value.value=I;F.submit();}function bridgeif_del_submit(F,I) {F.change_action.value="gozila_cgi";F.submit_type.value = "del_bridgeif";F.del_value.value=I;F.submit();}function bond_del_submit(F,I) {F.change_action.value="gozila_cgi";F.submit_type.value = "del_bond";F.del_value.value=I;F.submit();}function setBRCTLTable() {var table = document.getElementById("Bridging_table");var tbody = table.createTBody();var val = arguments;cleanTable(table);if(!val.length) {var cell = tbody.insertRow(-1).insertCell(-1);cell.colSpan = 3;cell.align = "center";cell.innerHTML = "- " + status_router.notavail + " -";return;}for(var i = 0; i < val.length; i = i + 3) {var row = tbody.insertRow(-1);row.insertCell(-1).innerHTML = val[i];row.insertCell(-1).innerHTML = val[i + 1];row.insertCell(-1).innerHTML = val[i + 2];}}function to_submit(F) {F.change_action.value="gozila_cgi";F.submit_type.value = "save_networking";F.save_button.value = sbutton.saving;apply(F);}function to_apply(F) {F.change_action.value="gozila_cgi";F.submit_type.value = "save_networking";F.apply_button.value = sbutton.applied;applytake(F);}var update;addEvent(window, "load", function() {stickControl(1);setBRCTLTable('br0','no','lan1 lan2 lan3 lan4 wan wlan0 wlan1 ');update = new StatusUpdate("Networking.live.asp", 3);update.onUpdate("bridges_table", function(u) {eval('setBRCTLTable(' + u.bridges_table + ')');});update.start();});addEvent(window, "unload", function() {update.stop();});
 //]]>
 </script></head><body class="gui"><div id="wrapper"><div id="content"><div id="header"><div id="logo"><h1>DD-WRT Control Panel</h1></div><div id="menu">
 <div id="menuMain">
@@ -31,32 +31,32 @@ function vlan_add_submit(F) {F.change_action.value="gozila_cgi";F.submit_type.va
 <ul id="menuSubList">
 <script type="text/javascript">
 //<![CDATA[
- document.write("<a id=\"logout\" title=\"" + share.logout + "\" aria-label=\"" + share.logout + "\" href=\"dologout.html\">");
+ document.write("<a id=\"logout\" title=\"" + share.logout + "\" aria-label=\"" + share.logout + "\" href=\"dologout.asp\">");
 //]]>
 </script>
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="logout" viewBox="0 0 16 16">
 <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"></path>
-<path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"></path></svg></a><li><a href="index.html.html"><script type="text/javascript">Capture(bmenu.setupbasic)</script></a></li>
-<li><a href="IPV6.html.html"><script type="text/javascript">Capture(bmenu.setupipv6)</script></a></li>
-<li><a href="DDNS.html.html"><script type="text/javascript">Capture(bmenu.setupddns)</script></a></li>
-<li><a href="WanMAC.html.html"><script type="text/javascript">Capture(bmenu.setupmacclone)</script></a></li>
-<li><a href="Routing.html.html"><script type="text/javascript">Capture(bmenu.setuprouting)</script></a></li>
+<path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"></path></svg></a><li><a href="index.asp.html"><script type="text/javascript">Capture(bmenu.setupbasic)</script></a></li>
+<li><a href="IPV6.asp.html"><script type="text/javascript">Capture(bmenu.setupipv6)</script></a></li>
+<li><a href="DDNS.asp.html"><script type="text/javascript">Capture(bmenu.setupddns)</script></a></li>
+<li><a href="WanMAC.asp.html"><script type="text/javascript">Capture(bmenu.setupmacclone)</script></a></li>
+<li><a href="Routing.asp.html"><script type="text/javascript">Capture(bmenu.setuprouting)</script></a></li>
 <li><span><script type="text/javascript">Capture(bmenu.networking)</script></span></li>
-<li><a href="eop-tunnel.html.html"><script type="text/javascript">Capture(bmenu.setupeop)</script></a></li>
+<li><a href="eop-tunnel.asp.html"><script type="text/javascript">Capture(bmenu.setupeop)</script></a></li>
 </ul>
 </div>
 </li>
-<li><a href="Wireless_Basic.html.html"><script type="text/javascript">Capture(bmenu.wireless)</script></a></li>
-<li><a href="Services.html.html"><script type="text/javascript">Capture(bmenu.services)</script></a></li>
-<li><a href="Firewall.html.html"><script type="text/javascript">Capture(bmenu.security)</script></a></li>
-<li><a href="Filters.html.html"><script type="text/javascript">Capture(bmenu.accrestriction)</script></a></li>
-<li><a href="ForwardSpec.html.html"><script type="text/javascript">Capture(bmenu.applications)</script></a></li>
-<li><a href="Management.html.html"><script type="text/javascript">Capture(bmenu.admin)</script></a></li>
-<li><a href="Status_Router.html.html"><script type="text/javascript">Capture(bmenu.statu)</script></a></li>
+<li><a href="Wireless_Basic.asp.html"><script type="text/javascript">Capture(bmenu.wireless)</script></a></li>
+<li><a href="Services.asp.html"><script type="text/javascript">Capture(bmenu.services)</script></a></li>
+<li><a href="Firewall.asp.html"><script type="text/javascript">Capture(bmenu.security)</script></a></li>
+<li><a href="Filters.asp.html"><script type="text/javascript">Capture(bmenu.accrestriction)</script></a></li>
+<li><a href="ForwardSpec.asp.html"><script type="text/javascript">Capture(bmenu.applications)</script></a></li>
+<li><a href="Management.asp.html"><script type="text/javascript">Capture(bmenu.admin)</script></a></li>
+<li><a href="Status_Router.asp.html"><script type="text/javascript">Capture(bmenu.statu)</script></a></li>
 </ul>
 </div>
 </div>
-</div><div id="main"><div id="contents"><form name="vlan" action="apply.cgi" method="post" spellcheck="false"><input type="hidden" name="submit_button" value="Networking" /><input type="hidden" name="action" value="Apply" /><input type="hidden" name="change_action" /><input type="hidden" name="del_value" /><input type="hidden" name="submit_type" /><input type="hidden" name="portsetup" value="1" /><input type="hidden" name="commit" value="1" /><h2><script type="text/javascript">Capture(networking.portstatus)</script></h2>
+</div><div id="main"><div id="contents"><form name="vlan" action="./apply.cgi" method="post" spellcheck="false"><input type="hidden" name="submit_button" value="Networking" /><input type="hidden" name="action" value="Apply" /><input type="hidden" name="change_action" /><input type="hidden" name="del_value" /><input type="hidden" name="submit_type" /><input type="hidden" name="portsetup" value="1" /><input type="hidden" name="commit" value="1" /><h2><script type="text/javascript">Capture(networking.portstatus)</script></h2>
 <fieldset>
 <table cellspacing="4" summary="portif" id="portif_table" class="table"><thead><tr>
 <th class="center" width="12%">lan1</th>
@@ -71,7 +71,7 @@ function vlan_add_submit(F) {F.change_action.value="gozila_cgi";F.submit_type.va
 <tbody>
 <tr>
 <td class="status_red center">Down</td>
-<td title="RX:0 MiB errors:0 drops:0 TX:7 MiB errors:0 drops:0 colls:0" class="status_green center"><p class="visually-hidden">RX:0 MiB errors:0 drops:0 TX:7 MiB errors:0 drops:0 colls:0</p>1000FD</td>
+<td title="RX:0 MiB errors:0 drops:0 TX:9 MiB errors:0 drops:0 colls:0" class="status_green center"><p class="visually-hidden">RX:0 MiB errors:0 drops:0 TX:9 MiB errors:0 drops:0 colls:0</p>1000FD</td>
 <td class="status_red center">Down</td>
 <td class="status_red center">Down</td>
 <td class="status_red center">Down</td>
@@ -741,8 +741,8 @@ show_layer_ext(document.getElementsByName("wlan1_dns_redirect"), "wlan1_idredire
 //<![CDATA[
 submitFooterButton(1,1);
 //]]>
-</script></div></form></div></div><div id="helpContainer"><div id="help"><h2><script type="text/javascript">Capture(share.help)</script></h2><dl><dt class="term"><script type="text/javascript">Capture(hnetworking.right1)</script>:</dt><dd class="definition"><script type="text/javascript">Capture(hnetworking.right2)</script></dd></dl><br /><a href="javascript:openHelpWindow('HNetworking.html');"><script type="text/javascript">Capture(share.more)</script></a></div></div><div id="floatKiller"></div><div id="statusInfo"><div class="info"><script type="text/javascript">Capture(share.firmware)</script>:&nbsp;<script type="text/javascript">
+</script></div></form></div></div><div id="helpContainer"><div id="help"><h2><script type="text/javascript">Capture(share.help)</script></h2><dl><dt class="term"><script type="text/javascript">Capture(hnetworking.right1)</script>:</dt><dd class="definition"><script type="text/javascript">Capture(hnetworking.right2)</script></dd></dl><br /><a href="javascript:openHelpWindow('HNetworking.asp');"><script type="text/javascript">Capture(share.more)</script></a></div></div><div id="floatKiller"></div><div id="statusInfo"><div class="info"><script type="text/javascript">Capture(share.firmware)</script>:&nbsp;<script type="text/javascript">
 //<![CDATA[
 document.write("<a title=\"" + share.about + "\" href=\"javascript:openAboutWindow()\">DD-WRT v3.0-r65498 std (07/02/26)</a>");
 //]]>
-</script></div><div class="info"><script type="text/javascript">Capture(share.time)</script>:  <span id="uptime"> 02:03:41 up  1:03,  load average: 0.00, 0.00, 0.00</span></div><div class="info">WAN<span id="ipinfo">: Disabled</span></div></div></div></div></body></html>
+</script></div><div class="info"><script type="text/javascript">Capture(share.time)</script>:  <span id="uptime"> 02:19:57 up  1:19,  load average: 0.00, 0.00, 0.00</span></div><div class="info">WAN<span id="ipinfo">: Disabled</span></div></div></div></div></body></html>

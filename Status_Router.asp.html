@@ -13,36 +13,36 @@
 <script type="text/javascript" src="common.js"></script>
 <script type="text/javascript" src="lang_pack/english.js"></script>
 <title>DD-WRT (build 65498) - Router Status</title>
-<script type="text/javascript">history.pushState({urlPath:'Status_Router.html'}, "DD-WRT (build 65498) - Router Status", 'Status_Router.html')
+<script type="text/javascript">history.pushState({urlPath:'Status_Router.asp'}, "DD-WRT (build 65498) - Router Status", 'Status_Router.asp')
 </script><script type="text/javascript">
 //<![CDATA[
-var update;function setMemoryValues(val) {var mem = val.replace(/'/g, "").split(",");var memTotal = parseInt(mem[19]);var memSystem = Math.pow(2, Math.ceil(Math.log(memTotal) / Math.LN2));var memFree = parseInt(mem[22]);var memUsed = memTotal - memFree;var memBuffer = parseInt(mem[28]);var memCached = parseInt(mem[31]);var memActive = parseInt(mem[37]);var memInactive = parseInt(mem[40]);var memAvail = parseInt(mem[43]);setMeterBar("mem_total", memTotal / memSystem * 100, memTotal + " KiB / " + memSystem + " KiB");setMeterBar("mem_free", memFree / memTotal * 100, memFree + " KiB / " + memTotal + " KiB");setMeterBar("mem_used", memUsed / memTotal * 100, memUsed + " KiB / " + memTotal + " KiB");setMeterBar("mem_avail", memAvail / memTotal * 100, memAvail + " KiB / " + memTotal + " KiB");setMeterBar("mem_buffer", memBuffer / memUsed * 100, memBuffer + " KiB / " + memUsed + " KiB");setMeterBar("mem_cached", memCached / memUsed * 100, memCached + " KiB / " + memUsed + " KiB");setMeterBar("mem_active", memActive / memUsed * 100, memActive + " KiB / " + memUsed + " KiB");setMeterBar("mem_inactive", memInactive / memUsed * 100, memInactive + " KiB / " + memUsed + " KiB");}function setUptimeValues(val) {setElementContent("uptime_up", val.substring(val.indexOf("up") + 3, val.indexOf("load") - 3));var loadAverage = val.substring(val.indexOf("average") + 9).split(",");setMeterBar("uptime_load", parseFloat(loadAverage[0]) / 4 * 100.0, loadAverage.join(","));}function setIpconntrackValues(val) {setMeterBar("ip_count", val / 32768 * 100, val);}addEvent(window, "load", function() {setMemoryValues(",'total:','used:','free:','shared:','buffers:','cached:','Mem:','425132032','173498368','251633664','0','0','34885632','Swap:','0','0','0','MemTotal:','415168','kB','MemFree:','245736','kB','MemShared:','0','kB','Buffers:','0','kB','Cached:','34068','kB','SwapCached:','0','kB','Active:','11112','kB','Inactive:','25468','kB','MemAvailable:','278944','kB','Active(anon):','3080','kB','Inactive(anon):','0','kB','Active(file):','8032','kB','Inactive(file):','25468','kB','Unevictable:','568','kB','Mlocked:','0','kB','SwapTotal:','0','kB','SwapFree:','0','kB','Dirty:','0','kB','Writeback:','0','kB','AnonPages:','3080','kB','Mapped:','4464','kB','Shmem:','0','kB','KReclaimable:','10240','kB','Slab:','99000','kB','SReclaimable:','10240','kB','SUnreclaim:','88760','kB','KernelStack:','1508','kB','PageTables:','388','kB','SecPageTables:','0','kB','NFS_Unstable:','0','kB','Bounce:','0','kB','WritebackTmp:','0','kB','CommitLimit:','207584','kB','Committed_AS:','4984','kB','VmallocTotal:','261087232','kB','VmallocUsed:','10824','kB','VmallocChunk:','0','kB','Percpu:','448','kB'");setUptimeValues(" 02:03:40 up  1:03,  load average: 0.00, 0.00, 0.00");setIpconntrackValues("0");update = new StatusUpdate("Status_Router.live.html", 3);update.onUpdate("mem_info", function(u) {setMemoryValues(u.mem_info);});update.onUpdate("uptime", function(u) {setUptimeValues(u.uptime);});update.onUpdate("ip_conntrack", function(u) {setIpconntrackValues(u.ip_conntrack);});update.start();});addEvent(window, "unload", function() {update.stop();});
+var update;function setMemoryValues(val) {var mem = val.replace(/'/g, "").split(",");var memTotal = parseInt(mem[19]);var memSystem = Math.pow(2, Math.ceil(Math.log(memTotal) / Math.LN2));var memFree = parseInt(mem[22]);var memUsed = memTotal - memFree;var memBuffer = parseInt(mem[28]);var memCached = parseInt(mem[31]);var memActive = parseInt(mem[37]);var memInactive = parseInt(mem[40]);var memAvail = parseInt(mem[43]);setMeterBar("mem_total", memTotal / memSystem * 100, memTotal + " KiB / " + memSystem + " KiB");setMeterBar("mem_free", memFree / memTotal * 100, memFree + " KiB / " + memTotal + " KiB");setMeterBar("mem_used", memUsed / memTotal * 100, memUsed + " KiB / " + memTotal + " KiB");setMeterBar("mem_avail", memAvail / memTotal * 100, memAvail + " KiB / " + memTotal + " KiB");setMeterBar("mem_buffer", memBuffer / memUsed * 100, memBuffer + " KiB / " + memUsed + " KiB");setMeterBar("mem_cached", memCached / memUsed * 100, memCached + " KiB / " + memUsed + " KiB");setMeterBar("mem_active", memActive / memUsed * 100, memActive + " KiB / " + memUsed + " KiB");setMeterBar("mem_inactive", memInactive / memUsed * 100, memInactive + " KiB / " + memUsed + " KiB");}function setUptimeValues(val) {setElementContent("uptime_up", val.substring(val.indexOf("up") + 3, val.indexOf("load") - 3));var loadAverage = val.substring(val.indexOf("average") + 9).split(",");setMeterBar("uptime_load", parseFloat(loadAverage[0]) / 4 * 100.0, loadAverage.join(","));}function setIpconntrackValues(val) {setMeterBar("ip_count", val / 32768 * 100, val);}addEvent(window, "load", function() {setMemoryValues(",'total:','used:','free:','shared:','buffers:','cached:','Mem:','425132032','173551616','251580416','0','0','34885632','Swap:','0','0','0','MemTotal:','415168','kB','MemFree:','245684','kB','MemShared:','0','kB','Buffers:','0','kB','Cached:','34068','kB','SwapCached:','0','kB','Active:','11192','kB','Inactive:','25468','kB','MemAvailable:','278960','kB','Active(anon):','3160','kB','Inactive(anon):','0','kB','Active(file):','8032','kB','Inactive(file):','25468','kB','Unevictable:','568','kB','Mlocked:','0','kB','SwapTotal:','0','kB','SwapFree:','0','kB','Dirty:','0','kB','Writeback:','0','kB','AnonPages:','3164','kB','Mapped:','4472','kB','Shmem:','0','kB','KReclaimable:','10308','kB','Slab:','99372','kB','SReclaimable:','10308','kB','SUnreclaim:','89064','kB','KernelStack:','1504','kB','PageTables:','416','kB','SecPageTables:','0','kB','NFS_Unstable:','0','kB','Bounce:','0','kB','WritebackTmp:','0','kB','CommitLimit:','207584','kB','Committed_AS:','5264','kB','VmallocTotal:','261087232','kB','VmallocUsed:','10824','kB','VmallocChunk:','0','kB','Percpu:','448','kB'");setUptimeValues(" 02:19:56 up  1:19,  load average: 0.00, 0.00, 0.00");setIpconntrackValues("0");update = new StatusUpdate("Status_Router.live.asp", 3);update.onUpdate("mem_info", function(u) {setMemoryValues(u.mem_info);});update.onUpdate("uptime", function(u) {setUptimeValues(u.uptime);});update.onUpdate("ip_conntrack", function(u) {setIpconntrackValues(u.ip_conntrack);});update.start();});addEvent(window, "unload", function() {update.stop();});
 //]]>
 </script></head><body class="gui"><div id="wrapper"><div id="content"><div id="header"><div id="logo"><h1>DD-WRT Control Panel</h1></div><div id="menu">
 <div id="menuMain">
 <ul id="menuMainList">
-<li><a href="index.html.html"><script type="text/javascript">Capture(bmenu.setup)</script></a></li>
-<li><a href="Wireless_Basic.html.html"><script type="text/javascript">Capture(bmenu.wireless)</script></a></li>
-<li><a href="Services.html.html"><script type="text/javascript">Capture(bmenu.services)</script></a></li>
-<li><a href="Firewall.html.html"><script type="text/javascript">Capture(bmenu.security)</script></a></li>
-<li><a href="Filters.html.html"><script type="text/javascript">Capture(bmenu.accrestriction)</script></a></li>
-<li><a href="ForwardSpec.html.html"><script type="text/javascript">Capture(bmenu.applications)</script></a></li>
-<li><a href="Management.html.html"><script type="text/javascript">Capture(bmenu.admin)</script></a></li>
+<li><a href="index.asp.html"><script type="text/javascript">Capture(bmenu.setup)</script></a></li>
+<li><a href="Wireless_Basic.asp.html"><script type="text/javascript">Capture(bmenu.wireless)</script></a></li>
+<li><a href="Services.asp.html"><script type="text/javascript">Capture(bmenu.services)</script></a></li>
+<li><a href="Firewall.asp.html"><script type="text/javascript">Capture(bmenu.security)</script></a></li>
+<li><a href="Filters.asp.html"><script type="text/javascript">Capture(bmenu.accrestriction)</script></a></li>
+<li><a href="ForwardSpec.asp.html"><script type="text/javascript">Capture(bmenu.applications)</script></a></li>
+<li><a href="Management.asp.html"><script type="text/javascript">Capture(bmenu.admin)</script></a></li>
 <li class="current"><span><script type="text/javascript">Capture(bmenu.statu)</script></span>
 <div id="menuSub">
 <ul id="menuSubList">
 <script type="text/javascript">
 //<![CDATA[
- document.write("<a id=\"logout\" title=\"" + share.logout + "\" aria-label=\"" + share.logout + "\" href=\"dologout.html\">");
+ document.write("<a id=\"logout\" title=\"" + share.logout + "\" aria-label=\"" + share.logout + "\" href=\"dologout.asp\">");
 //]]>
 </script>
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="logout" viewBox="0 0 16 16">
 <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"></path>
 <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"></path></svg></a><li><span><script type="text/javascript">Capture(bmenu.statuRouter)</script></span></li>
-<li><a href="Status_Internet.html.html"><script type="text/javascript">Capture(bmenu.statuInet)</script></a></li>
-<li><a href="Status_Lan.html.html"><script type="text/javascript">Capture(bmenu.statuLAN)</script></a></li>
-<li><a href="Status_Wireless.html.html"><script type="text/javascript">Capture(bmenu.statuWLAN)</script></a></li>
-<li><a href="Status_Bandwidth.html.html"><script type="text/javascript">Capture(bmenu.statuBand)</script></a></li>
+<li><a href="Status_Internet.asp.html"><script type="text/javascript">Capture(bmenu.statuInet)</script></a></li>
+<li><a href="Status_Lan.asp.html"><script type="text/javascript">Capture(bmenu.statuLAN)</script></a></li>
+<li><a href="Status_Wireless.asp.html"><script type="text/javascript">Capture(bmenu.statuWLAN)</script></a></li>
+<li><a href="Status_Bandwidth.asp.html"><script type="text/javascript">Capture(bmenu.statuBand)</script></a></li>
 <li><a href="Info.htm"><script type="text/javascript">Capture(bmenu.statuSysInfo)</script></a></li>
 </ul>
 </div>
@@ -50,7 +50,7 @@ var update;function setMemoryValues(val) {var mem = val.replace(/'/g, "").split(
 </ul>
 </div>
 </div>
-</div><div id="main"><div id="contents"><form name="status" action="apply.cgi" method="post"><input type="hidden" name="submit_button" value="Status_Router" /><input type="hidden" name="action" value="Apply" /><input type="hidden" name="change_action" /><input type="hidden" name="submit_type" /><h2><script type="text/javascript">Capture(status_router.h2)</script></h2><fieldset><legend><script type="text/javascript">Capture(status_router.legend)</script></legend><div class="setting"><div class="label"><script type="text/javascript">Capture(share.routername)</script></div>DD-WRT</div><div class="setting"><div class="label"><script type="text/javascript">Capture(status_router.sys_model)</script></div>Linksys MR7350</div><div class="setting"><div class="label"><script type="text/javascript">Capture(status_router.sys_firmver)</script></div>DD-WRT v3.0-r65498 std (07/02/26)</div><div class="setting"><div class="label"><script type="text/javascript">Capture(status_router.sys_kernel)</script></div>Linux 6.12.94 #1882 SMP Thu Jul  2 03:11:48 +06 2026 aarch64</div><div class="setting"><div class="label"><script type="text/javascript">Capture(share.mac)</script></div><script type="text/javascript">
+</div><div id="main"><div id="contents"><form name="status" action="./apply.cgi" method="post"><input type="hidden" name="submit_button" value="Status_Router" /><input type="hidden" name="action" value="Apply" /><input type="hidden" name="change_action" /><input type="hidden" name="submit_type" /><h2><script type="text/javascript">Capture(status_router.h2)</script></h2><fieldset><legend><script type="text/javascript">Capture(status_router.legend)</script></legend><div class="setting"><div class="label"><script type="text/javascript">Capture(share.routername)</script></div>DD-WRT</div><div class="setting"><div class="label"><script type="text/javascript">Capture(status_router.sys_model)</script></div>Linksys MR7350</div><div class="setting"><div class="label"><script type="text/javascript">Capture(status_router.sys_firmver)</script></div>DD-WRT v3.0-r65498 std (07/02/26)</div><div class="setting"><div class="label"><script type="text/javascript">Capture(status_router.sys_kernel)</script></div>Linux 6.12.94 #1882 SMP Thu Jul  2 03:11:48 +06 2026 aarch64</div><div class="setting"><div class="label"><script type="text/javascript">Capture(share.mac)</script></div><script type="text/javascript">
 //<![CDATA[
 document.write("<span id=\"wan_mac\" class=\"link\" style=\"cursor:pointer;\" title=\"" + share.oui + "\" onclick=\"getOUIFromMAC('E8:9F:80:78:55:17');\" >");document.write("E8:9F:80:78:55:17");document.write("</span>");
 //]]>
@@ -62,47 +62,47 @@ document.write("<span id=\"wan_mac\" class=\"link\" style=\"cursor:pointer;\" ti
 <legend><script type="text/javascript">Capture(status_router.cputemp);</script></legend>
 <div class="setting">
 <div class="label">WLAN0</div>
-<span id="cpu_temp0">48.0 &#176;C
+<span id="cpu_temp0">50.0 &#176;C
 </span>&nbsp;
 </div>
 <div class="setting">
 <div class="label">WLAN1</div>
-<span id="cpu_temp1">47.0 &#176;C
+<span id="cpu_temp1">48.0 &#176;C
 </span>&nbsp;
 </div>
 <div class="setting">
 <div class="label">nss system</div>
-<span id="cpu_temp2">55.5 &#176;C
+<span id="cpu_temp2">55.8 &#176;C
 </span>&nbsp;
 </div>
 <div class="setting">
 <div class="label">nss_thermal</div>
-<span id="cpu_temp3">55.5 &#176;C
+<span id="cpu_temp3">56.1 &#176;C
 </span>&nbsp;
 </div>
 <div class="setting">
 <div class="label">wireless subsystem phya0</div>
-<span id="cpu_temp4">55.5 &#176;C
+<span id="cpu_temp4">56.1 &#176;C
 </span>&nbsp;
 </div>
 <div class="setting">
 <div class="label">wireless subsystem phya1</div>
-<span id="cpu_temp5">55.1 &#176;C
+<span id="cpu_temp5">56.1 &#176;C
 </span>&nbsp;
 </div>
 <div class="setting">
 <div class="label">cpu</div>
-<span id="cpu_temp6">55.8 &#176;C
+<span id="cpu_temp6">56.1 &#176;C
 </span>&nbsp;
 </div>
 <div class="setting">
 <div class="label">audio subsystem</div>
-<span id="cpu_temp7">55.5 &#176;C
+<span id="cpu_temp7">56.1 &#176;C
 </span>&nbsp;
 </div>
 <div class="setting">
 <div class="label">ddrss_top_thermal</div>
-<span id="cpu_temp8">55.8 &#176;C
+<span id="cpu_temp8">56.4 &#176;C
 </span>&nbsp;
 </div>
 </fieldset><br />
@@ -135,14 +135,14 @@ document.write( ((0) && (mmc.size)) ? (scaleSize(mmc.used) + ' / ' + scaleSize(m
 //]]>
 </script></div>--></fieldset><br /><fieldset><legend><script type="text/javascript">Capture(status_router.legend4)</script></legend><div class="setting"><div class="label"><script type="text/javascript">Capture(status_router.net_ipcontrkmax)</script></div>32768&nbsp;</div><div class="setting"><div class="label"><script type="text/javascript">Capture(status_router.net_conntrack)</script></div><script type="text/javascript">
 //<![CDATA[
-document.write("<span class=\"link\" id=\"ip_count\" style=\"cursor: pointer;\" title=\"" + share.detail + "\" onclick=\"openWindow('Status_Conntrack.html', 800, 600)\" >");document.write("</span>&nbsp;");
+document.write("<span class=\"link\" id=\"ip_count\" style=\"cursor: pointer;\" title=\"" + share.detail + "\" onclick=\"openWindow('Status_Conntrack.asp', 800, 600)\" >");document.write("</span>&nbsp;");
 //]]>
 </script>&nbsp;</div></fieldset><br /><div class="submitFooter nostick"><script type="text/javascript">
 //<![CDATA[
 var autoref = sbutton.autorefresh;submitFooterButton(0,0,0,autoref);
 //]]>
-</script></div></form></div></div><div id="helpContainer"><div id="help"><h2><script type="text/javascript">Capture(share.help)</script></h2><dl><dt class="term"><script type="text/javascript">Capture(share.routername)</script>: </dt><dd class="definition"><script type="text/javascript">Capture(hstatus_router.right2)</script></dd><dt class="term"><script type="text/javascript">Capture(share.mac)</script>: </dt><dd class="definition"><script type="text/javascript">Capture(hstatus_router.right4)</script></dd><dt class="term"><script type="text/javascript">Capture(status_router.sys_firmver)</script>: </dt><dd class="definition"><script type="text/javascript">Capture(hstatus_router.right6)</script></dd><dt class="term"><script type="text/javascript">Capture(status_router.sys_time)</script>: </dt><dd class="definition"><script type="text/javascript">Capture(hstatus_router.right8)</script></dd><dt class="term"><script type="text/javascript">Capture(status_router.sys_up)</script>: </dt><dd class="definition"><script type="text/javascript">Capture(hstatus_router.right10)</script></dd><dt class="term"><script type="text/javascript">Capture(status_router.sys_load)</script>: </dt><dd class="definition"><script type="text/javascript">Capture(hstatus_router.right12)</script></dd></dl><br /><a href="javascript:openHelpWindow('HStatus.html');"><script type="text/javascript">Capture(share.more)</script></a></div></div><div id="floatKiller"></div><div id="statusInfo"><div class="info"><script type="text/javascript">Capture(share.firmware)</script>:&nbsp;<script type="text/javascript">
+</script></div></form></div></div><div id="helpContainer"><div id="help"><h2><script type="text/javascript">Capture(share.help)</script></h2><dl><dt class="term"><script type="text/javascript">Capture(share.routername)</script>: </dt><dd class="definition"><script type="text/javascript">Capture(hstatus_router.right2)</script></dd><dt class="term"><script type="text/javascript">Capture(share.mac)</script>: </dt><dd class="definition"><script type="text/javascript">Capture(hstatus_router.right4)</script></dd><dt class="term"><script type="text/javascript">Capture(status_router.sys_firmver)</script>: </dt><dd class="definition"><script type="text/javascript">Capture(hstatus_router.right6)</script></dd><dt class="term"><script type="text/javascript">Capture(status_router.sys_time)</script>: </dt><dd class="definition"><script type="text/javascript">Capture(hstatus_router.right8)</script></dd><dt class="term"><script type="text/javascript">Capture(status_router.sys_up)</script>: </dt><dd class="definition"><script type="text/javascript">Capture(hstatus_router.right10)</script></dd><dt class="term"><script type="text/javascript">Capture(status_router.sys_load)</script>: </dt><dd class="definition"><script type="text/javascript">Capture(hstatus_router.right12)</script></dd></dl><br /><a href="javascript:openHelpWindow('HStatus.asp');"><script type="text/javascript">Capture(share.more)</script></a></div></div><div id="floatKiller"></div><div id="statusInfo"><div class="info"><script type="text/javascript">Capture(share.firmware)</script>:&nbsp;<script type="text/javascript">
 //<![CDATA[
 document.write("<a title=\"" + share.about + "\" href=\"javascript:openAboutWindow()\">DD-WRT v3.0-r65498 std (07/02/26)</a>");
 //]]>
-</script></div><div class="info"><script type="text/javascript">Capture(share.time)</script>:  <span id="uptime"> 02:03:40 up  1:03,  load average: 0.00, 0.00, 0.00</span></div><div class="info">WAN<span id="ipinfo">: Disabled</span></div></div></div></div></body></html>
+</script></div><div class="info"><script type="text/javascript">Capture(share.time)</script>:  <span id="uptime"> 02:19:56 up  1:19,  load average: 0.00, 0.00, 0.00</span></div><div class="info">WAN<span id="ipinfo">: Disabled</span></div></div></div></div></body></html>

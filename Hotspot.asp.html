@@ -18,7 +18,7 @@
 <script type="text/javascript" src="js/window.js"></script>
 <script type="text/javascript" src="js/window_effects.js"></script>
 <title>DD-WRT (build 65498) - Hotspot</title>
-<script type="text/javascript">history.pushState({urlPath:'Hotspot.html'}, "DD-WRT (build 65498) - Hotspot", 'Hotspot.html')
+<script type="text/javascript">history.pushState({urlPath:'Hotspot.asp'}, "DD-WRT (build 65498) - Hotspot", 'Hotspot.asp')
 </script><script type="text/javascript">
 //<![CDATA[
 function user_add_submit(F) {F.change_action.value="gozila_cgi";F.submit_type.value = "add_user";F.submit();}function iradius_add_submit(F) {F.change_action.value="gozila_cgi";F.submit_type.value = "add_iradius";F.submit();}function user_remove_submit(F) {F.change_action.value="gozila_cgi";F.submit_type.value = "remove_user";F.submit();}function to_submit(F) {F.change_action.value = "";F.submit_type.value = "";F.save_button.value = sbutton.saving;if(F._hotss_customsplash) {F.hotss_customsplash.value = F._hotss_customsplash.checked ? 1 : 0;}apply(F);}function to_apply(F) {F.change_action.value = "";F.submit_type.value = "";F.apply_button.value = sbutton.applied;if(F._hotss_customsplash) {F.hotss_customsplash.value = F._hotss_customsplash.checked ? 1 : 0;}applytake(F);}function handle_hotss(F,value) {if(value == 0) {choose_enable(F._hotss_customsplash);}else {F._hotss_customsplash.checked = false;choose_disable(F._hotss_customsplash);}}function setHotss(val) {if (val == "1") {setElementsActive("chilli_enable", "chilli_additional", false);show_layer_ext(this, 'idhotspotsys', true);show_layer_ext(this, 'idchilli', false);} else {setElementsActive("chilli_enable", "chilli_additional", true);show_layer_ext(this, 'idhotspotsys', false);show_layer_ext(this, 'idchilli', 0 == 1);if (0 == 1) {show_layer_ext(this, 'idchilli', false);setElementsActive("chilli_enable", "chilli_additional", false);}}}var update;addEvent(window, "load", function() {stickControl(1);show_layer_ext(document.setup.wd_enable, 'idwifidog', 0 == 1);show_layer_ext(document.setup.wd_sslavailable, 'idwifidogssl', 0 == 1);show_layer_ext(document.setup.wd_auth, 'idauth', 0 == 1);show_layer_ext(document.setup.wd_radius, 'idradius', 0 == 1);show_layer_ext(document.setup.wd_radius, 'idauthsrv', 0 == 1);show_layer_ext(document.setup.chilli_enable, 'idchilli', 0 == 1);show_layer_ext(document.setup.chilli_nowifibridge, 'idchillidhcp', 0 == 1);show_layer_ext(document.setup.chilli_macauth, 'idmacauth', 0 == 1);show_layer_ext(document.setup.http_redirect_enable, 'idhttpredirect', 0 == 1);show_layer_ext(document.setup.NC_enable, 'idnocat', 0 == 1);show_layer_ext(document.setup.ND_enable, 'idnodog', 0 == 1);show_layer_ext(document.setup.shat_enable, 'idzeroip', 0 == 1);show_layer_ext(document.setup.smtp_redirect_enable, 'smtpredirect', 0 == 1);show_layer_ext(document.setup.hotss_enable, 'idhotspotsys', 0 == 1);show_layer_ext(document.setup.hotss_uamenable, 'idhotssuam', 0 == 1);show_layer_ext(document.setup.hotss_nowifibridge, 'idhotssdhcp', 0 == 1);setHotss("0");if (document.setup.hotss_loginonsplash) {handle_hotss(document.setup, 0 == 1);}update = new StatusbarUpdate();update.start();});addEvent(window, "unload", function() {update.stop();});
@@ -26,37 +26,37 @@ function user_add_submit(F) {F.change_action.value="gozila_cgi";F.submit_type.va
 </script></head><body class="gui"><div id="wrapper"><div id="content"><div id="header"><div id="logo"><h1>DD-WRT Control Panel</h1></div><div id="menu">
 <div id="menuMain">
 <ul id="menuMainList">
-<li><a href="index.html.html"><script type="text/javascript">Capture(bmenu.setup)</script></a></li>
-<li><a href="Wireless_Basic.html.html"><script type="text/javascript">Capture(bmenu.wireless)</script></a></li>
+<li><a href="index.asp.html"><script type="text/javascript">Capture(bmenu.setup)</script></a></li>
+<li><a href="Wireless_Basic.asp.html"><script type="text/javascript">Capture(bmenu.wireless)</script></a></li>
 <li class="current"><span><script type="text/javascript">Capture(bmenu.services)</script></span>
 <div id="menuSub">
 <ul id="menuSubList">
 <script type="text/javascript">
 //<![CDATA[
- document.write("<a id=\"logout\" title=\"" + share.logout + "\" aria-label=\"" + share.logout + "\" href=\"dologout.html\">");
+ document.write("<a id=\"logout\" title=\"" + share.logout + "\" aria-label=\"" + share.logout + "\" href=\"dologout.asp\">");
 //]]>
 </script>
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="logout" viewBox="0 0 16 16">
 <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"></path>
-<path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"></path></svg></a><li><a href="Services.html.html"><script type="text/javascript">Capture(bmenu.servicesServices)</script></a></li>
-<li><a href="PPPoE_Server.html.html"><script type="text/javascript">Capture(bmenu.servicesPppoesrv)</script></a></li>
-<li><a href="PPTP.html.html"><script type="text/javascript">Capture(bmenu.servicesPptp)</script></a></li>
-<li><a href="USB.html.html"><script type="text/javascript">Capture(bmenu.servicesUSB)</script></a></li>
-<li><a href="NAS.html.html"><script type="text/javascript">Capture(bmenu.servicesNAS)</script></a></li>
+<path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"></path></svg></a><li><a href="Services.asp.html"><script type="text/javascript">Capture(bmenu.servicesServices)</script></a></li>
+<li><a href="PPPoE_Server.asp.html"><script type="text/javascript">Capture(bmenu.servicesPppoesrv)</script></a></li>
+<li><a href="PPTP.asp.html"><script type="text/javascript">Capture(bmenu.servicesPptp)</script></a></li>
+<li><a href="USB.asp.html"><script type="text/javascript">Capture(bmenu.servicesUSB)</script></a></li>
+<li><a href="NAS.asp.html"><script type="text/javascript">Capture(bmenu.servicesNAS)</script></a></li>
 <li><span><script type="text/javascript">Capture(bmenu.servicesHotspot)</script></span></li>
-<li><a href="Speedchecker.html.html"><script type="text/javascript">Capture(bmenu.servicesSpeedchecker)</script></a></li>
+<li><a href="Speedchecker.asp.html"><script type="text/javascript">Capture(bmenu.servicesSpeedchecker)</script></a></li>
 </ul>
 </div>
 </li>
-<li><a href="Firewall.html.html"><script type="text/javascript">Capture(bmenu.security)</script></a></li>
-<li><a href="Filters.html.html"><script type="text/javascript">Capture(bmenu.accrestriction)</script></a></li>
-<li><a href="ForwardSpec.html.html"><script type="text/javascript">Capture(bmenu.applications)</script></a></li>
-<li><a href="Management.html.html"><script type="text/javascript">Capture(bmenu.admin)</script></a></li>
-<li><a href="Status_Router.html.html"><script type="text/javascript">Capture(bmenu.statu)</script></a></li>
+<li><a href="Firewall.asp.html"><script type="text/javascript">Capture(bmenu.security)</script></a></li>
+<li><a href="Filters.asp.html"><script type="text/javascript">Capture(bmenu.accrestriction)</script></a></li>
+<li><a href="ForwardSpec.asp.html"><script type="text/javascript">Capture(bmenu.applications)</script></a></li>
+<li><a href="Management.asp.html"><script type="text/javascript">Capture(bmenu.admin)</script></a></li>
+<li><a href="Status_Router.asp.html"><script type="text/javascript">Capture(bmenu.statu)</script></a></li>
 </ul>
 </div>
 </div>
-</div><div id="main"><div id="contents"><form name="setup" action="apply.cgi" method="post" spellcheck="false"><input type="hidden" name="submit_button" value="Hotspot" /><input type="hidden" name="action" value="Apply" /><input type="hidden" name="change_action" /><input type="hidden" name="submit_type" /><input type="hidden" name="commit" value="1"/><input type="hidden" name="hotss_preconfig" value="0"/><input type="hidden" name="hotss_customsplash" /><h2><script type="text/javascript">Capture(hotspot.h2)</script></h2><fieldset><legend><script type="text/javascript">Capture(hotspotsys.legend)</script>&nbsp;- remotekey:&nbsp;</legend><div class="center"><a href="http://www.hotspotsystem.com/" target="_blank"><img src="images/hotspotsystem.png" alt="hotspotsystem logo" border="0" /></a></div><br class="hide"/><div class="setting"><div class="label"><script type="text/javascript">Capture(hotspotsys.legend)</script></div><input class="spaceradio" type="radio" value="1" name="hotss_enable"  onclick="setHotss(this.value);" /><script type="text/javascript">Capture(share.enable)</script>&nbsp;<input class="spaceradio" type="radio" value="0" name="hotss_enable" checked onclick="setHotss(this.value);" /><script type="text/javascript">Capture(share.disable)</script></div><div id="idhotspotsys"><div class="setting"><div class="label"><script type="text/javascript">Capture(hotspotsys.operatorid)</script></div><input class="text" maxLength="500" size="25" name="hotss_operatorid" value="" /></div><div class="setting"><div class="label"><script type="text/javascript">Capture(hotspotsys.locationid)</script></div><input class="text" maxLength="25" size="25" name="hotss_locationid" value="" /></div><div class="setting"> <div class="label"><script type="text/javascript">Capture(hotspotsys.dhcp)</script></div> <select name="hotss_interface">
+</div><div id="main"><div id="contents"><form name="setup" action="./apply.cgi" method="post" spellcheck="false"><input type="hidden" name="submit_button" value="Hotspot" /><input type="hidden" name="action" value="Apply" /><input type="hidden" name="change_action" /><input type="hidden" name="submit_type" /><input type="hidden" name="commit" value="1"/><input type="hidden" name="hotss_preconfig" value="0"/><input type="hidden" name="hotss_customsplash" /><h2><script type="text/javascript">Capture(hotspot.h2)</script></h2><fieldset><legend><script type="text/javascript">Capture(hotspotsys.legend)</script>&nbsp;- remotekey:&nbsp;</legend><div class="center"><a href="http://www.hotspotsystem.com/" target="_blank"><img src="images/hotspotsystem.png" alt="hotspotsystem logo" border="0" /></a></div><br class="hide"/><div class="setting"><div class="label"><script type="text/javascript">Capture(hotspotsys.legend)</script></div><input class="spaceradio" type="radio" value="1" name="hotss_enable"  onclick="setHotss(this.value);" /><script type="text/javascript">Capture(share.enable)</script>&nbsp;<input class="spaceradio" type="radio" value="0" name="hotss_enable" checked onclick="setHotss(this.value);" /><script type="text/javascript">Capture(share.disable)</script></div><div id="idhotspotsys"><div class="setting"><div class="label"><script type="text/javascript">Capture(hotspotsys.operatorid)</script></div><input class="text" maxLength="500" size="25" name="hotss_operatorid" value="" /></div><div class="setting"><div class="label"><script type="text/javascript">Capture(hotspotsys.locationid)</script></div><input class="text" maxLength="25" size="25" name="hotss_locationid" value="" /></div><div class="setting"> <div class="label"><script type="text/javascript">Capture(hotspotsys.dhcp)</script></div> <select name="hotss_interface">
 <option value="none"  ><script type="text/javascript">Capture(share.select)</script></option>
 <option value="br0"  >LAN</option>
 </select>
@@ -84,8 +84,8 @@ document.write("<input class=\"button\" type=\"button\" value=\"" + sbutton.add 
 //<![CDATA[
 submitFooterButton(1,1);
 //]]>
-</script></div></form></div></div><div id="helpContainer"><div id="help"><h2><script type="text/javascript">Capture(share.help)</script></h2><dl><dt class="term"><script type="text/javascript">Capture(hotspot.legend)</script> <script type="text/javascript">Capture(hotspotsys.legend)</script></dt><dd class="definition"><script type="text/javascript">Capture(hstatus_hots.right1)</script></dd></dl><br /><a href="javascript:openHelpWindow('HHotspot.html');"><script type="text/javascript">Capture(share.more)</script></a></div></div><div id="floatKiller"></div><div id="statusInfo"><div class="info"><script type="text/javascript">Capture(share.firmware)</script>:&nbsp;<script type="text/javascript">
+</script></div></form></div></div><div id="helpContainer"><div id="help"><h2><script type="text/javascript">Capture(share.help)</script></h2><dl><dt class="term"><script type="text/javascript">Capture(hotspot.legend)</script> <script type="text/javascript">Capture(hotspotsys.legend)</script></dt><dd class="definition"><script type="text/javascript">Capture(hstatus_hots.right1)</script></dd></dl><br /><a href="javascript:openHelpWindow('HHotspot.asp');"><script type="text/javascript">Capture(share.more)</script></a></div></div><div id="floatKiller"></div><div id="statusInfo"><div class="info"><script type="text/javascript">Capture(share.firmware)</script>:&nbsp;<script type="text/javascript">
 //<![CDATA[
 document.write("<a title=\"" + share.about + "\" href=\"javascript:openAboutWindow()\">DD-WRT v3.0-r65498 std (07/02/26)</a>");
 //]]>
-</script></div><div class="info"><script type="text/javascript">Capture(share.time)</script>:  <span id="uptime"> 02:03:42 up  1:03,  load average: 0.00, 0.00, 0.00</span></div><div class="info">WAN<span id="ipinfo">: Disabled</span></div></div></div></div></body></html>
+</script></div><div class="info"><script type="text/javascript">Capture(share.time)</script>:  <span id="uptime"> 02:19:58 up  1:19,  load average: 0.00, 0.00, 0.00</span></div><div class="info">WAN<span id="ipinfo">: Disabled</span></div></div></div></div></body></html>
