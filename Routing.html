@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+<meta name="robots" content="noindex" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link type="text/css" rel="stylesheet" href="style/common.css" />
+<link type="text/css" rel="stylesheet" href="style/elegant/style.css" />
+<!--[if IE]><link type="text/css" rel="stylesheet" href="style/common_style_ie.css" /><![endif]-->
+<link type="text/css" rel="stylesheet" href="style/elegant/fresh.css" />
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript" src="lang_pack/english.js"></script>
+<link type="text/css" rel="stylesheet" href="style/pwc/ddwrt.css" />
+<script type="text/javascript" src="js/prototype.js"></script>
+<script type="text/javascript" src="js/effects.js"></script>
+<script type="text/javascript" src="js/window.js"></script>
+<script type="text/javascript" src="js/window_effects.js"></script>
+<title>DD-WRT (build 65498) - Routing</title>
+<script type="text/javascript">history.pushState({urlPath:'Routing.html'}, "DD-WRT (build 65498) - Routing", 'Routing.html')
+</script><script type="text/javascript">
+//<![CDATA[
+route.zebra_copt = route.bird_copt;route.zebra_legend = route.bird_legend;route.zebra_log = route.bird_log;function valid_value(F) {if(F.wk_mode.value != "ospf") {if(!valid_ip(F,"F.route_ipaddr","IP",0))return false;if(!valid_ip(F,"F.route_gateway","Gateway",MASK_NO))return false;}return true;}function DeleteEntry(F) {if(!confirm(errmsg.err57)) return;F.change_action.value="gozila_cgi";F.submit_type.value = "del";apply(F);}function DeleteRuleEntry(F) {if(!confirm(errmsg.err57)) return;F.change_action.value="gozila_cgi";F.submit_type.value = "del_rule";apply(F);}function SelRoute(num,F) {F.change_action.value="gozila_cgi";F.route_page.value = F.route_page.options[num].value;F.submit();}function SelRule(num,F) {F.change_action.value="gozila_cgi";F.rule_page.value = F.rule_page.options[num].value;F.submit();}function SelMode(num,F) {F.change_action.value="gozila_cgi";F.wk_mode.value = F.wk_mode.options[num].value;F.submit();}function olsrd_add_submit(F) {F.change_action.value="gozila_cgi";F.submit_type.value = "add_olsrd";F.submit();}function olsrd_del_submit(F,num) {F.change_action.value="gozila_cgi";F.submit_type.value = "del_olsrd";F.olsrd_delcount.value = num;F.submit();}function olsrd_checkDijkstra(F) {if (F.olsrd_lqdijkstramin && F.olsrd_lqdijkstramax) {if (F.olsrd_lqdijkstramin.value>F.olsrd_lqdijkstramax.value) {alert(route.olsrd_lqdmin + errmsg.err103 + route.olsrd_lqdmax +".");}}}function submitcheck(F) {if (F.routing_bgp_neighbor_ip != null) {F.routing_bgp_neighbor_ip.value = F.routing_bgp_neighbor_ip_0.value+'.'+F.routing_bgp_neighbor_ip_1.value+'.'+F.routing_bgp_neighbor_ip_2.value+'.'+F.routing_bgp_neighbor_ip_3.value;}if(!valid_value(F)) return;if(F._route_nat){F.route_nat.value = F._route_nat.checked ? 1 : 0;}if(F._src_en){F.src_en.value = F._src_en.checked ? 1 : 0;}if(F._scope_en){F.scope_en.value = F._scope_en.checked ? 1 : 0;}if(F._table_en){F.table_en.value = F._table_en.checked ? 1 : 0;}if(F._mtu_en){F.mtu_en.value = F._mtu_en.checked ? 1 : 0;}if(F._advmss_en){F.advmss_en.value = F._advmss_en.checked ? 1 : 0;}if(F._not){F.not.value = F._not.checked ? 1 : 0;}if(F._from_en){F.from_en.value = F._from_en.checked ? 1 : 0;}if(F._to_en){F.to_en.value = F._to_en.checked ? 1 : 0;}if(F._priority_en){F.priority_en.value = F._priority_en.checked ? 1 : 0;}if(F._tos_en){F.tos_en.value = F._tos_en.checked ? 1 : 0;}if(F._fwmark_en){F.fwmark_en.value = F._fwmark_en.checked ? 1 : 0;}if(F._realms_en){F.realms_en.value = F._realms_en.checked ? 1 : 0;}if(F._pbr_table_en){F.pbr_table_en.value = F._pbr_table_en.checked ? 1 : 0;}if(F._suppress_prefixlength_en){F.suppress_prefixlength_en.value = F._suppress_prefixlength_en.checked ? 1 : 0;}if(F._iif_en){F.iif_en.value = F._iif_en.checked ? 1 : 0;}if(F._nat_en){F.nat_en.value = F._nat_en.checked ? 1 : 0;}if(F._type_en){F.type_en.value = F._type_en.checked ? 1 : 0;}if(F._sport_en){F.sport_en.value = F._sport_en.checked ? 1 : 0;}if(F._dport_en){F.dport_en.value = F._dport_en.checked ? 1 : 0;}if(F._ipproto_en){F.ipproto_en.value = F._ipproto_en.checked ? 1 : 0;}F.change_action.value = "";F.submit_type.value = "";}function to_submit(F) {submitcheck(F);F.save_button.value = sbutton.saving;apply(F);}function to_apply(F) {submitcheck(F);F.apply_button.value = sbutton.applied;applytake(F);}var update;addEvent(window, "load", function() {stickControl(1);show_layer_ext(document.static.ospfd_copt, 'idospfd', 0 == 1);show_layer_ext(document.static.ripd_copt, 'idripd', 0 == 1);show_layer_ext(document.static.zebra_copt, 'idzebra', 0 == 1);update = new StatusbarUpdate();update.start();});addEvent(window, "unload", function() {update.stop();});
+//]]>
+</script></head><body class="gui"><div id="wrapper"><div id="content"><div id="header"><div id="logo"><h1>DD-WRT Control Panel</h1></div><div id="menu">
+<div id="menuMain">
+<ul id="menuMainList">
+<li class="current"><span><script type="text/javascript">Capture(bmenu.setup)</script></span>
+<div id="menuSub">
+<ul id="menuSubList">
+<script type="text/javascript">
+//<![CDATA[
+ document.write("<a id=\"logout\" title=\"" + share.logout + "\" aria-label=\"" + share.logout + "\" href=\"dologout.html\">");
+//]]>
+</script>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="logout" viewBox="0 0 16 16">
+<path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"></path>
+<path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"></path></svg></a><li><a href="index.html"><script type="text/javascript">Capture(bmenu.setupbasic)</script></a></li>
+<li><a href="IPV6.html"><script type="text/javascript">Capture(bmenu.setupipv6)</script></a></li>
+<li><a href="DDNS.html"><script type="text/javascript">Capture(bmenu.setupddns)</script></a></li>
+<li><a href="WanMAC.html"><script type="text/javascript">Capture(bmenu.setupmacclone)</script></a></li>
+<li><span><script type="text/javascript">Capture(bmenu.setuprouting)</script></span></li>
+<li><a href="Networking.html"><script type="text/javascript">Capture(bmenu.networking)</script></a></li>
+<li><a href="eop-tunnel.html"><script type="text/javascript">Capture(bmenu.setupeop)</script></a></li>
+</ul>
+</div>
+</li>
+<li><a href="Wireless_Basic.html"><script type="text/javascript">Capture(bmenu.wireless)</script></a></li>
+<li><a href="Services.html"><script type="text/javascript">Capture(bmenu.services)</script></a></li>
+<li><a href="Firewall.html"><script type="text/javascript">Capture(bmenu.security)</script></a></li>
+<li><a href="Filters.html"><script type="text/javascript">Capture(bmenu.accrestriction)</script></a></li>
+<li><a href="ForwardSpec.html"><script type="text/javascript">Capture(bmenu.applications)</script></a></li>
+<li><a href="Management.html"><script type="text/javascript">Capture(bmenu.admin)</script></a></li>
+<li><a href="Status_Router.html"><script type="text/javascript">Capture(bmenu.statu)</script></a></li>
+</ul>
+</div>
+</div>
+</div><div id="main"><div id="contents"><form name="static" action="apply.cgi" method="post" ><input type="hidden" name="submit_button" value="Routing" /><input type="hidden" name="action" value="Apply" /><input type="hidden" name="change_action"/><input type="hidden" name="submit_type" /><input type="hidden" name="route_nat" /><input type="hidden" name="src_en" /><input type="hidden" name="scope_en" /><input type="hidden" name="table_en" /><input type="hidden" name="mtu_en" /><input type="hidden" name="advmss_en" /><input type="hidden" name="not" /><input type="hidden" name="from_en" /><input type="hidden" name="to_en" /><input type="hidden" name="priority_en" /><input type="hidden" name="tos_en" /><input type="hidden" name="fwmark_en" /><input type="hidden" name="realms_en" /><input type="hidden" name="pbr_table_en" /><input type="hidden" name="suppress_prefixlength_en" /><input type="hidden" name="iif_en" /><input type="hidden" name="nat_en" /><input type="hidden" name="type_en" /><input type="hidden" name="ipproto_en" /><input type="hidden" name="sport_en" /><input type="hidden" name="dport_en" /><input type="hidden" name="olsrd_delcount" /><input type="hidden" name="static_route" /><input type="hidden" name="pbr_rule" /><h2><script type="text/javascript">Capture(route.h2)</script></h2><fieldset><legend><script type="text/javascript">Capture(route.mod)</script></legend><div class="setting"><div class="label"><script type="text/javascript">Capture(route.mod)</script></div><select name="wk_mode" onchange="SelMode(this.form.wk_mode.selectedIndex,this.form)"><script type="text/javascript">
+//<![CDATA[
+document.write("<option value=\"gateway\" selected=\"selected\" >" + share.gateway + "</option>");
+document.write("<option value=\"bgp\"  >BGP</option>");
+document.write("<option value=\"router\"  >" + route.rip2_mod + "</option>");
+document.write("<option value=\"static\"  >" + share.router + "</option>");
+//]]>
+</script>
+</select></div></fieldset><br /><!--<fieldset><legend><script type="text/javascript">Capture(route.ospf_legend)</script></legend><div class="setting"><div class="label"><script type="text/javascript">Capture(route.ospf_copt)</script></div><input class="spaceradio" type="radio" value="1" name="ospfd_copt"  onclick="show_layer_ext(this, 'idospfd', true)" /><script type="text/javascript">Capture(route.copt_gui)</script>&nbsp;<input class="spaceradio" type="radio" value="0" name="ospfd_copt" checked="checked" onclick="show_layer_ext(this, 'idospfd', false)" /><script type="text/javascript">Capture(route.copt_vtysh)</script></div><div id="idospfd"><div class="setting"><div class="label"><script type="text/javascript">Capture(route.ospf_conf)</script></div><textarea cols="60" rows="12" id="ospfd_conf" name="ospfd_conf"></textarea><script type="text/javascript">
+//<![CDATA[
+var ospfd_conf = fix_cr( '' );document.getElementById("ospfd_conf").value = ospfd_conf;
+//]]>
+</script></div></div></fieldset><br />--><!--<fieldset><legend><script type="text/javascript">Capture(route.bgp_legend)</script></legend><div class="setting"><div class="label"><script type="text/javascript">Capture(route.bgp_own_as)</script></div><input size="10" name="routing_bgp_as" value="" /></div><div class="setting"><div class="label"><script type="text/javascript">Capture(route.bgp_ip)</script></div><input type="hidden" name="routing_bgp_neighbor_ip" value="0.0.0.0" /><input size="3" maxlength="3" name="routing_bgp_neighbor_ip_0" onblur="valid_range(this,0,255,route.bgp_ip)" class="num" value="0" />.<input size="3" maxlength="3" name="routing_bgp_neighbor_ip_1" onblur="valid_range(this,0,255,route.bgp_ip)" class="num" value="0" />.<input size="3" maxlength="3" name="routing_bgp_neighbor_ip_2" onblur="valid_range(this,0,255,route.bgp_ip)" class="num" value="0" />.<input size="3" maxlength="3" name="routing_bgp_neighbor_ip_3" onblur="valid_range(this,0,254,route.bgp_ip)" class="num" value="0" /></div><div class="setting"><div class="label"><script type="text/javascript">Capture(route.bgp_as)</script></div><input size="10" name="routing_bgp_neighbor_as" value="" /></div></fieldset><br/>--><!--<fieldset><legend><script type="text/javascript">Capture(route.rip2_legend)</script></legend><div class="setting"><div class="label"><script type="text/javascript">Capture(route.rip2_copt)</script></div><input class="spaceradio" type="radio" value="1" name="ripd_copt"  onclick="show_layer_ext(this, 'idripd', true)" /><script type="text/javascript">Capture(route.copt_gui)</script>&nbsp;<input class="spaceradio" type="radio" value="0" name="ripd_copt"  onclick="show_layer_ext(this, 'idripd', false)" /><script type="text/javascript">Capture(route.copt_vtysh)</script></div><div id="idripd"><div class="setting"><div class="label"><script type="text/javascript">Capture(route.rip2_conf)</script></div><textarea cols="60" rows="12" id="ripd_conf" name="ripd_conf"></textarea><script type="text/javascript">
+//<![CDATA[
+var ripd_conf = fix_cr( '' );document.getElementById("ripd_conf").value = ripd_conf;
+//]]>
+</script></div></div></fieldset><br />--><!--<fieldset><legend><script type="text/javascript">Capture(route.zebra_legend)</script></legend><div class="setting"><div class="label"><script type="text/javascript">Capture(route.zebra_copt)</script></div><input class="spaceradio" type="radio" value="1" name="zebra_copt"  onclick="show_layer_ext(this, 'idzebra', true)" /><script type="text/javascript">Capture(route.copt_gui)</script>&nbsp;<input class="spaceradio" type="radio" value="0" name="zebra_copt" checked="checked" onclick="show_layer_ext(this, 'idzebra', false)" /><script type="text/javascript">Capture(route.copt_vtysh)</script></div><div id="idzebra"><div class="setting"><div class="label"><script type="text/javascript">Capture(route.zebra_legend)</script></div><textarea cols="60" rows="12" id="zebra_conf" name="zebra_conf"></textarea><script type="text/javascript">
+//<![CDATA[
+var zebra_conf = fix_cr( '' );document.getElementById("zebra_conf").value = zebra_conf;
+//]]>
+</script></div><div class="setting"><div class="label"><script type="text/javascript">Capture(route.zebra_log)</script></div><input class="spaceradio" type="radio" name="zebra_log" value="1"  /><script type="text/javascript">Capture(share.enable)</script>&nbsp;<input class="spaceradio" type="radio" name="zebra_log" value="0" checked="checked" /><script type="text/javascript">Capture(share.disable)</script></div></div></fieldset><br />--><fieldset><legend><script type="text/javascript">Capture(route.gateway_legend)</script></legend><div class="setting"><div class="label"><script type="text/javascript">Capture(share.intrface)</script></div><select size="1" name="dr_setting"><script type="text/javascript">
+//<![CDATA[
+document.write("<option value=\"0\" selected=\"selected\" >" + share.disable + "</option>");
+//]]>
+</script><option value="1"  >WAN</option><option value="2"  >LAN &amp; WLAN</option><script type="text/javascript">
+//<![CDATA[
+document.write("<option value=\"3\"  >" + share.both + "</option>");
+//]]>
+</script></select></div></fieldset><br/><fieldset><legend><script type="text/javascript">Capture(route.static_legend)</script></legend><div class="setting"><div class="label"><script type="text/javascript">Capture(route.static_setno)</script></div><select size="1" name="route_page" onchange="SelRoute(this.form.route_page.selectedIndex,this.form)">		<option value="0" selected="selected"> 1 ( )</option>
+		<option value="1" > 2 ( )</option>
+		<option value="2" > 3 ( )</option>
+		<option value="3" > 4 ( )</option>
+		<option value="4" > 5 ( )</option>
+		<option value="5" > 6 ( )</option>
+		<option value="6" > 7 ( )</option>
+		<option value="7" > 8 ( )</option>
+		<option value="8" > 9 ( )</option>
+		<option value="9" > 10 ( )</option>
+		<option value="10" > 11 ( )</option>
+		<option value="11" > 12 ( )</option>
+		<option value="12" > 13 ( )</option>
+		<option value="13" > 14 ( )</option>
+		<option value="14" > 15 ( )</option>
+		<option value="15" > 16 ( )</option>
+		<option value="16" > 17 ( )</option>
+		<option value="17" > 18 ( )</option>
+		<option value="18" > 19 ( )</option>
+		<option value="19" > 20 ( )</option>
+		<option value="20" > 21 ( )</option>
+		<option value="21" > 22 ( )</option>
+		<option value="22" > 23 ( )</option>
+		<option value="23" > 24 ( )</option>
+		<option value="24" > 25 ( )</option>
+		<option value="25" > 26 ( )</option>
+		<option value="26" > 27 ( )</option>
+		<option value="27" > 28 ( )</option>
+		<option value="28" > 29 ( )</option>
+		<option value="29" > 30 ( )</option>
+		<option value="30" > 31 ( )</option>
+		<option value="31" > 32 ( )</option>
+		<option value="32" > 33 ( )</option>
+		<option value="33" > 34 ( )</option>
+		<option value="34" > 35 ( )</option>
+		<option value="35" > 36 ( )</option>
+		<option value="36" > 37 ( )</option>
+		<option value="37" > 38 ( )</option>
+		<option value="38" > 39 ( )</option>
+		<option value="39" > 40 ( )</option>
+		<option value="40" > 41 ( )</option>
+		<option value="41" > 42 ( )</option>
+		<option value="42" > 43 ( )</option>
+		<option value="43" > 44 ( )</option>
+		<option value="44" > 45 ( )</option>
+		<option value="45" > 46 ( )</option>
+		<option value="46" > 47 ( )</option>
+		<option value="47" > 48 ( )</option>
+		<option value="48" > 49 ( )</option>
+		<option value="49" > 50 ( )</option>
+		<option value="50" > 51 ( )</option>
+		<option value="51" > 52 ( )</option>
+		<option value="52" > 53 ( )</option>
+		<option value="53" > 54 ( )</option>
+		<option value="54" > 55 ( )</option>
+		<option value="55" > 56 ( )</option>
+		<option value="56" > 57 ( )</option>
+		<option value="57" > 58 ( )</option>
+		<option value="58" > 59 ( )</option>
+		<option value="59" > 60 ( )</option>
+		<option value="60" > 61 ( )</option>
+		<option value="61" > 62 ( )</option>
+		<option value="62" > 63 ( )</option>
+		<option value="63" > 64 ( )</option>
+</select>&nbsp;&nbsp;<script type="text/javascript">
+//<![CDATA[
+document.write("<input class=\"button\" type=\"button\" name=\"del_button\" value=\"" + sbutton.del + "\" onclick=\"DeleteEntry(this.form);\" />");
+//]]>
+</script></div><div class="setting"><div class="label"><script type="text/javascript">Capture(route.static_name)</script></div><input name="route_name" size="25" maxlength="25" onblur="valid_name(this,route.static_name)" value="" /></div><div class="setting"><div class="label"><script type="text/javascript">Capture(routetbl.th1)</script></div><input type="hidden" name="route_ipaddr" value="4" /><input name="route_ipaddr_0" size="3" maxlength="3" onblur="valid_range(this,0,255,routetbl.th1)" class="num" value="0" />.<input name="route_ipaddr_1" size="3" maxlength="3" onblur="valid_range(this,0,255,routetbl.th1)" class="num" value="0" />.<input name="route_ipaddr_2" size="3" maxlength="3" onblur="valid_range(this,0,255,routetbl.th1)" class="num" value="0" />.<input name="route_ipaddr_3" size="3" maxlength="3" onblur="valid_range(this,0,254,routetbl.th1)" class="num" value="0" /> / <input name="route_netmask" size="3" maxlength="3" onblur="valid_range(this,0,32,share.subnet)" class="num" value="0" /></div><div class="setting"><div class="label"><script type="text/javascript">Capture(share.gateway)</script></div><input type="hidden" name="route_gateway" value="4" /><input size="3" maxlength="3" name="route_gateway_0" onblur="valid_range(this,0,255,share.gateway)" class="num" value="0" />.<input size="3" maxlength="3" name="route_gateway_1" onblur="valid_range(this,0,255,share.gateway)" class="num" value="0" />.<input size="3" maxlength="3" name="route_gateway_2" onblur="valid_range(this,0,255,share.gateway)" class="num" value="0" />.<input size="3" maxlength="3" name="route_gateway_3" onblur="valid_range(this,0,254,share.gateway)" class="num" value="0" /></div><div class="setting"><div class="label"><script type="text/javascript">Capture(share.intrface)</script></div><select name="route_ifname"><option value="lan" selected="selected" >LAN &amp; WLAN</option>
+<option value="wan"  >WAN</option>
+<option value="any"  >ANY</option>
+</select></div><div class="setting"><div class="label"><script type="text/javascript">Capture(route.metric)</script></div><input name="route_metric" size="4" maxlength="4" onblur="valid_range(this,0,9999,route.metric)" class="num" value="0" /></div><div class="setting"><div class="label"><script type="text/javascript">Capture(routetbl.masquerade)</script></div><input class="spaceradio" type="checkbox" value="1" name="_route_nat"  /></div><div class="setting"><input class="spaceradio" type="checkbox" value="1" name="_src_en"  /><div class="label"><script type="text/javascript">Capture(routetbl.src)</script></div><input type="hidden" name="route_src" value="4" /><input name="route_src_0" size="3" maxlength="3" onblur="valid_range(this,0,255,routetbl.src)" class="num" value="0" />.<input name="route_src_1" size="3" maxlength="3" onblur="valid_range(this,0,255,routetbl.src)" class="num" value="0" />.<input name="route_src_2" size="3" maxlength="3" onblur="valid_range(this,0,255,routetbl.src)" class="num" value="0" />.<input name="route_src_3" size="3" maxlength="3" onblur="valid_range(this,0,254,routetbl.src)" class="num" value="0" /></div><div class="setting"><input class="spaceradio" type="checkbox" value="1" name="_scope_en"  /><div class="label"><script type="text/javascript">Capture(routetbl.scope)</script></div><select name="route_scope"><option value="0" global ><script type="text/javascript">Capture(route.global)</script></option><option value="255" global ><script type="text/javascript">Capture(route.nowhere)</script></option><option value="254" global ><script type="text/javascript">Capture(route.host)</script></option><option value="253" global ><script type="text/javascript">Capture(route.link)</script></option><option value="200" global ><script type="text/javascript">Capture(route.site)</script></option></select></div><div class="setting"><input class="spaceradio" type="checkbox" value="1" name="_table_en"  /><div class="label"><script type="text/javascript">Capture(routetbl.table)</script></div><input name="route_table" size="5" maxlength="5" onblur="valid_range(this,0,2147483647,routetbl.table)" class="num" value="0" /></div><div class="setting"><input class="spaceradio" type="checkbox" value="1" name="_mtu_en"  /><div class="label"><script type="text/javascript">Capture(idx.mtu)</script></div><input name="route_mtu" size="5" maxlength="5" onblur="valid_range(this,68,9000,idx.mtu)" class="num" value="1500" /></div><div class="setting"><input class="spaceradio" type="checkbox" value="1" name="_advmss_en"  /><div class="label"><script type="text/javascript">Capture(routetbl.advmss)</script></div><input name="route_advmss" size="5" maxlength="5" onblur="valid_range(this,28,8960,routetbl.advmss)" class="num" value="1460" /></div><div class="center"><br /><script type="text/javascript">
+//<![CDATA[
+document.write("<input class=\"button\" type=\"button\" name=\"button2\" value=\"" + sbutton.routingtab + "\" onclick=\"openWindow('RouteTable.html', 790, 600);\" />");
+//]]>
+</script><input type="hidden" value="0" name="Route_reload" /></div></fieldset><br /><fieldset><legend><script type="text/javascript">Capture(route.rules)</script></legend><div class="setting"><div class="label"><script type="text/javascript">Capture(route.policy_setno)</script></div><select size="1" name="rule_page" onchange="SelRule(this.form.rule_page.selectedIndex,this.form)">		<option value="0" selected="selected"> 1 ( )</option>
+		<option value="1" > 2 ( )</option>
+		<option value="2" > 3 ( )</option>
+		<option value="3" > 4 ( )</option>
+		<option value="4" > 5 ( )</option>
+		<option value="5" > 6 ( )</option>
+		<option value="6" > 7 ( )</option>
+		<option value="7" > 8 ( )</option>
+		<option value="8" > 9 ( )</option>
+		<option value="9" > 10 ( )</option>
+		<option value="10" > 11 ( )</option>
+		<option value="11" > 12 ( )</option>
+		<option value="12" > 13 ( )</option>
+		<option value="13" > 14 ( )</option>
+		<option value="14" > 15 ( )</option>
+		<option value="15" > 16 ( )</option>
+		<option value="16" > 17 ( )</option>
+		<option value="17" > 18 ( )</option>
+		<option value="18" > 19 ( )</option>
+		<option value="19" > 20 ( )</option>
+		<option value="20" > 21 ( )</option>
+		<option value="21" > 22 ( )</option>
+		<option value="22" > 23 ( )</option>
+		<option value="23" > 24 ( )</option>
+		<option value="24" > 25 ( )</option>
+		<option value="25" > 26 ( )</option>
+		<option value="26" > 27 ( )</option>
+		<option value="27" > 28 ( )</option>
+		<option value="28" > 29 ( )</option>
+		<option value="29" > 30 ( )</option>
+		<option value="30" > 31 ( )</option>
+		<option value="31" > 32 ( )</option>
+		<option value="32" > 33 ( )</option>
+		<option value="33" > 34 ( )</option>
+		<option value="34" > 35 ( )</option>
+		<option value="35" > 36 ( )</option>
+		<option value="36" > 37 ( )</option>
+		<option value="37" > 38 ( )</option>
+		<option value="38" > 39 ( )</option>
+		<option value="39" > 40 ( )</option>
+		<option value="40" > 41 ( )</option>
+		<option value="41" > 42 ( )</option>
+		<option value="42" > 43 ( )</option>
+		<option value="43" > 44 ( )</option>
+		<option value="44" > 45 ( )</option>
+		<option value="45" > 46 ( )</option>
+		<option value="46" > 47 ( )</option>
+		<option value="47" > 48 ( )</option>
+		<option value="48" > 49 ( )</option>
+		<option value="49" > 50 ( )</option>
+		<option value="50" > 51 ( )</option>
+		<option value="51" > 52 ( )</option>
+		<option value="52" > 53 ( )</option>
+		<option value="53" > 54 ( )</option>
+		<option value="54" > 55 ( )</option>
+		<option value="55" > 56 ( )</option>
+		<option value="56" > 57 ( )</option>
+		<option value="57" > 58 ( )</option>
+		<option value="58" > 59 ( )</option>
+		<option value="59" > 60 ( )</option>
+		<option value="60" > 61 ( )</option>
+		<option value="61" > 62 ( )</option>
+		<option value="62" > 63 ( )</option>
+		<option value="63" > 64 ( )</option>
+</select>&nbsp;&nbsp;<script type="text/javascript">
+//<![CDATA[
+document.write("<input class=\"button\" type=\"button\" name=\"del_button\" value=\"" + sbutton.del + "\" onclick=\"DeleteRuleEntry(this.form);\" />");
+//]]>
+</script></div><div class="setting"><div class="label"><script type="text/javascript">Capture(route.rule_name)</script></div><input name="rule_name" size="25" maxlength="25" onblur="valid_name(this,route.rule_name)" value="" /></div><div class="setting"><div class="label"><script type="text/javascript">Capture(routetbl.not)</script></div><input class="spaceradio" type="checkbox" value="1" name="_not"  /></div><div class="setting"><input class="spaceradio" type="checkbox" value="1" name="_from_en"  /><div class="label"><script type="text/javascript">Capture(routetbl.from)</script></div><input type="hidden" name="rule_from" value="4" /><input name="rule_from_0" size="3" maxlength="3" onblur="valid_range(this,0,255,routetbl.from)" class="num" value="0" />.<input name="rule_from_1" size="3" maxlength="3" onblur="valid_range(this,0,255,routetbl.from)" class="num" value="0" />.<input name="rule_from_2" size="3" maxlength="3" onblur="valid_range(this,0,255,routetbl.from)" class="num" value="0" />.<input name="rule_from_3" size="3" maxlength="3" onblur="valid_range(this,0,254,routetbl.from)" class="num" value="0" /> / <input name="rule_from_4" size="3" maxlength="3" onblur="valid_range(this,0,32,routetbl.from)" class="num" value="0" /></div><div class="setting"><input class="spaceradio" type="checkbox" value="1" name="_to_en"  /><div class="label"><script type="text/javascript">Capture(routetbl.to)</script></div><input type="hidden" name="rule_to" value="4" /><input name="rule_to_0" size="3" maxlength="3" onblur="valid_range(this,0,255,routetbl.to)" class="num" value="0" />.<input name="rule_to_1" size="3" maxlength="3" onblur="valid_range(this,0,255,routetbl.to)" class="num" value="0" />.<input name="rule_to_2" size="3" maxlength="3" onblur="valid_range(this,0,255,routetbl.to)" class="num" value="0" />.<input name="rule_to_3" size="3" maxlength="3" onblur="valid_range(this,0,254,routetbl.to)" class="num" value="0" /> / <input name="rule_to_4" size="3" maxlength="3" onblur="valid_range(this,0,32,routetbl.to)" class="num" value="0" /></div><div class="setting"><input class="spaceradio" type="checkbox" value="1" name="_priority_en"  /><div class="label"><script type="text/javascript">Capture(routetbl.priority)</script></div><input name="rule_priority" size="5" maxlength="5" onblur="valid_range(this,0,2147483647,routetbl.priority)" class="num" value="0" /></div><div class="setting"><input class="spaceradio" type="checkbox" value="1" name="_tos_en"  /><div class="label"><script type="text/javascript">Capture(routetbl.tos)</script></div><input name="rule_tos" size="5" maxlength="5" onblur="valid_range(this,0,255,routetbl.tos)" class="num" value="0" /></div><div class="setting"><input class="spaceradio" type="checkbox" value="1" name="_fwmark_en"  /><div class="label"><script type="text/javascript">Capture(routetbl.fwmark)</script></div><input name="rule_fwmark" size="10" maxlength="10" class="num" value="0" /> / <input name="rule_fwmask" size="10" maxlength="10" class="num" value="0xffffffff" /><!--<input name="rule_fwmark" size="10" maxlength="10" class="num" value="0" />--></div><div class="setting"><input class="spaceradio" type="checkbox" value="1" name="_realms_en"  /><div class="label"><script type="text/javascript">Capture(routetbl.realms)</script></div><input name="rule_realms" size="5" maxlength="5" onblur="valid_range(this,0,2147483647,routetbl.realms)" class="num" value="0" /></div><div class="setting"><input class="spaceradio" type="checkbox" value="1" name="_pbr_table_en"  /><div class="label"><script type="text/javascript">Capture(routetbl.table)</script></div><input name="rule_table" size="5" maxlength="5" onblur="valid_range(this,0,2147483647,routetbl.table)" class="num" value="254" /></div><div class="setting"><input class="spaceradio" type="checkbox" value="1" name="_suppress_prefixlength_en"  /><div class="label"><script type="text/javascript">Capture(routetbl.suppress_prefixlength)</script></div><input name="rule_suppress_prefixlength" size="5" maxlength="5" onblur="valid_range(this,0,2147483647,routetbl.suppress_prefixlength)" class="num" value="0" /></div><div class="setting"><input class="spaceradio" type="checkbox" value="1" name="_iif_en"  /><div class="label"><script type="text/javascript">Capture(routetbl.iif)</script></div><select name="rule_iif"><option value="lan" selected="selected" >LAN &amp; WLAN</option>
+<option value="wan"  >WAN</option>
+</select></div><div class="setting"><input class="spaceradio" type="checkbox" value="1" name="_oif_en"  /><div class="label"><script type="text/javascript">Capture(routetbl.oif)</script></div><select name="rule_oif"><option value="lan" selected="selected" >LAN &amp; WLAN</option>
+<option value="wan"  >WAN</option>
+</select></div><div class="setting"><input class="spaceradio" type="checkbox" value="1" name="_nat_en"  /><div class="label"><script type="text/javascript">Capture(routetbl.nat)</script></div><input type="hidden" name="rule_nat" value="4" /><input name="rule_nat_0" size="3" maxlength="3" onblur="valid_range(this,0,255,routetbl.nat)" class="num" value="0" />.<input name="rule_nat_1" size="3" maxlength="3" onblur="valid_range(this,0,255,routetbl.nat)" class="num" value="0" />.<input name="rule_nat_2" size="3" maxlength="3" onblur="valid_range(this,0,255,routetbl.nat)" class="num" value="0" />.<input name="rule_nat_3" size="3" maxlength="3" onblur="valid_range(this,0,254,routetbl.nat)" class="num" value="0" /></div><div class="setting"><input class="spaceradio" type="checkbox" value="1" name="_type_en"  /><div class="label"><script type="text/javascript">Capture(routetbl.type)</script></div><select name="rule_type"><option value="unicast" unicast ><script type="text/javascript">Capture(route.unicast)</script></option><option value="blackhole" unicast ><script type="text/javascript">Capture(route.blackhole)</script></option><option value="unreachable" unicast ><script type="text/javascript">Capture(route.unreachable)</script></option><option value="prohibit" unicast ><script type="text/javascript">Capture(route.prohibit)</script></option><option value="nat" unicast ><script type="text/javascript">Capture(route.nat)</script></option></select></div><div class="setting"><input class="spaceradio" type="checkbox" value="1" name="_ipproto_en"  /><div class="label"><script type="text/javascript">Capture(routetbl.ipproto)</script></div><select name="rule_ipproto"><option value="0" 0 >IP</option><option value="1" 0 >ICMP</option><option value="2" 0 >IGMP</option><option value="4" 0 >IPIP</option><option value="6" 0 >TCP</option><option value="8" 0 >EGP</option><option value="12" 0 >PUP</option><option value="17" 0 >UDP</option><option value="22" 0 >IDP</option><option value="29" 0 >TP</option><option value="33" 0 >DCCP</option><option value="41" 0 >IPV6</option><option value="43" 0 >ROUTING</option><option value="44" 0 >FRAGMENT</option><option value="46" 0 >RSVP</option><option value="47" 0 >GRE</option><option value="50" 0 >ESP</option><option value="51" 0 >AH</option><option value="58" 0 >ICMPV6</option><option value="60" 0 >DSTOPTS</option><option value="92" 0 >MTP</option><option value="94" 0 >BEETPH</option><option value="97" 0 >ETHERIP</option><option value="98" 0 >ENCAP</option><option value="103" 0 >PIM</option><option value="108" 0 >COMP</option><option value="132" 0 >SCTP</option><option value="135" 0 >MH</option><option value="136" 0 >UDPLITE</option><option value="137" 0 >MPLS</option></select></div><div class="setting"><input class="spaceradio" type="checkbox" value="1" name="_sport_en"  /><div class="label"><script type="text/javascript">Capture(routetbl.sport)</script></div><input name="rule_sport_from" size="5" maxlength="5" onblur="valid_range(this,1,65535,routetbl.sport)" class="num" value="0" /> ~ <input name="rule_sport_to" size="5" maxlength="5" onblur="valid_range(this,1,65535,routetbl.sport)" class="num" value="0" /></div><div class="setting"><input class="spaceradio" type="checkbox" value="1" name="_dport_en"  /><div class="label"><script type="text/javascript">Capture(routetbl.dport)</script></div><input name="rule_dport_from" size="5" maxlength="5" onblur="valid_range(this,1,65535,routetbl.dport)" class="num" value="0" /> ~ <input name="rule_dport_to" size="5" maxlength="5" onblur="valid_range(this,1,65535,routetbl.dport)" class="num" value="0" /></div><div class="center"><br /><script type="text/javascript">
+//<![CDATA[
+document.write("<input class=\"button\" type=\"button\" name=\"button2\" value=\"" + sbutton.policytab + "\" onclick=\"openWindow('RuleTable.html', 1090, 600);\" />");
+//]]>
+</script><input type="hidden" value="0" name="Route_reload" /></div></fieldset><br /><div id="footer" class="submitFooter"><script type="text/javascript">
+//<![CDATA[
+submitFooterButton(1,1);
+//]]>
+</script></div></form></div></div><div id="helpContainer"><div id="help"><h2><script type="text/javascript">Capture(share.help)</script></h2><dl><dt class="term"><script type="text/javascript">Capture(route.mod)</script>:</dt><dd class="definition"><script type="text/javascript">Capture(hroute.right2)</script></dd><dt class="term"><script type="text/javascript">Capture(route.static_setno)</script>:</dt><dd class="definition"><script type="text/javascript">Capture(hroute.right4)</script></dd><dt class="term"><script type="text/javascript">Capture(route.static_name)</script>:</dt><dd class="definition"><script type="text/javascript">Capture(hroute.right6)</script></dd><dt class="term"><script type="text/javascript">Capture(route.static_ip)</script>:</dt><dd class="definition"><script type="text/javascript">Capture(hroute.right8)</script></dd><dt class="term"><script type="text/javascript">Capture(share.subnet)</script>:</dt><dd class="definition"><script type="text/javascript">Capture(hroute.right10)</script></dd></dl><br /><a href="javascript:openHelpWindow('HRouting.html');"><script type="text/javascript">Capture(share.more)</script></a></div></div><div id="floatKiller"></div><div id="statusInfo"><div class="info"><script type="text/javascript">Capture(share.firmware)</script>:&nbsp;<script type="text/javascript">
+//<![CDATA[
+document.write("<a title=\"" + share.about + "\" href=\"javascript:openAboutWindow()\">DD-WRT v3.0-r65498 std (07/02/26)</a>");
+//]]>
+</script></div><div class="info"><script type="text/javascript">Capture(share.time)</script>:  <span id="uptime"> 01:26:53 up 26 min,  load average: 0.00, 0.00, 0.00</span></div><div class="info">WAN<span id="ipinfo">: Disabled</span></div></div></div></div></body></html>
