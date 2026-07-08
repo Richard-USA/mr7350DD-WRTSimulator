@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+<meta name="robots" content="noindex" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link type="text/css" rel="stylesheet" href="style/common.css" />
+<link type="text/css" rel="stylesheet" href="style/elegant/style.css" />
+<!--[if IE]><link type="text/css" rel="stylesheet" href="style/common_style_ie.css" /><![endif]-->
+<link type="text/css" rel="stylesheet" href="style/elegant/fresh.css" />
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript" src="lang_pack/english.js"></script>
+<link type="text/css" rel="stylesheet" href="style/pwc/ddwrt.css" />
+<script type="text/javascript" src="js/prototype.js"></script>
+<script type="text/javascript" src="js/effects.js"></script>
+<script type="text/javascript" src="js/window.js"></script>
+<script type="text/javascript" src="js/window_effects.js"></script>
+<title>DD-WRT (build 65498) - VPN Passthrough</title>
+<script type="text/javascript">history.pushState({urlPath:'VPN.asp'}, "DD-WRT (build 65498) - VPN Passthrough", 'VPN.asp')
+</script><script type="text/javascript">
+//<![CDATA[
+function to_submit(F) {F.save_button.value = sbutton.saving;apply(F);}function to_apply(F) {F.apply_button.value = sbutton.applied;applytake(F);}var update;addEvent(window, "load", function() {stickControl(1);update = new StatusbarUpdate();update.start();});addEvent(window, "unload", function() {update.stop();});
+//]]>
+</script></head><body class="gui"><div id="wrapper"><div id="content"><div id="header"><div id="logo"><h1>DD-WRT Control Panel</h1></div><div id="menu">
+<div id="menuMain">
+<ul id="menuMainList">
+<li><a href="index.asp"><script type="text/javascript">Capture(bmenu.setup)</script></a></li>
+<li><a href="Wireless_Basic.asp"><script type="text/javascript">Capture(bmenu.wireless)</script></a></li>
+<li><a href="Services.asp"><script type="text/javascript">Capture(bmenu.services)</script></a></li>
+<li class="current"><span><script type="text/javascript">Capture(bmenu.security)</script></span>
+<div id="menuSub">
+<ul id="menuSubList">
+<script type="text/javascript">
+//<![CDATA[
+ document.write("<a id=\"logout\" title=\"" + share.logout + "\" aria-label=\"" + share.logout + "\" href=\"dologout.asp\">");
+//]]>
+</script>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="logout" viewBox="0 0 16 16">
+<path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"></path>
+<path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"></path></svg></a><li><a href="Firewall.asp"><script type="text/javascript">Capture(bmenu.firwall)</script></a></li>
+<li><span><script type="text/javascript">Capture(bmenu.vpn)</script></span></li>
+</ul>
+</div>
+</li>
+<li><a href="Filters.asp"><script type="text/javascript">Capture(bmenu.accrestriction)</script></a></li>
+<li><a href="ForwardSpec.asp"><script type="text/javascript">Capture(bmenu.applications)</script></a></li>
+<li><a href="Management.asp"><script type="text/javascript">Capture(bmenu.admin)</script></a></li>
+<li><a href="Status_Router.asp"><script type="text/javascript">Capture(bmenu.statu)</script></a></li>
+</ul>
+</div>
+</div>
+</div><div id="main"><div id="contents"><form action="http://192.168.1.1/apply.cgi" method="post" spellcheck="false"><input type="hidden" name="submit_button" value="VPN" /><input type="hidden" name="action" value="Apply" /><input type="hidden" name="change_action" /><input type="hidden" name="submit_type" /><h2><script type="text/javascript">Capture(vpn.h2)</script></h2><fieldset><legend><script type="text/javascript">Capture(vpn.legend)</script></legend><div class="setting"><div class="label"><script type="text/javascript">Capture(vpn.ipsec)</script></div><input class="spaceradio" type="radio" value="1" name="ipsec_pass" checked="checked" /><script type="text/javascript">Capture(share.enable)</script>&nbsp;<input class="spaceradio" type="radio" value="0" name="ipsec_pass"  /><script type="text/javascript">Capture(share.disable)</script></div><div class="setting"><div class="label"><script type="text/javascript">Capture(vpn.pptp)</script></div><input class="spaceradio" type="radio" value="1" name="pptp_pass" checked="checked" /><script type="text/javascript">Capture(share.enable)</script>&nbsp;<input class="spaceradio" type="radio" value="0" name="pptp_pass"  /><script type="text/javascript">Capture(share.disable)</script></div><div class="setting"><div class="label"><script type="text/javascript">Capture(vpn.l2tp)</script></div><input class="spaceradio" type="radio" value="1" name="l2tp_pass" checked="checked" /><script type="text/javascript">Capture(share.enable)</script>&nbsp;<input class="spaceradio" type="radio" value="0" name="l2tp_pass"  /><script type="text/javascript">Capture(share.disable)</script></div></fieldset><br/><div id="footer" class="submitFooter"><script type="text/javascript">
+//<![CDATA[
+submitFooterButton(1,1);
+//]]>
+</script></div></form></div></div><div id="helpContainer"><div id="help"><h2><script type="text/javascript">Capture(share.help)</script></h2><dl><dd class="definition"><script type="text/javascript">Capture(hvpn.right1)</script></dd></dl><br/><a href="javascript:openHelpWindow('HVPN.asp');"><script type="text/javascript">Capture(share.more)</script></a></div></div><div id="floatKiller"></div><div id="statusInfo"><div class="info"><script type="text/javascript">Capture(share.firmware)</script>:&nbsp;<script type="text/javascript">
+//<![CDATA[
+document.write("<a title=\"" + share.about + "\" href=\"javascript:openAboutWindow()\">DD-WRT v3.0-r65498 std (07/02/26)</a>");
+//]]>
+</script></div><div class="info"><script type="text/javascript">Capture(share.time)</script>:  <span id="uptime"> 01:09:37 up 9 min,  load average: 0.00, 0.01, 0.00</span></div><div class="info">WAN<span id="ipinfo">: Disabled</span></div></div></div></div></body></html>

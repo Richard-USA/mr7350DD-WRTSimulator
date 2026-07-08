@@ -1,0 +1,847 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+<meta name="robots" content="noindex" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link type="text/css" rel="stylesheet" href="style/common.css" />
+<link type="text/css" rel="stylesheet" href="style/elegant/style.css" />
+<!--[if IE]><link type="text/css" rel="stylesheet" href="style/common_style_ie.css" /><![endif]-->
+<link type="text/css" rel="stylesheet" href="style/elegant/fresh.css" />
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript" src="lang_pack/english.js"></script>
+<link type="text/css" rel="stylesheet" href="style/pwc/ddwrt.css" />
+<script type="text/javascript" src="js/prototype.js"></script>
+<script type="text/javascript" src="js/effects.js"></script>
+<script type="text/javascript" src="js/window.js"></script>
+<script type="text/javascript" src="js/window_effects.js"></script>
+<title>DD-WRT (build 65498) - Access Restrictions</title>
+<script type="text/javascript">history.pushState({urlPath:'Filters.asp'}, "DD-WRT (build 65498) - Access Restrictions", 'Filters.asp')
+</script><script type="text/javascript">
+//<![CDATA[
+var summary_win = null;var ipmac_win = null;function dayall(F) {if(F.day_all.checked == false) {I = 1;} else {I = 0;}day_enable_disable(F,I);}function day_enable_disable(F,I) {if(I == 1) {choose_enable(F.week0);choose_enable(F.week1);choose_enable(F.week2);choose_enable(F.week3);choose_enable(F.week4);choose_enable(F.week5);choose_enable(F.week6);} else if(I == 0) {choose_disable(F.week0);choose_disable(F.week1);choose_disable(F.week2);choose_disable(F.week3);choose_disable(F.week4);choose_disable(F.week5);choose_disable(F.week6);}}function timeall(F,I) {time_enable_disable(F,I);}function time_enable_disable(F,I){if(I == 1) {choose_enable(F.start_hour);choose_enable(F.start_min);choose_enable(F.end_hour);choose_enable(F.end_min);} else if(I == 0) {choose_disable(F.start_hour);choose_disable(F.start_min);choose_disable(F.end_hour);choose_disable(F.end_min);}}function valid(F) {if(F.day_all.checked == false &&F.week0.checked == false &&F.week1.checked == false &&F.week2.checked == false &&F.week3.checked == false &&F.week4.checked == false &&F.week5.checked == false &&F.week6.checked == false) {alert(filter.mess2);return false;}if(F.time_all[1].checked == true){start = (parseInt(F.start_hour.value, 10)) * 60 + parseInt(F.start_min.value, 10);end = (parseInt(F.end_hour.value, 10)) * 60 + parseInt(F.end_min.value, 10);if(end <= start){alert(filter.mess3);return false;}}if(F.f_status1[1].checked == true) {F.f_status.value = "0";} else {if(F.f_status2[1].checked == true) {F.f_status.value = "2";} else {F.f_status.value = "1";}}if (F._filter_p2p)if (F._filter_p2p.checked == false){F.filter_p2p.value = 0;}else{F.filter_p2p.value = 1;}return true;}function service(id, name, port_start, port_end, protocol, servicename) {this.id = id;this.name = name;this.start = port_start;this.end = port_end;this.protocol = protocol;this.deleted = false;this.modified = false;this.servicename = servicename;}var sorton = function(x,y) {if(x.name <  y.name) {return -1;} else {if (x.name == y.name) {return 0;} else {return 1;}}};var services=new Array();var services_length=0;services[0]=new service(0, "1kxun", 0, 0, 101, "dpi");
+services[1]=new service(1, "accuweather", 0, 0, 101, "dpi");
+services[2]=new service(2, "activision", 0, 0, 101, "dpi");
+services[3]=new service(3, "ad-telemetry", 0, 0, 103, "custom");
+services[4]=new service(4, "adobe_connect", 0, 0, 101, "dpi");
+services[5]=new service(5, "afp", 0, 0, 101, "dpi");
+services[6]=new service(6, "ajp", 0, 0, 101, "dpi");
+services[7]=new service(7, "akamai", 0, 0, 101, "dpi");
+services[8]=new service(8, "alibaba", 0, 0, 101, "dpi");
+services[9]=new service(9, "alicloud", 0, 0, 101, "dpi");
+services[10]=new service(10, "amazon", 0, 0, 101, "dpi");
+services[11]=new service(11, "amazonalexa", 0, 0, 101, "dpi");
+services[12]=new service(12, "amazonaws", 0, 0, 101, "dpi");
+services[13]=new service(13, "amazonvideo", 0, 0, 101, "dpi");
+services[14]=new service(14, "amongus", 0, 0, 101, "dpi");
+services[15]=new service(15, "amqp", 0, 0, 101, "dpi");
+services[16]=new service(16, "anonymous subscriber", 0, 0, 102, "risk");
+services[17]=new service(17, "anydesk", 0, 0, 101, "dpi");
+services[18]=new service(18, "apache_kafka", 0, 0, 101, "dpi");
+services[19]=new service(19, "apache_thrift", 0, 0, 101, "dpi");
+services[20]=new service(20, "apple", 0, 0, 101, "dpi");
+services[21]=new service(21, "appleicloud", 0, 0, 101, "dpi");
+services[22]=new service(22, "appleitunes", 0, 0, 101, "dpi");
+services[23]=new service(23, "applepush", 0, 0, 101, "dpi");
+services[24]=new service(24, "applesiri", 0, 0, 101, "dpi");
+services[25]=new service(25, "applestore", 0, 0, 101, "dpi");
+services[26]=new service(26, "appletvplus", 0, 0, 101, "dpi");
+services[27]=new service(27, "ares", 0, 0, 100, "p2p");
+services[28]=new service(28, "armagetron", 0, 0, 101, "dpi");
+services[29]=new service(29, "atg", 0, 0, 101, "dpi");
+services[30]=new service(30, "avast", 0, 0, 101, "dpi");
+services[31]=new service(31, "avastsecuredns", 0, 0, 101, "dpi");
+services[32]=new service(32, "aws_cognito", 0, 0, 101, "dpi");
+services[33]=new service(33, "aws_api_gateway", 0, 0, 101, "dpi");
+services[34]=new service(34, "aws_kinesis", 0, 0, 101, "dpi");
+services[35]=new service(35, "aws_ec2", 0, 0, 101, "dpi");
+services[36]=new service(36, "aws_emr", 0, 0, 101, "dpi");
+services[37]=new service(37, "aws_s3", 0, 0, 101, "dpi");
+services[38]=new service(38, "aws_cloudfront", 0, 0, 101, "dpi");
+services[39]=new service(39, "aws_dynamodb", 0, 0, 101, "dpi");
+services[40]=new service(40, "azure", 0, 0, 101, "dpi");
+services[41]=new service(41, "bacnet", 0, 0, 101, "dpi");
+services[42]=new service(42, "badoo", 0, 0, 101, "dpi");
+services[43]=new service(43, "bearshare", 0, 0, 100, "p2p");
+services[44]=new service(44, "beckhoff_ads", 0, 0, 101, "dpi");
+services[45]=new service(45, "bfcp", 0, 0, 101, "dpi");
+services[46]=new service(46, "bfd", 0, 0, 101, "dpi");
+services[47]=new service(47, "bgp", 0, 0, 101, "dpi");
+services[48]=new service(48, "binary app transfer", 0, 0, 102, "risk");
+services[49]=new service(49, "bitcoin", 0, 0, 101, "dpi");
+services[50]=new service(50, "bittorrent", 0, 0, 101, "dpi");
+services[51]=new service(51, "bjnp", 0, 0, 101, "dpi");
+services[52]=new service(52, "blacknut", 0, 0, 101, "dpi");
+services[53]=new service(53, "blizzard", 0, 0, 101, "dpi");
+services[54]=new service(54, "bloomberg", 0, 0, 101, "dpi");
+services[55]=new service(55, "bluesky", 0, 0, 101, "dpi");
+services[56]=new service(56, "boosteroid", 0, 0, 101, "dpi");
+services[57]=new service(57, "c1222", 0, 0, 101, "dpi");
+services[58]=new service(58, "cachefly", 0, 0, 101, "dpi");
+services[59]=new service(59, "cactusvpn", 0, 0, 101, "dpi");
+services[60]=new service(60, "can", 0, 0, 101, "dpi");
+services[61]=new service(61, "canonical", 0, 0, 101, "dpi");
+services[62]=new service(62, "capwap", 0, 0, 101, "dpi");
+services[63]=new service(63, "cassandra", 0, 0, 101, "dpi");
+services[64]=new service(64, "ceph", 0, 0, 101, "dpi");
+services[65]=new service(65, "checkmk", 0, 0, 101, "dpi");
+services[66]=new service(66, "ciscoskinny", 0, 0, 101, "dpi");
+services[67]=new service(67, "ciscovpn", 0, 0, 101, "dpi");
+services[68]=new service(68, "citrix", 0, 0, 101, "dpi");
+services[69]=new service(69, "clear-text credentials", 0, 0, 102, "risk");
+services[70]=new service(70, "clickhouse", 0, 0, 101, "dpi");
+services[71]=new service(71, "cloudflare", 0, 0, 101, "dpi");
+services[72]=new service(72, "cloudflarewarp", 0, 0, 101, "dpi");
+services[73]=new service(73, "cnn", 0, 0, 101, "dpi");
+services[74]=new service(74, "cnp_ip", 0, 0, 101, "dpi");
+services[75]=new service(75, "coap", 0, 0, 101, "dpi");
+services[76]=new service(76, "cod_mobile", 0, 0, 101, "dpi");
+services[77]=new service(77, "collectd", 0, 0, 101, "dpi");
+services[78]=new service(78, "corba", 0, 0, 101, "dpi");
+services[79]=new service(79, "cpha", 0, 0, 101, "dpi");
+services[80]=new service(80, "crashlytics", 0, 0, 101, "dpi");
+services[81]=new service(81, "crawler/bot", 0, 0, 102, "risk");
+services[82]=new service(82, "crossfire", 0, 0, 101, "dpi");
+services[83]=new service(83, "crynet", 0, 0, 101, "dpi");
+services[84]=new service(84, "cybersec", 0, 0, 101, "dpi");
+services[85]=new service(85, "datasaver", 0, 0, 101, "dpi");
+services[86]=new service(86, "dailymotion", 0, 0, 101, "dpi");
+services[87]=new service(87, "dazn", 0, 0, 101, "dpi");
+services[88]=new service(88, "dcerpc", 0, 0, 101, "dpi");
+services[89]=new service(89, "deezer", 0, 0, 101, "dpi");
+services[90]=new service(90, "desktop/file sharing", 0, 0, 102, "risk");
+services[91]=new service(91, "dhcp", 0, 0, 101, "dpi");
+services[92]=new service(92, "dhcpv6", 0, 0, 101, "dpi");
+services[93]=new service(93, "diameter", 0, 0, 101, "dpi");
+services[94]=new service(94, "dicom", 0, 0, 101, "dpi");
+services[95]=new service(95, "digitalocean", 0, 0, 101, "dpi");
+services[96]=new service(96, "dingtalk", 0, 0, 101, "dpi");
+services[97]=new service(97, "directv", 0, 0, 101, "dpi");
+services[98]=new service(98, "discord", 0, 0, 101, "dpi");
+services[99]=new service(99, "disneyplus", 0, 0, 101, "dpi");
+services[100]=new service(100, "dlep", 0, 0, 101, "dpi");
+services[101]=new service(101, "dnp3", 0, 0, 101, "dpi");
+services[102]=new service(102, "dns", 0, 0, 101, "dpi");
+services[103]=new service(103, "dns message fragmented", 0, 0, 102, "risk");
+services[104]=new service(104, "dns packet large", 0, 0, 102, "risk");
+services[105]=new service(105, "dns susp dga domain", 0, 0, 102, "risk");
+services[106]=new service(106, "dns traffic susp", 0, 0, 102, "risk");
+services[107]=new service(107, "dnscrypt", 0, 0, 101, "dpi");
+services[108]=new service(108, "dofus", 0, 0, 101, "dpi");
+services[109]=new service(109, "doh_dot", 0, 0, 101, "dpi");
+services[110]=new service(110, "drda", 0, 0, 101, "dpi");
+services[111]=new service(111, "dropbox", 0, 0, 101, "dpi");
+services[112]=new service(112, "dtls", 0, 0, 101, "dpi");
+services[113]=new service(113, "eaq", 0, 0, 101, "dpi");
+services[114]=new service(114, "easyweather", 0, 0, 101, "dpi");
+services[115]=new service(115, "ebay", 0, 0, 101, "dpi");
+services[116]=new service(116, "edgecast", 0, 0, 101, "dpi");
+services[117]=new service(117, "edonkey", 0, 0, 101, "dpi");
+services[118]=new service(118, "egd", 0, 0, 101, "dpi");
+services[119]=new service(119, "elasticsearch", 0, 0, 101, "dpi");
+services[120]=new service(120, "electronicarts", 0, 0, 101, "dpi");
+services[121]=new service(121, "epicgames", 0, 0, 101, "dpi");
+services[122]=new service(122, "espn", 0, 0, 101, "dpi");
+services[123]=new service(123, "ethereum", 0, 0, 101, "dpi");
+services[124]=new service(124, "ethernetip", 0, 0, 101, "dpi");
+services[125]=new service(125, "ethersbus", 0, 0, 101, "dpi");
+services[126]=new service(126, "ethersio", 0, 0, 101, "dpi");
+services[127]=new service(127, "error code", 0, 0, 102, "risk");
+services[128]=new service(128, "facebook", 0, 0, 101, "dpi");
+services[129]=new service(129, "facebook_messenger", 0, 0, 101, "dpi");
+services[130]=new service(130, "facebook_reel_story", 0, 0, 101, "dpi");
+services[131]=new service(131, "facebookvoip", 0, 0, 101, "dpi");
+services[132]=new service(132, "fastcgi", 0, 0, 101, "dpi");
+services[133]=new service(133, "fins", 0, 0, 101, "dpi");
+services[134]=new service(134, "fix", 0, 0, 101, "dpi");
+services[135]=new service(135, "flute", 0, 0, 101, "dpi");
+services[136]=new service(136, "forticlient", 0, 0, 101, "dpi");
+services[137]=new service(137, "ftp_control", 0, 0, 101, "dpi");
+services[138]=new service(138, "ftps", 0, 0, 101, "dpi");
+services[139]=new service(139, "ftp_data", 0, 0, 101, "dpi");
+services[140]=new service(140, "fuze", 0, 0, 101, "dpi");
+services[141]=new service(141, "gaijin", 0, 0, 101, "dpi");
+services[142]=new service(142, "gearman", 0, 0, 101, "dpi");
+services[143]=new service(143, "gearup_booster", 0, 0, 101, "dpi");
+services[144]=new service(144, "genshinimpact", 0, 0, 101, "dpi");
+services[145]=new service(145, "geforcenow", 0, 0, 101, "dpi");
+services[146]=new service(146, "git", 0, 0, 101, "dpi");
+services[147]=new service(147, "github", 0, 0, 101, "dpi");
+services[148]=new service(148, "github_actions", 0, 0, 101, "dpi");
+services[149]=new service(149, "github_copilot", 0, 0, 101, "dpi");
+services[150]=new service(150, "github_packages", 0, 0, 101, "dpi");
+services[151]=new service(151, "gitlab", 0, 0, 101, "dpi");
+services[152]=new service(152, "glbp", 0, 0, 101, "dpi");
+services[153]=new service(153, "gmail", 0, 0, 101, "dpi");
+services[154]=new service(154, "gnutella", 0, 0, 101, "dpi");
+services[155]=new service(155, "google", 0, 0, 101, "dpi");
+services[156]=new service(156, "googlecall", 0, 0, 101, "dpi");
+services[157]=new service(157, "googlechat", 0, 0, 101, "dpi");
+services[158]=new service(158, "googleclassroom", 0, 0, 101, "dpi");
+services[159]=new service(159, "googlecloud", 0, 0, 101, "dpi");
+services[160]=new service(160, "googledocs", 0, 0, 101, "dpi");
+services[161]=new service(161, "googledrive", 0, 0, 101, "dpi");
+services[162]=new service(162, "googlemeet", 0, 0, 101, "dpi");
+services[163]=new service(163, "googlemaps", 0, 0, 101, "dpi");
+services[164]=new service(164, "googleservices", 0, 0, 101, "dpi");
+services[165]=new service(165, "goto", 0, 0, 101, "dpi");
+services[166]=new service(166, "gtp", 0, 0, 101, "dpi");
+services[167]=new service(167, "gtp_c", 0, 0, 101, "dpi");
+services[168]=new service(168, "gtp_prime", 0, 0, 101, "dpi");
+services[169]=new service(169, "gtp_u", 0, 0, 101, "dpi");
+services[170]=new service(170, "guildwars2", 0, 0, 101, "dpi");
+services[171]=new service(171, "h323", 0, 0, 101, "dpi");
+services[172]=new service(172, "hamachi", 0, 0, 101, "dpi");
+services[173]=new service(173, "haproxy", 0, 0, 101, "dpi");
+services[174]=new service(174, "hart_ip", 0, 0, 101, "dpi");
+services[175]=new service(175, "hbo", 0, 0, 101, "dpi");
+services[176]=new service(176, "hclnotes", 0, 0, 101, "dpi");
+services[177]=new service(177, "hl7", 0, 0, 101, "dpi");
+services[178]=new service(178, "hls", 0, 0, 101, "dpi");
+services[179]=new service(179, "heroes_of_the_storm", 0, 0, 101, "dpi");
+services[180]=new service(180, "hislip", 0, 0, 101, "dpi");
+services[181]=new service(181, "hotspotshield", 0, 0, 101, "dpi");
+services[182]=new service(182, "hp_virtgrp", 0, 0, 101, "dpi");
+services[183]=new service(183, "hsrp", 0, 0, 101, "dpi");
+services[184]=new service(184, "http", 0, 0, 101, "dpi");
+services[185]=new service(185, "http_connect", 0, 0, 101, "dpi");
+services[186]=new service(186, "http_proxy", 0, 0, 101, "dpi");
+services[187]=new service(187, "http2", 0, 0, 101, "dpi");
+services[188]=new service(188, "http obsolete server", 0, 0, 102, "risk");
+services[189]=new service(189, "http susp content", 0, 0, 102, "risk");
+services[190]=new service(190, "http susp header", 0, 0, 102, "risk");
+services[191]=new service(191, "http susp user-agent", 0, 0, 102, "risk");
+services[192]=new service(192, "http susp url", 0, 0, 102, "risk");
+services[193]=new service(193, "http/tls/quic numeric hostname/sni", 0, 0, 102, "risk");
+services[194]=new service(194, "huawei", 0, 0, 101, "dpi");
+services[195]=new service(195, "huawei_cloud", 0, 0, 101, "dpi");
+services[196]=new service(196, "hulu", 0, 0, 101, "dpi");
+services[197]=new service(197, "i3d", 0, 0, 101, "dpi");
+services[198]=new service(198, "iax", 0, 0, 101, "dpi");
+services[199]=new service(199, "icecast", 0, 0, 101, "dpi");
+services[200]=new service(200, "icloudprivaterelay", 0, 0, 101, "dpi");
+services[201]=new service(201, "icmpv6", 0, 0, 101, "dpi");
+services[202]=new service(202, "idn domain name", 0, 0, 102, "risk");
+services[203]=new service(203, "iec60870", 0, 0, 101, "dpi");
+services[204]=new service(204, "Iec62056", 0, 0, 101, "dpi");
+services[205]=new service(205, "ieee_c37118", 0, 0, 101, "dpi");
+services[206]=new service(206, "iflix", 0, 0, 101, "dpi");
+services[207]=new service(207, "iheartradio", 0, 0, 101, "dpi");
+services[208]=new service(208, "imap", 0, 0, 101, "dpi");
+services[209]=new service(209, "imaps", 0, 0, 101, "dpi");
+services[210]=new service(210, "imo", 0, 0, 101, "dpi");
+services[211]=new service(211, "instagram", 0, 0, 101, "dpi");
+services[212]=new service(212, "ip_ah", 0, 0, 101, "dpi");
+services[213]=new service(213, "ip_egp", 0, 0, 101, "dpi");
+services[214]=new service(214, "ip_esp", 0, 0, 101, "dpi");
+services[215]=new service(215, "ip_gre", 0, 0, 101, "dpi");
+services[216]=new service(216, "ip_igmp", 0, 0, 101, "dpi");
+services[217]=new service(217, "ip_icmp", 0, 0, 101, "dpi");
+services[218]=new service(218, "ip_in_ip", 0, 0, 101, "dpi");
+services[219]=new service(219, "ip_ospf", 0, 0, 101, "dpi");
+services[220]=new service(220, "ip_pim", 0, 0, 101, "dpi");
+services[221]=new service(221, "ip_sctp", 0, 0, 101, "dpi");
+services[222]=new service(222, "ipp", 0, 0, 101, "dpi");
+services[223]=new service(223, "ipsec", 0, 0, 101, "dpi");
+services[224]=new service(224, "iqiyi", 0, 0, 101, "dpi");
+services[225]=new service(225, "irc", 0, 0, 101, "dpi");
+services[226]=new service(226, "iris", 0, 0, 101, "dpi");
+services[227]=new service(227, "iso9506_1_mms", 0, 0, 101, "dpi");
+services[228]=new service(228, "jabber", 0, 0, 101, "dpi");
+services[229]=new service(229, "jrmi", 0, 0, 101, "dpi");
+services[230]=new service(230, "json", 0, 0, 101, "dpi");
+services[231]=new service(231, "json_rpc", 0, 0, 101, "dpi");
+services[232]=new service(232, "kakaotalk", 0, 0, 101, "dpi");
+services[233]=new service(233, "kakaotalk_voice", 0, 0, 101, "dpi");
+services[234]=new service(234, "kazaa", 0, 0, 100, "p2p");
+services[235]=new service(235, "kcp", 0, 0, 100, "p2p");
+services[236]=new service(236, "kerberos", 0, 0, 101, "dpi");
+services[237]=new service(237, "kick", 0, 0, 101, "dpi");
+services[238]=new service(238, "kismet", 0, 0, 101, "dpi");
+services[239]=new service(239, "known proto on non std port", 0, 0, 102, "risk");
+services[240]=new service(240, "knxnet_ip", 0, 0, 101, "dpi");
+services[241]=new service(241, "lagofast", 0, 0, 101, "dpi");
+services[242]=new service(242, "lastfm", 0, 0, 101, "dpi");
+services[243]=new service(243, "ldap", 0, 0, 101, "dpi");
+services[244]=new service(244, "ldp", 0, 0, 101, "dpi");
+services[245]=new service(245, "libp2p", 0, 0, 101, "dpi");
+services[246]=new service(246, "likee", 0, 0, 101, "dpi");
+services[247]=new service(247, "line", 0, 0, 101, "dpi");
+services[248]=new service(248, "line_call", 0, 0, 101, "dpi");
+services[249]=new service(249, "linkedin", 0, 0, 101, "dpi");
+services[250]=new service(250, "lisp", 0, 0, 101, "dpi");
+services[251]=new service(251, "livestream", 0, 0, 101, "dpi");
+services[252]=new service(252, "llmnr", 0, 0, 101, "dpi");
+services[253]=new service(253, "lol_wild_rift", 0, 0, 101, "dpi");
+services[254]=new service(254, "lustre", 0, 0, 101, "dpi");
+services[255]=new service(255, "malformed packet", 0, 0, 102, "risk");
+services[256]=new service(256, "malicious ja3 fingerp.", 0, 0, 102, "risk");
+services[257]=new service(257, "malicious ssl cert/sha1 fingerp.", 0, 0, 102, "risk");
+services[258]=new service(258, "mastodon", 0, 0, 101, "dpi");
+services[259]=new service(259, "matter", 0, 0, 101, "dpi");
+services[260]=new service(260, "mdns", 0, 0, 101, "dpi");
+services[261]=new service(261, "megaco", 0, 0, 101, "dpi");
+services[262]=new service(262, "melsec", 0, 0, 101, "dpi");
+services[263]=new service(263, "memcached", 0, 0, 101, "dpi");
+services[264]=new service(264, "meraki_cloud", 0, 0, 101, "dpi");
+services[265]=new service(265, "mgcp", 0, 0, 101, "dpi");
+services[266]=new service(266, "microsoft", 0, 0, 101, "dpi");
+services[267]=new service(267, "microsoft365", 0, 0, 101, "dpi");
+services[268]=new service(268, "mikrotik", 0, 0, 101, "dpi");
+services[269]=new service(269, "mining", 0, 0, 101, "dpi");
+services[270]=new service(270, "minor issues", 0, 0, 102, "risk");
+services[271]=new service(271, "missing sni tls extn", 0, 0, 102, "risk");
+services[272]=new service(272, "modbus", 0, 0, 101, "dpi");
+services[273]=new service(273, "monero", 0, 0, 101, "dpi");
+services[274]=new service(274, "mongodb", 0, 0, 101, "dpi");
+services[275]=new service(275, "mozilla", 0, 0, 101, "dpi");
+services[276]=new service(276, "ms_teams_call", 0, 0, 101, "dpi");
+services[277]=new service(277, "mudfish", 0, 0, 101, "dpi");
+services[278]=new service(278, "mullvad", 0, 0, 101, "dpi");
+services[279]=new service(279, "mumble", 0, 0, 101, "dpi");
+services[280]=new service(280, "munin", 0, 0, 101, "dpi");
+services[281]=new service(281, "mpeg_ts", 0, 0, 101, "dpi");
+services[282]=new service(282, "mpegdash", 0, 0, 101, "dpi");
+services[283]=new service(283, "mqtt", 0, 0, 101, "dpi");
+services[284]=new service(284, "ms_onedrive", 0, 0, 101, "dpi");
+services[285]=new service(285, "ms_rpch", 0, 0, 101, "dpi");
+services[286]=new service(286, "msdo", 0, 0, 101, "dpi");
+services[287]=new service(287, "msgpack", 0, 0, 101, "dpi");
+services[288]=new service(288, "mssql-tds", 0, 0, 101, "dpi");
+services[289]=new service(289, "mute", 0, 0, 100, "p2p");
+services[290]=new service(290, "mysql", 0, 0, 101, "dpi");
+services[291]=new service(291, "nano", 0, 0, 101, "dpi");
+services[292]=new service(292, "natpmp", 0, 0, 101, "dpi");
+services[293]=new service(293, "nats", 0, 0, 101, "dpi");
+services[294]=new service(294, "naver", 0, 0, 101, "dpi");
+services[295]=new service(295, "nestlogsink", 0, 0, 101, "dpi");
+services[296]=new service(296, "netease_games", 0, 0, 101, "dpi");
+services[297]=new service(297, "netbios", 0, 0, 101, "dpi");
+services[298]=new service(298, "netflix", 0, 0, 101, "dpi");
+services[299]=new service(299, "netflow", 0, 0, 101, "dpi");
+services[300]=new service(300, "nexon", 0, 0, 101, "dpi");
+services[301]=new service(301, "nfs", 0, 0, 101, "dpi");
+services[302]=new service(302, "nintendo", 0, 0, 101, "dpi");
+services[303]=new service(303, "noe", 0, 0, 101, "dpi");
+services[304]=new service(304, "nomachine", 0, 0, 101, "dpi");
+services[305]=new service(305, "nordvpn", 0, 0, 101, "dpi");
+services[306]=new service(306, "ntop", 0, 0, 101, "dpi");
+services[307]=new service(307, "ntp", 0, 0, 101, "dpi");
+services[308]=new service(308, "nvidia", 0, 0, 101, "dpi");
+services[309]=new service(309, "ocs", 0, 0, 101, "dpi");
+services[310]=new service(310, "ocsp", 0, 0, 101, "dpi");
+services[311]=new service(311, "oicq", 0, 0, 101, "dpi");
+services[312]=new service(312, "ookla", 0, 0, 101, "dpi");
+services[313]=new service(313, "opc_ua", 0, 0, 101, "dpi");
+services[314]=new service(314, "opendns", 0, 0, 101, "dpi");
+services[315]=new service(315, "openflow", 0, 0, 101, "dpi");
+services[316]=new service(316, "openvpn", 0, 0, 101, "dpi");
+services[317]=new service(317, "openwire", 0, 0, 101, "dpi");
+services[318]=new service(318, "opera_vpn", 0, 0, 101, "dpi");
+services[319]=new service(319, "oracle", 0, 0, 101, "dpi");
+services[320]=new service(320, "ospf", 0, 0, 101, "dpi");
+services[321]=new service(321, "outlook", 0, 0, 101, "dpi");
+services[322]=new service(322, "paltalk", 0, 0, 101, "dpi");
+services[323]=new service(323, "pandora", 0, 0, 101, "dpi");
+services[324]=new service(324, "paramountplus", 0, 0, 101, "dpi");
+services[325]=new service(325, "pastebin", 0, 0, 101, "dpi");
+services[326]=new service(326, "path_of_exile", 0, 0, 101, "dpi");
+services[327]=new service(327, "pfcp", 0, 0, 101, "dpi");
+services[328]=new service(328, "pgm", 0, 0, 101, "dpi");
+services[329]=new service(329, "pia", 0, 0, 101, "dpi");
+services[330]=new service(330, "pinterest", 0, 0, 101, "dpi");
+services[331]=new service(331, "playstation", 0, 0, 101, "dpi");
+services[332]=new service(332, "playstore", 0, 0, 101, "dpi");
+services[333]=new service(333, "pluralsight", 0, 0, 101, "dpi");
+services[334]=new service(334, "pop3", 0, 0, 101, "dpi");
+services[335]=new service(335, "pops", 0, 0, 101, "dpi");
+services[336]=new service(336, "possible exploit", 0, 0, 102, "risk");
+services[337]=new service(337, "postgresql", 0, 0, 101, "dpi");
+services[338]=new service(338, "pptp", 0, 0, 101, "dpi");
+services[339]=new service(339, "ptpv2", 0, 0, 101, "dpi");
+services[340]=new service(340, "profinet_io", 0, 0, 101, "dpi");
+services[341]=new service(341, "protobuf", 0, 0, 101, "dpi");
+services[342]=new service(342, "protonvpn", 0, 0, 101, "dpi");
+services[343]=new service(343, "psiphon", 0, 0, 101, "dpi");
+services[344]=new service(344, "qq", 0, 0, 101, "dpi");
+services[345]=new service(345, "quic", 0, 0, 101, "dpi");
+services[346]=new service(346, "radius", 0, 0, 101, "dpi");
+services[347]=new service(347, "radmin", 0, 0, 101, "dpi");
+services[348]=new service(348, "raft", 0, 0, 101, "dpi");
+services[349]=new service(349, "raknet", 0, 0, 101, "dpi");
+services[350]=new service(350, "rce injection", 0, 0, 102, "risk");
+services[351]=new service(351, "rdp", 0, 0, 101, "dpi");
+services[352]=new service(352, "reddit", 0, 0, 101, "dpi");
+services[353]=new service(353, "resp", 0, 0, 101, "dpi");
+services[354]=new service(354, "riotgames", 0, 0, 101, "dpi");
+services[355]=new service(355, "ripe_atlas", 0, 0, 101, "dpi");
+services[356]=new service(356, "risky domain name", 0, 0, 102, "risk");
+services[357]=new service(357, "rmcp", 0, 0, 101, "dpi");
+services[358]=new service(358, "rockstar_games", 0, 0, 101, "dpi");
+services[359]=new service(359, "roblox", 0, 0, 101, "dpi");
+services[360]=new service(360, "roughtime", 0, 0, 101, "dpi");
+services[361]=new service(361, "rsh", 0, 0, 101, "dpi");
+services[362]=new service(362, "rsync", 0, 0, 101, "dpi");
+services[363]=new service(363, "rtcp", 0, 0, 101, "dpi");
+services[364]=new service(364, "rtmp", 0, 0, 101, "dpi");
+services[365]=new service(365, "rtp", 0, 0, 101, "dpi");
+services[366]=new service(366, "rtps", 0, 0, 101, "dpi");
+services[367]=new service(367, "rtsp", 0, 0, 101, "dpi");
+services[368]=new service(368, "rumble", 0, 0, 101, "dpi");
+services[369]=new service(369, "rx", 0, 0, 101, "dpi");
+services[370]=new service(370, "samsung_sdp", 0, 0, 101, "dpi");
+services[371]=new service(371, "s7comm", 0, 0, 101, "dpi");
+services[372]=new service(372, "s7comm_plus", 0, 0, 101, "dpi");
+services[373]=new service(373, "salesforce", 0, 0, 101, "dpi");
+services[374]=new service(374, "sap", 0, 0, 101, "dpi");
+services[375]=new service(375, "sbe", 0, 0, 101, "dpi");
+services[376]=new service(376, "sd-rtn", 0, 0, 101, "dpi");
+services[377]=new service(377, "service-location", 0, 0, 101, "dpi");
+services[378]=new service(378, "sflow", 0, 0, 101, "dpi");
+services[379]=new service(379, "shein", 0, 0, 101, "dpi");
+services[380]=new service(380, "showtime", 0, 0, 101, "dpi");
+services[381]=new service(381, "signal", 0, 0, 101, "dpi");
+services[382]=new service(382, "signalvoip", 0, 0, 101, "dpi");
+services[383]=new service(383, "sina", 0, 0, 101, "dpi");
+services[384]=new service(384, "sina_weibo", 0, 0, 101, "dpi");
+services[385]=new service(385, "sip", 0, 0, 101, "dpi");
+services[386]=new service(386, "siriusxmradio", 0, 0, 101, "dpi");
+services[387]=new service(387, "slack", 0, 0, 101, "dpi");
+services[388]=new service(388, "smb insecure vers", 0, 0, 102, "risk");
+services[389]=new service(389, "smbv1", 0, 0, 101, "dpi");
+services[390]=new service(390, "smbv23", 0, 0, 101, "dpi");
+services[391]=new service(391, "smpp", 0, 0, 101, "dpi");
+services[392]=new service(392, "smtp", 0, 0, 101, "dpi");
+services[393]=new service(393, "smtps", 0, 0, 101, "dpi");
+services[394]=new service(394, "snapchat", 0, 0, 101, "dpi");
+services[395]=new service(395, "snapchatcall", 0, 0, 101, "dpi");
+services[396]=new service(396, "snmp", 0, 0, 101, "dpi");
+services[397]=new service(397, "soap", 0, 0, 101, "dpi");
+services[398]=new service(398, "socks", 0, 0, 101, "dpi");
+services[399]=new service(399, "softether", 0, 0, 101, "dpi");
+services[400]=new service(400, "someip", 0, 0, 101, "dpi");
+services[401]=new service(401, "sonos", 0, 0, 101, "dpi");
+services[402]=new service(402, "soulseek", 0, 0, 100, "p2p");
+services[403]=new service(403, "soundcloud", 0, 0, 101, "dpi");
+services[404]=new service(404, "source_engine", 0, 0, 101, "dpi");
+services[405]=new service(405, "spotify", 0, 0, 101, "dpi");
+services[406]=new service(406, "sql injection", 0, 0, 102, "risk");
+services[407]=new service(407, "srtp", 0, 0, 101, "dpi");
+services[408]=new service(408, "ssdp", 0, 0, 101, "dpi");
+services[409]=new service(409, "ssh", 0, 0, 101, "dpi");
+services[410]=new service(410, "ssh obsolete cli ver/cipher", 0, 0, 102, "risk");
+services[411]=new service(411, "ssh obsolete ser ver/cipher", 0, 0, 102, "risk");
+services[412]=new service(412, "steam", 0, 0, 101, "dpi");
+services[413]=new service(413, "stomp", 0, 0, 101, "dpi");
+services[414]=new service(414, "stun", 0, 0, 101, "dpi");
+services[415]=new service(415, "surfshark", 0, 0, 101, "dpi");
+services[416]=new service(416, "susp entropy", 0, 0, 102, "risk");
+services[417]=new service(417, "syncthing", 0, 0, 101, "dpi");
+services[418]=new service(418, "syslog", 0, 0, 101, "dpi");
+services[419]=new service(419, "tailscale", 0, 0, 101, "dpi");
+services[420]=new service(420, "taobao", 0, 0, 101, "dpi");
+services[421]=new service(421, "targusdataspeed", 0, 0, 101, "dpi");
+services[422]=new service(422, "tcp connection issues", 0, 0, 102, "risk");
+services[423]=new service(423, "teams", 0, 0, 101, "dpi");
+services[424]=new service(424, "teamspeak", 0, 0, 101, "dpi");
+services[425]=new service(425, "temu", 0, 0, 101, "dpi");
+services[426]=new service(426, "teamviewer", 0, 0, 101, "dpi");
+services[427]=new service(427, "tencentvideo", 0, 0, 101, "dpi");
+services[428]=new service(428, "telegram", 0, 0, 101, "dpi");
+services[429]=new service(429, "telegram_voip", 0, 0, 101, "dpi");
+services[430]=new service(430, "telnet", 0, 0, 101, "dpi");
+services[431]=new service(431, "tencent", 0, 0, 101, "dpi");
+services[432]=new service(432, "tencentgames", 0, 0, 101, "dpi");
+services[433]=new service(433, "teredo", 0, 0, 101, "dpi");
+services[434]=new service(434, "tesla_services", 0, 0, 101, "dpi");
+services[435]=new service(435, "teso", 0, 0, 101, "dpi");
+services[436]=new service(436, "text with non-printable chars", 0, 0, 102, "risk");
+services[437]=new service(437, "tftp", 0, 0, 101, "dpi");
+services[438]=new service(438, "threads", 0, 0, 101, "dpi");
+services[439]=new service(439, "threema", 0, 0, 101, "dpi");
+services[440]=new service(440, "tidal", 0, 0, 101, "dpi");
+services[441]=new service(441, "tiktok", 0, 0, 101, "dpi");
+services[442]=new service(442, "tinc", 0, 0, 101, "dpi");
+services[443]=new service(443, "tivoconnect", 0, 0, 101, "dpi");
+services[444]=new service(444, "tls", 0, 0, 101, "dpi");
+services[445]=new service(445, "tls cert about to expire", 0, 0, 102, "risk");
+services[446]=new service(446, "tls cert expired", 0, 0, 102, "risk");
+services[447]=new service(447, "tls cert mismatch", 0, 0, 102, "risk");
+services[448]=new service(448, "tls cert validity too long", 0, 0, 102, "risk");
+services[449]=new service(449, "tls fatal alert", 0, 0, 102, "risk");
+services[450]=new service(450, "tls not carrying https", 0, 0, 102, "risk");
+services[451]=new service(451, "tls obsolete (v1.1 or older)", 0, 0, 102, "risk");
+services[452]=new service(452, "tls self signed cert", 0, 0, 102, "risk");
+services[453]=new service(453, "tls susp esni usage", 0, 0, 102, "risk");
+services[454]=new service(454, "tls susp extn", 0, 0, 102, "risk");
+services[455]=new service(455, "tls weak cipher", 0, 0, 102, "risk");
+services[456]=new service(456, "tocaboca", 0, 0, 101, "dpi");
+services[457]=new service(457, "tor", 0, 0, 101, "dpi");
+services[458]=new service(458, "tplink_shp", 0, 0, 101, "dpi");
+services[459]=new service(459, "trdp", 0, 0, 101, "dpi");
+services[460]=new service(460, "tristation", 0, 0, 101, "dpi");
+services[461]=new service(461, "truphone", 0, 0, 101, "dpi");
+services[462]=new service(462, "tumblr", 0, 0, 101, "dpi");
+services[463]=new service(463, "tunein", 0, 0, 101, "dpi");
+services[464]=new service(464, "tunnelbear", 0, 0, 101, "dpi");
+services[465]=new service(465, "tuya_lp", 0, 0, 101, "dpi");
+services[466]=new service(466, "twitch", 0, 0, 101, "dpi");
+services[467]=new service(467, "twitter", 0, 0, 101, "dpi");
+services[468]=new service(468, "ubiquiti", 0, 0, 101, "dpi");
+services[469]=new service(469, "ubnt-telemetry", 0, 0, 103, "custom");
+services[470]=new service(470, "ubntac2", 0, 0, 101, "dpi");
+services[471]=new service(471, "uftp", 0, 0, 101, "dpi");
+services[472]=new service(472, "ultrasurf", 0, 0, 101, "dpi");
+services[473]=new service(473, "umas", 0, 0, 101, "dpi");
+services[474]=new service(474, "uncommon tls alpn", 0, 0, 102, "risk");
+services[475]=new service(475, "unidirectional traffic", 0, 0, 102, "risk");
+services[476]=new service(476, "unsafe protocol", 0, 0, 102, "risk");
+services[477]=new service(477, "usenet", 0, 0, 101, "dpi");
+services[478]=new service(478, "valve_sdr", 0, 0, 101, "dpi");
+services[479]=new service(479, "viber", 0, 0, 101, "dpi");
+services[480]=new service(480, "viber_voip", 0, 0, 101, "dpi");
+services[481]=new service(481, "vimeo", 0, 0, 101, "dpi");
+services[482]=new service(482, "vivox", 0, 0, 101, "dpi");
+services[483]=new service(483, "vk", 0, 0, 101, "dpi");
+services[484]=new service(484, "vmware", 0, 0, 101, "dpi");
+services[485]=new service(485, "vnc", 0, 0, 101, "dpi");
+services[486]=new service(486, "vrrp", 0, 0, 101, "dpi");
+services[487]=new service(487, "vudu", 0, 0, 101, "dpi");
+services[488]=new service(488, "vxlan", 0, 0, 101, "dpi");
+services[489]=new service(489, "warcraft3", 0, 0, 101, "dpi");
+services[490]=new service(490, "waste", 0, 0, 100, "p2p");
+services[491]=new service(491, "waze", 0, 0, 101, "dpi");
+services[492]=new service(492, "webdav", 0, 0, 101, "dpi");
+services[493]=new service(493, "webex", 0, 0, 101, "dpi");
+services[494]=new service(494, "websocket", 0, 0, 101, "dpi");
+services[495]=new service(495, "wechat", 0, 0, 101, "dpi");
+services[496]=new service(496, "whatsapp", 0, 0, 101, "dpi");
+services[497]=new service(497, "whatsappcall", 0, 0, 101, "dpi");
+services[498]=new service(498, "whatsappfiles", 0, 0, 101, "dpi");
+services[499]=new service(499, "whois-das", 0, 0, 101, "dpi");
+services[500]=new service(500, "wikipedia", 0, 0, 101, "dpi");
+services[501]=new service(501, "windows-telemetry", 0, 0, 103, "custom");
+services[502]=new service(502, "windowsupdate", 0, 0, 101, "dpi");
+services[503]=new service(503, "windscribe", 0, 0, 101, "dpi");
+services[504]=new service(504, "wireguard", 0, 0, 101, "dpi");
+services[505]=new service(505, "worldofkungfu", 0, 0, 101, "dpi");
+services[506]=new service(506, "worldofwarcraft", 0, 0, 101, "dpi");
+services[507]=new service(507, "wsd", 0, 0, 101, "dpi");
+services[508]=new service(508, "xbox", 0, 0, 101, "dpi");
+services[509]=new service(509, "xdcc", 0, 0, 100, "p2p");
+services[510]=new service(510, "xdmcp", 0, 0, 101, "dpi");
+services[511]=new service(511, "xiaomi", 0, 0, 101, "dpi");
+services[512]=new service(512, "xss attack", 0, 0, 102, "risk");
+services[513]=new service(513, "yahoo", 0, 0, 101, "dpi");
+services[514]=new service(514, "yandex", 0, 0, 101, "dpi");
+services[515]=new service(515, "yandex_alice", 0, 0, 101, "dpi");
+services[516]=new service(516, "yandex_cloud", 0, 0, 101, "dpi");
+services[517]=new service(517, "yandex_direct", 0, 0, 101, "dpi");
+services[518]=new service(518, "yandex_disk", 0, 0, 101, "dpi");
+services[519]=new service(519, "yandex_mail", 0, 0, 101, "dpi");
+services[520]=new service(520, "yandex_market", 0, 0, 101, "dpi");
+services[521]=new service(521, "yandex_metrika", 0, 0, 101, "dpi");
+services[522]=new service(522, "yandex_music", 0, 0, 101, "dpi");
+services[523]=new service(523, "yojimbo", 0, 0, 101, "dpi");
+services[524]=new service(524, "youtube", 0, 0, 101, "dpi");
+services[525]=new service(525, "youtube_kids", 0, 0, 101, "dpi");
+services[526]=new service(526, "youtubeupload", 0, 0, 101, "dpi");
+services[527]=new service(527, "z3950", 0, 0, 101, "dpi");
+services[528]=new service(528, "zabbix", 0, 0, 101, "dpi");
+services[529]=new service(529, "zeromq", 0, 0, 101, "dpi");
+services[530]=new service(530, "zoom", 0, 0, 101, "dpi");
+services[531]=new service(531, "zug", 0, 0, 101, "dpi");
+services_length = 532;
+services.sort(sorton);var servport_name0 = "";
+var servport_name1 = "";
+var servport_name2 = "";
+var servport_name3 = "";
+var p2p_value = "";function search_service_index(name) {for(var i=0; i<services_length ; i++){if(name == services[i].name){return i;}}return -1;}function write_service_options(name) {var index = search_service_index(name);for(var i=0 ; i<services_length ; i++){document.write("<option value=\""+services[i].name+"\"");if(i==index) {document.write(" selected=\"selected\"");}document.write(">"+services[i].name+" [ "+services[i].servicename+" ]"+"</option>");}}function setBlockedServicesValue() {var index;if (p2p_value) {if (p2p_value == "1") {document.filters._filter_p2p.checked = true;} else {document.filters._filter_p2p.checked = false;}}for (i=0;i<document.filters.numfilters.value;i++) {index = search_service_index(eval("servport_name"+i));if(index!=-1) {eval("document.filters.port"+i+"_start").value = services[index].start;eval("document.filters.port"+i+"_end").value = services[index].end;eval("document.filters.blocked_service"+i).selectedIndex = index+1; }}}function onchange_blockedServices(index, start, end) {index--;if(index == -1) {start.value = '';end.value = '';} else {start.value = services[index].start;end.value = services[index].end;}}function Status(F,I) {var start = '';var end = '';var total = F.elements.length;for(var i=0 ; i < total ; i++){if(F.elements[i].name == "_filter_p2p")start = i - 1;if(F.elements[i].name == "url15")end = i;}if(start == '' || end == '') return true;if(I == "deny" ) {for(i = start; i<=end; i++) {choose_disable(F.elements[i]);}} else {for(i = start; i<=end; i++) {choose_enable(F.elements[i]);}for(i = 0; i < F.numfilters.value; i++) {choose_disable(eval("document.filters.port"+i+"_start"));choose_disable(eval("document.filters.port"+i+"_end"));}}return true;}function filter_add_submit(F) {F.change_action.value = "gozila_cgi";F.submit_type.value = "add_filter";apply(F);}function filter_remove_submit(F) {F.change_action.value = "gozila_cgi";F.submit_type.value = "remove_filter";apply(F);}function SelFilter(num,F) {F.change_action.value="gozila_cgi";F.submit_type.value = "sel_filter";F.f_id.value=F.f_id.options[num].value;apply(F);}function to_delete(F) {if(confirm(filter.mess1)) {F.change_action.value="gozila_cgi";F.submit_type.value = "delete";F.submit();}}function to_submit(F) {if(valid(F) == true) {F.change_action.value = "";F.submit_type.value = "";F.save_button.value = sbutton.saving;apply(F);}}function to_apply(F) {if(valid(F) == true) {F.change_action.value = "";F.submit_type.value = "";F.apply_button.value = sbutton.applied;applytake(F);}}var update;addEvent(window, "load", function() {stickControl(1);day_enable_disable(document.filters, "0");time_enable_disable(document.filters, "0");setBlockedServicesValue();Status(document.filters, "allow");for(i = 0; i < document.filters.numfilters.value; i++) {choose_disable(eval("document.filters.port"+i+"_start"));choose_disable(eval("document.filters.port"+i+"_end"));}update = new StatusbarUpdate();update.start();});addEvent(window, "unload", function() {update.stop();});
+//]]>
+</script></head><body class="gui"><div id="wrapper"><div id="content"><div id="header"><div id="logo"><h1>DD-WRT Control Panel</h1></div><div id="menu">
+<div id="menuMain">
+<ul id="menuMainList">
+<li><a href="index.asp"><script type="text/javascript">Capture(bmenu.setup)</script></a></li>
+<li><a href="Wireless_Basic.asp"><script type="text/javascript">Capture(bmenu.wireless)</script></a></li>
+<li><a href="Services.asp"><script type="text/javascript">Capture(bmenu.services)</script></a></li>
+<li><a href="Firewall.asp"><script type="text/javascript">Capture(bmenu.security)</script></a></li>
+<li class="current"><span><script type="text/javascript">Capture(bmenu.accrestriction)</script></span>
+<div id="menuSub">
+<ul id="menuSubList">
+<script type="text/javascript">
+//<![CDATA[
+ document.write("<a id=\"logout\" title=\"" + share.logout + "\" aria-label=\"" + share.logout + "\" href=\"dologout.asp\">");
+//]]>
+</script>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="logout" viewBox="0 0 16 16">
+<path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"></path>
+<path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"></path></svg></a><li><span><script type="text/javascript">Capture(bmenu.webaccess)</script></span></li>
+</ul>
+</div>
+</li>
+<li><a href="ForwardSpec.asp"><script type="text/javascript">Capture(bmenu.applications)</script></a></li>
+<li><a href="Management.asp"><script type="text/javascript">Capture(bmenu.admin)</script></a></li>
+<li><a href="Status_Router.asp"><script type="text/javascript">Capture(bmenu.statu)</script></a></li>
+</ul>
+</div>
+</div>
+</div><div id="main"><div id="contents"><form name="filters" action="http://192.168.1.1/apply.cgi" method="post" spellcheck="false"><input type="hidden" name="submit_button" value="Filters" /><input type="hidden" name="action" value="Apply" /><input type="hidden" name="change_action" /><input type="hidden" name="submit_type" /><input type="hidden" name="numfilters" value="4" /><input type="hidden" name="blocked_service" /><input type="hidden" name="filter_web" /><input type="hidden" name="filter_policy" /><input type="hidden" name="filter_p2p" /><input type="hidden" name="f_status" /><h2><script type="text/javascript">Capture(filter.h2)</script></h2><fieldset><legend><script type="text/javascript">Capture(filter.legend)</script></legend><div class="setting"><div class="label"><script type="text/javascript">Capture(filter.pol)</script></div><select name="f_id" onchange="SelFilter(this.form.f_id.selectedIndex,this.form)"><option value=1 selected="selected" >1 (  ) </option>
+<option value=2 >2 (  ) </option>
+<option value=3 >3 (  ) </option>
+<option value=4 >4 (  ) </option>
+<option value=5 >5 (  ) </option>
+<option value=6 >6 (  ) </option>
+<option value=7 >7 (  ) </option>
+<option value=8 >8 (  ) </option>
+<option value=9 >9 (  ) </option>
+<option value=10 >10 (  ) </option>
+<option value=11 >11 (  ) </option>
+<option value=12 >12 (  ) </option>
+<option value=13 >13 (  ) </option>
+<option value=14 >14 (  ) </option>
+<option value=15 >15 (  ) </option>
+<option value=16 >16 (  ) </option>
+<option value=17 >17 (  ) </option>
+<option value=18 >18 (  ) </option>
+<option value=19 >19 (  ) </option>
+<option value=20 >20 (  ) </option>
+</select><script type="text/javascript">
+//<![CDATA[
+document.write("<input class=\"button\" type=\"button\" value=\"" + sbutton.del + "\" onclick=\"to_delete(this.form);\" />");document.write("<input class=\"button\" type=\"button\" value=\"" + sbutton.summary + "\" onclick=\"openWindow('FilterSummary.asp', 700, 480);\" />");
+//]]>
+</script></div><div class="setting"><div class="label"><script type="text/javascript">Capture(share.statu)</script></div><input class="spaceradio" type="radio" value="enable" name="f_status1" /><script type="text/javascript">Capture(share.enable)</script>&nbsp;<input class="spaceradio" type="radio" value="disable" name="f_status1" checked="checked" /><script type="text/javascript">Capture(share.disable)</script></div><div class="setting"><div class="label"><script type="text/javascript">Capture(share.intrface)</script></div><select name="filter_if">
+<option value="none"  ><script type="text/javascript">Capture(share.select)</script></option>
+<option value="Any"  >Any</option>
+<option value="br0"  >LAN</option>
+</select>
+</div><div class="setting"><div class="label"><script type="text/javascript">Capture(filter.polname)</script></div><input maxlength="30" size="22" name="f_name" value=""/></div><div class="setting"><div class="label"><script type="text/javascript">Capture(filter.pcs)</script></div><script type="text/javascript">
+//<![CDATA[
+document.write("<input class=\"button\" type=\"button\" value=\"" + sbutton.filterIP + "\" onclick=\"openWindow('FilterIPMAC.asp', 590, 730);\" />");
+//]]>
+</script></div><div class="setting"><div class="label"><script type="text/javascript">Capture(share.deny)</script></div><input class="spaceradio" type="radio" name="f_status2" value="deny" onclick="Status(this.form,'deny')"  /><script type="text/javascript">Capture(filter.polallow)</script></div><div class="setting"><div class="label"><script type="text/javascript">Capture(share.filter)</script></div><input class="spaceradio" type="radio" name="f_status2" value="allow" onclick="Status(this.form,'allow')" checked="checked"  /></div><br /><div class="setting"><div class="label"><script type="text/javascript">Capture(filter.packetcount)</script></div>0&nbsp;</div><br /></fieldset><br /><fieldset><legend><script type="text/javascript">Capture(filter.legend2)</script></legend><div class="setting"><table class="table weekdays" summary="week days table"><tbody><tr class="center"><td><script type="text/javascript">Capture(share.everyday)</script></td><td><script type="text/javascript">Capture(share.sun_s)</script></td><td><script type="text/javascript">Capture(share.mon_s)</script></td><td><script type="text/javascript">Capture(share.tue_s)</script></td><td><script type="text/javascript">Capture(share.wed_s)</script></td><td><script type="text/javascript">Capture(share.thu_s)</script></td><td><script type="text/javascript">Capture(share.fri_s)</script></td><td><script type="text/javascript">Capture(share.sat_s)</script></td></tr><tr class="center"><td><input type="checkbox" value="1" name="day_all" onclick="dayall(this.form)" checked="checked"  /></td><td><input type="checkbox" value="1" name="week0"  /></td><td><input type="checkbox" value="1" name="week1"  /></td><td><input type="checkbox" value="1" name="week2"  /></td><td><input type="checkbox" value="1" name="week3"  /></td><td><input type="checkbox" value="1" name="week4"  /></td><td><input type="checkbox" value="1" name="week5"  /></td><td><input type="checkbox" value="1" name="week6"  /></td></tr></tbody></table></div></fieldset><br /><fieldset><legend><script type="text/javascript">Capture(filter.time)</script></legend><div class="setting"><div class="label"><script type="text/javascript">Capture(filter.h24)</script></div><input class="spaceradio" type="radio" value="1" name="time_all" onclick="timeall(this.form,'0')" checked="checked"  /></div><div class="setting"><div class="label"><script type="text/javascript">Capture(share.from)</script></div><input type="hidden" name="allday" /><input class="spaceradio" type="radio" value="0" name="time_all" onclick="timeall(this.form,'1')"  /><select name="start_hour"><option value=0 selected="selected" >0</option>
+<option value=1 >1</option>
+<option value=2 >2</option>
+<option value=3 >3</option>
+<option value=4 >4</option>
+<option value=5 >5</option>
+<option value=6 >6</option>
+<option value=7 >7</option>
+<option value=8 >8</option>
+<option value=9 >9</option>
+<option value=10 >10</option>
+<option value=11 >11</option>
+<option value=12 >12</option>
+<option value=13 >13</option>
+<option value=14 >14</option>
+<option value=15 >15</option>
+<option value=16 >16</option>
+<option value=17 >17</option>
+<option value=18 >18</option>
+<option value=19 >19</option>
+<option value=20 >20</option>
+<option value=21 >21</option>
+<option value=22 >22</option>
+<option value=23 >23</option>
+</select>:<select name="start_min"><option value=00 selected="selected" >00</option>
+<option value=01 >01</option>
+<option value=02 >02</option>
+<option value=03 >03</option>
+<option value=04 >04</option>
+<option value=05 >05</option>
+<option value=06 >06</option>
+<option value=07 >07</option>
+<option value=08 >08</option>
+<option value=09 >09</option>
+<option value=10 >10</option>
+<option value=11 >11</option>
+<option value=12 >12</option>
+<option value=13 >13</option>
+<option value=14 >14</option>
+<option value=15 >15</option>
+<option value=16 >16</option>
+<option value=17 >17</option>
+<option value=18 >18</option>
+<option value=19 >19</option>
+<option value=20 >20</option>
+<option value=21 >21</option>
+<option value=22 >22</option>
+<option value=23 >23</option>
+<option value=24 >24</option>
+<option value=25 >25</option>
+<option value=26 >26</option>
+<option value=27 >27</option>
+<option value=28 >28</option>
+<option value=29 >29</option>
+<option value=30 >30</option>
+<option value=31 >31</option>
+<option value=32 >32</option>
+<option value=33 >33</option>
+<option value=34 >34</option>
+<option value=35 >35</option>
+<option value=36 >36</option>
+<option value=37 >37</option>
+<option value=38 >38</option>
+<option value=39 >39</option>
+<option value=40 >40</option>
+<option value=41 >41</option>
+<option value=42 >42</option>
+<option value=43 >43</option>
+<option value=44 >44</option>
+<option value=45 >45</option>
+<option value=46 >46</option>
+<option value=47 >47</option>
+<option value=48 >48</option>
+<option value=49 >49</option>
+<option value=50 >50</option>
+<option value=51 >51</option>
+<option value=52 >52</option>
+<option value=53 >53</option>
+<option value=54 >54</option>
+<option value=55 >55</option>
+<option value=56 >56</option>
+<option value=57 >57</option>
+<option value=58 >58</option>
+<option value=59 >59</option>
+</select>&nbsp;<script type="text/javascript">Capture(share.to)</script>&nbsp;<select name="end_hour"><option value=0 selected="selected" >0</option>
+<option value=1 >1</option>
+<option value=2 >2</option>
+<option value=3 >3</option>
+<option value=4 >4</option>
+<option value=5 >5</option>
+<option value=6 >6</option>
+<option value=7 >7</option>
+<option value=8 >8</option>
+<option value=9 >9</option>
+<option value=10 >10</option>
+<option value=11 >11</option>
+<option value=12 >12</option>
+<option value=13 >13</option>
+<option value=14 >14</option>
+<option value=15 >15</option>
+<option value=16 >16</option>
+<option value=17 >17</option>
+<option value=18 >18</option>
+<option value=19 >19</option>
+<option value=20 >20</option>
+<option value=21 >21</option>
+<option value=22 >22</option>
+<option value=23 >23</option>
+</select>:<select name="end_min"><option value=00 selected="selected" >00</option>
+<option value=01 >01</option>
+<option value=02 >02</option>
+<option value=03 >03</option>
+<option value=04 >04</option>
+<option value=05 >05</option>
+<option value=06 >06</option>
+<option value=07 >07</option>
+<option value=08 >08</option>
+<option value=09 >09</option>
+<option value=10 >10</option>
+<option value=11 >11</option>
+<option value=12 >12</option>
+<option value=13 >13</option>
+<option value=14 >14</option>
+<option value=15 >15</option>
+<option value=16 >16</option>
+<option value=17 >17</option>
+<option value=18 >18</option>
+<option value=19 >19</option>
+<option value=20 >20</option>
+<option value=21 >21</option>
+<option value=22 >22</option>
+<option value=23 >23</option>
+<option value=24 >24</option>
+<option value=25 >25</option>
+<option value=26 >26</option>
+<option value=27 >27</option>
+<option value=28 >28</option>
+<option value=29 >29</option>
+<option value=30 >30</option>
+<option value=31 >31</option>
+<option value=32 >32</option>
+<option value=33 >33</option>
+<option value=34 >34</option>
+<option value=35 >35</option>
+<option value=36 >36</option>
+<option value=37 >37</option>
+<option value=38 >38</option>
+<option value=39 >39</option>
+<option value=40 >40</option>
+<option value=41 >41</option>
+<option value=42 >42</option>
+<option value=43 >43</option>
+<option value=44 >44</option>
+<option value=45 >45</option>
+<option value=46 >46</option>
+<option value=47 >47</option>
+<option value=48 >48</option>
+<option value=49 >49</option>
+<option value=50 >50</option>
+<option value=51 >51</option>
+<option value=52 >52</option>
+<option value=53 >53</option>
+<option value=54 >54</option>
+<option value=55 >55</option>
+<option value=56 >56</option>
+<option value=57 >57</option>
+<option value=58 >58</option>
+<option value=59 >59</option>
+</select></div></fieldset><br /><fieldset><legend><script type="text/javascript">Capture(filter.legend3)</script></legend><div class="setting"><div class="label"><script type="text/javascript">Capture(filter.catchall)</script></div><input class="spaceradio" type="checkbox" name="_filter_p2p" value="1"  /></div><table><tr class="center"><td><div class="setting">
+<select size="1" name="blocked_service0" onchange="onchange_blockedServices(blocked_service0.selectedIndex, port0_start, port0_end)">
+<option value="None" selected="selected"></option>
+<script type="text/javascript">
+//<![CDATA[
+write_service_options(servport_name0);
+//]]>
+</script>
+</select>
+<input maxLength="5" size="5" name="port0_start" class="num" readonly="readonly" /> ~ <input maxLength="5" size="5" name="port0_end" class="num" readonly="readonly" />
+</div>
+<div class="setting">
+<select size="1" name="blocked_service1" onchange="onchange_blockedServices(blocked_service1.selectedIndex, port1_start, port1_end)">
+<option value="None" selected="selected"></option>
+<script type="text/javascript">
+//<![CDATA[
+write_service_options(servport_name1);
+//]]>
+</script>
+</select>
+<input maxLength="5" size="5" name="port1_start" class="num" readonly="readonly" /> ~ <input maxLength="5" size="5" name="port1_end" class="num" readonly="readonly" />
+</div>
+<div class="setting">
+<select size="1" name="blocked_service2" onchange="onchange_blockedServices(blocked_service2.selectedIndex, port2_start, port2_end)">
+<option value="None" selected="selected"></option>
+<script type="text/javascript">
+//<![CDATA[
+write_service_options(servport_name2);
+//]]>
+</script>
+</select>
+<input maxLength="5" size="5" name="port2_start" class="num" readonly="readonly" /> ~ <input maxLength="5" size="5" name="port2_end" class="num" readonly="readonly" />
+</div>
+<div class="setting">
+<select size="1" name="blocked_service3" onchange="onchange_blockedServices(blocked_service3.selectedIndex, port3_start, port3_end)">
+<option value="None" selected="selected"></option>
+<script type="text/javascript">
+//<![CDATA[
+write_service_options(servport_name3);
+//]]>
+</script>
+</select>
+<input maxLength="5" size="5" name="port3_start" class="num" readonly="readonly" /> ~ <input maxLength="5" size="5" name="port3_end" class="num" readonly="readonly" />
+</div>
+</td></tr></table><div class="center"><script type="text/javascript">
+//<![CDATA[
+document.write("<input class=\"button\" style=\"margin-right: .5em\" type=\"button\" value=\"" + sbutton.add + "\" onclick=\"filter_add_submit(this.form);\"/>");document.write("<input class=\"button\" style=\"margin-right: .5em\" type=\"button\" value=\"" + sbutton.del + "\" onclick=\"filter_remove_submit(this.form);\"/>");document.write("<input class=\"button\" type=\"button\" value=\"" + sbutton.filterSer + "\" onclick=\"openWindow('Port_Services.asp', 640, 500);\" />");
+//]]>
+</script></div></fieldset><br /><fieldset><legend><script type="text/javascript">Capture(filter.legend4)</script></legend><div class="setting center"><input size="30" maxlength="79" name="host0" onblur="valid_name(this,'URL')" value="" class="three_column" /><input size="30" maxlength="79" name="host1" onblur="valid_name(this,'URL')" value="" class="three_column" /><input size="30" maxlength="79" name="host2" onblur="valid_name(this,'URL')" value="" class="three_column three_column_last" /></div><div class="setting center"><input size="30" maxlength="79" name="host3" onblur="valid_name(this,'URL')" value="" class="three_column" /><input size="30" maxlength="79" name="host4" onblur="valid_name(this,'URL')" value="" class="three_column" /><input size="30" maxlength="79" name="host5" onblur="valid_name(this,'URL')" value="" class="three_column three_column_last" /></div><div class="setting center"><input size="30" maxlength="79" name="host6" onblur="valid_name(this,'URL')" value="" class="three_column" /><input size="30" maxlength="79" name="host7" onblur="valid_name(this,'URL')" value="" class="three_column" /><input size="30" maxlength="79" name="host8" onblur="valid_name(this,'URL')" value="" class="three_column three_column_last" /></div><div class="setting center"><input size="30" maxlength="79" name="host9" onblur="valid_name(this,'URL')" value="" class="three_column" /><input size="30" maxlength="79" name="host10" onblur="valid_name(this,'URL')" value="" class="three_column" /><input size="30" maxlength="79" name="host11" onblur="valid_name(this,'URL')" value="" class="three_column three_column_last" /></div><div class="setting center"><input size="30" maxlength="79" name="host12" onblur="valid_name(this,'URL')" value="" class="three_column" /><input size="30" maxlength="79" name="host13" onblur="valid_name(this,'URL')" value="" class="three_column" /><input size="30" maxlength="79" name="host14" onblur="valid_name(this,'URL')" value="" class="three_column three_column_last" /></div></fieldset><br /><fieldset><legend><script type="text/javascript">Capture(filter.legend5)</script></legend><div class="setting center"><input size="21" maxlength="79" name="url0" onblur="valid_name(this,'Keyword')" value="" class="four_column" /><input size="21" maxlength="79" name="url1" onblur="valid_name(this,'Keyword')" value="" class="four_column" /><input size="21" maxlength="79" name="url2" onblur="valid_name(this,'Keyword')" value="" class="four_column" /><input size="21" maxlength="79" name="url3" onblur="valid_name(this,'Keyword')" value="" class="four_column four_column_last" /></div><div class="setting center"><input size="21" maxlength="79" name="url4" onblur="valid_name(this,'Keyword')" value="" class="four_column" /><input size="21" maxlength="79" name="url5" onblur="valid_name(this,'Keyword')" value="" class="four_column" /><input size="21" maxlength="79" name="url6" onblur="valid_name(this,'Keyword')" value="" class="four_column" /><input size="21" maxlength="79" name="url7" onblur="valid_name(this,'Keyword')" value="" class="four_column four_column_last" /></div><div class="setting center"><input size="21" maxlength="79" name="url8" onblur="valid_name(this,'Keyword')" value="" class="four_column" /><input size="21" maxlength="79" name="url9" onblur="valid_name(this,'Keyword')" value="" class="four_column" /><input size="21" maxlength="79" name="url10" onblur="valid_name(this,'Keyword')" value="" class="four_column" /><input size="21" maxlength="79" name="url11" onblur="valid_name(this,'Keyword')" value="" class="four_column four_column_last" /></div><div class="setting center"><input size="21" maxlength="79" name="url12" onblur="valid_name(this,'Keyword')" value="" class="four_column" /><input size="21" maxlength="79" name="url13" onblur="valid_name(this,'Keyword')" value="" class="four_column" /><input size="21" maxlength="79" name="url14" onblur="valid_name(this,'Keyword')" value="" class="four_column" /><input size="21" maxlength="79" name="url15" onblur="valid_name(this,'Keyword')" value="" class="four_column four_column_last" /></div></fieldset><br /><!--<fieldset><legend><script type="text/javascript">Capture(filter.legend6)</script></legend><div class="setting"><div class="label"><script type="text/javascript">Capture(firewall.geoip_blacklist)</script></div><input maxlength="1000" size="20" name="geoip_bl" value="" /></div><div class="setting"><div class="label"><script type="text/javascript">Capture(firewall.geoip_whitelist)</script></div><input maxlength="1000" size="20" name="geoip_wl" value="" /></div></fieldset><br />--><div id="footer" class="submitFooter"><script type="text/javascript">
+//<![CDATA[
+submitFooterButton(1,1);
+//]]>
+</script></div></form></div></div><div id="helpContainer"><div id="help"><h2><script type="text/javascript">Capture(share.help)</script></h2><dl><dt class="term"><script type="text/javascript">Capture(filter.legend)</script>:</dt><dd class="definition"><script type="text/javascript">Capture(hfilter.right2)</script></dd><dt class="term"><script type="text/javascript">Capture(share.statu)</script>:</dt><dd class="definition"><script type="text/javascript">Capture(hfilter.right4)</script></dd><dt class="term"><script type="text/javascript">Capture(filter.polname)</script>:</dt><dd class="definition"><script type="text/javascript">Capture(hfilter.right6)</script></dd><dt class="term"><script type="text/javascript">Capture(filter.legend2)</script>:</dt><dd class="definition"><script type="text/javascript">Capture(hfilter.right8)</script></dd><dt class="term"><script type="text/javascript">Capture(filter.time)</script>:</dt><dd class="definition"><script type="text/javascript">Capture(hfilter.right10)</script></dd><dt class="term"><script type="text/javascript">Capture(filter.legend3)</script>:</dt><dd class="definition"><script type="text/javascript">Capture(hfilter.right12)</script></dd><dt class="term"><script type="text/javascript">Capture(filter.legend4)</script>:</dt><dd class="definition"><script type="text/javascript">Capture(hfilter.right14)</script></dd><dt class="term"><script type="text/javascript">Capture(filter.legend5)</script>:</dt><dd class="definition"><script type="text/javascript">Capture(hfilter.right16)</script></dd></dl><br /><a href="javascript:openHelpWindow('HFilters.asp');"><script type="text/javascript">Capture(share.more)</script></a></div></div><div id="floatKiller"></div><div id="statusInfo"><div class="info"><script type="text/javascript">Capture(share.firmware)</script>:&nbsp;<script type="text/javascript">
+//<![CDATA[
+document.write("<a title=\"" + share.about + "\" href=\"javascript:openAboutWindow()\">DD-WRT v3.0-r65498 std (07/02/26)</a>");
+//]]>
+</script></div><div class="info"><script type="text/javascript">Capture(share.time)</script>:  <span id="uptime"> 01:09:36 up 9 min,  load average: 0.00, 0.01, 0.00</span></div><div class="info">WAN<span id="ipinfo">: Disabled</span></div></div></div></div></body></html>

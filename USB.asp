@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+<meta name="robots" content="noindex" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link type="text/css" rel="stylesheet" href="style/common.css" />
+<link type="text/css" rel="stylesheet" href="style/elegant/style.css" />
+<!--[if IE]><link type="text/css" rel="stylesheet" href="style/common_style_ie.css" /><![endif]-->
+<link type="text/css" rel="stylesheet" href="style/elegant/fresh.css" />
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript" src="lang_pack/english.js"></script>
+<link type="text/css" rel="stylesheet" href="style/pwc/ddwrt.css" />
+<script type="text/javascript" src="js/prototype.js"></script>
+<script type="text/javascript" src="js/effects.js"></script>
+<script type="text/javascript" src="js/window.js"></script>
+<script type="text/javascript" src="js/window_effects.js"></script>
+<title>DD-WRT (build 65498) - USB</title>
+<script type="text/javascript">history.pushState({urlPath:'USB.asp'}, "DD-WRT (build 65498) - USB", 'USB.asp')
+</script><script type="text/javascript">
+//<![CDATA[
+function to_submit(F) {F.save_button.value = sbutton.saving;apply(F);}function to_apply(F) {F.apply_button.value = sbutton.applied;applytake(F);}var update;addEvent(window, "load", function() {stickControl(1);show_layer_ext(document.setup.usb_enable, 'idusb', 0 == 1);show_layer_ext(document.setup.usb_storage, 'idusbstor', 0 == 1);show_layer_ext(document.setup.usb_automnt, 'idusbmnt', 0 == 1);update = new StatusUpdate("USB.live.asp", 3);update.start();});addEvent(window, "unload", function() {update.stop();});
+//]]>
+</script></head><body class="gui"><div id="wrapper"><div id="content"><div id="header"><div id="logo"><h1>DD-WRT Control Panel</h1></div><div id="menu">
+<div id="menuMain">
+<ul id="menuMainList">
+<li><a href="index.asp"><script type="text/javascript">Capture(bmenu.setup)</script></a></li>
+<li><a href="Wireless_Basic.asp"><script type="text/javascript">Capture(bmenu.wireless)</script></a></li>
+<li class="current"><span><script type="text/javascript">Capture(bmenu.services)</script></span>
+<div id="menuSub">
+<ul id="menuSubList">
+<script type="text/javascript">
+//<![CDATA[
+ document.write("<a id=\"logout\" title=\"" + share.logout + "\" aria-label=\"" + share.logout + "\" href=\"dologout.asp\">");
+//]]>
+</script>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="logout" viewBox="0 0 16 16">
+<path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"></path>
+<path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"></path></svg></a><li><a href="Services.asp"><script type="text/javascript">Capture(bmenu.servicesServices)</script></a></li>
+<li><a href="PPPoE_Server.asp"><script type="text/javascript">Capture(bmenu.servicesPppoesrv)</script></a></li>
+<li><a href="PPTP.asp"><script type="text/javascript">Capture(bmenu.servicesPptp)</script></a></li>
+<li><span><script type="text/javascript">Capture(bmenu.servicesUSB)</script></span></li>
+<li><a href="NAS.asp"><script type="text/javascript">Capture(bmenu.servicesNAS)</script></a></li>
+<li><a href="Hotspot.asp"><script type="text/javascript">Capture(bmenu.servicesHotspot)</script></a></li>
+<li><a href="Speedchecker.asp"><script type="text/javascript">Capture(bmenu.servicesSpeedchecker)</script></a></li>
+</ul>
+</div>
+</li>
+<li><a href="Firewall.asp"><script type="text/javascript">Capture(bmenu.security)</script></a></li>
+<li><a href="Filters.asp"><script type="text/javascript">Capture(bmenu.accrestriction)</script></a></li>
+<li><a href="ForwardSpec.asp"><script type="text/javascript">Capture(bmenu.applications)</script></a></li>
+<li><a href="Management.asp"><script type="text/javascript">Capture(bmenu.admin)</script></a></li>
+<li><a href="Status_Router.asp"><script type="text/javascript">Capture(bmenu.statu)</script></a></li>
+</ul>
+</div>
+</div>
+</div><div id="main"><div id="contents"><form name="setup" action="http://192.168.1.1/apply.cgi" method="post" spellcheck="false"><input type="hidden" name="submit_button" value="USB" /><input type="hidden" name="action" value="Apply" /><input type="hidden" name="change_action" /><input type="hidden" name="submit_type" /><input type="hidden" name="commit" value="1"/><h2><script type="text/javascript">Capture(usb.usb_legend)</script></h2><fieldset><legend><script type="text/javascript">Capture(usb.usb_legend)</script></legend><div class="setting"><div class="label"><script type="text/javascript">Capture(usb.usb_core)</script></div><input class="spaceradio" type="radio" value="1" name="usb_enable"  onclick="show_layer_ext(this, 'idusb', true)" /><script type="text/javascript">Capture(share.enable)</script>&nbsp;<input class="spaceradio" type="radio" value="0" name="usb_enable" checked="checked" onclick="show_layer_ext(this, 'idusb', false)" /><script type="text/javascript">Capture(share.disable)</script></div><div id="idusb"><div class="setting"><div class="label"><script type="text/javascript">Capture(usb.usb_printer)</script></div><input class="spaceradio" type="radio" value="1" name="usb_printer"  /><script type="text/javascript">Capture(share.enable)</script>&nbsp;<input class="spaceradio" type="radio" value="0" name="usb_printer" checked="checked" /><script type="text/javascript">Capture(share.disable)</script></div><div class="setting"><div class="label"><script type="text/javascript">Capture(usb.usb_storage)</script></div><input class="spaceradio" type="radio" value="1" name="usb_storage"  onclick="show_layer_ext(this, 'idusbstor', true)" /><script type="text/javascript">Capture(share.enable)</script>&nbsp;<input class="spaceradio" type="radio" value="0" name="usb_storage" checked="checked" onclick="show_layer_ext(this, 'idusbstor', false)" /><script type="text/javascript">Capture(share.disable)</script></div><div class="setting"><div class="label"><script type="text/javascript">Capture(usb.drive_ra)</script></div><input class="num" maxlength="8" size="6" name="drive_ra" value="256" />&nbsp;<script type="text/javascript">Capture(usb.drive_ra_sectors)</script><span class="default"><script type="text/javascript">
+//<![CDATA[
+document.write("(" + share.deflt + ": 256)");
+//]]>
+</script></span></div><!--<div class="setting"><div class="label"><script type="text/javascript">Capture(usb.usb_ip)</script></div><input class="spaceradio" type="radio" value="1" name="usb_ip"  /><script type="text/javascript">Capture(share.enable)</script>&nbsp;<input class="spaceradio" type="radio" value="0" name="usb_ip"  /><script type="text/javascript">Capture(share.disable)</script></div>--><div id="idusbstor"><div class="setting"><div class="label"><script type="text/javascript">Capture(usb.usb_automnt)</script></div><input class="spaceradio" type="radio" value="1" name="usb_automnt"  onclick="show_layer_ext(this, 'idusbmnt', true)" /><script type="text/javascript">Capture(share.enable)</script>&nbsp;<input class="spaceradio" type="radio" value="0" name="usb_automnt" checked="checked" onclick="show_layer_ext(this, 'idusbmnt', false)" /><script type="text/javascript">Capture(share.disable)</script></div><div id="idusbmnt"><div class="setting"><div class="label"><script type="text/javascript">Capture(usb.usb_runonmount)</script></div><input maxlength="79" size="35" name="usb_runonmount" value="" /></div><div class="setting"><div class="label"><script type="text/javascript">Capture(usb.usb_mntjffs)</script></div><input maxlength="79" size="35" name="usb_mntjffs" value="">&nbsp;UUID</input></div><div class="setting"><div class="label"><script type="text/javascript">Capture(usb.usb_mntopt)</script></div><input maxlength="79" size="35" name="usb_mntopt" value="">&nbsp;UUID</input></div><div class="setting"><div class="label"><script type="text/javascript">Capture(usb.usb_ses_umount)</script></div><input class="spaceradio" type="radio" value="1" name="usb_ses_umount"  /><script type="text/javascript">Capture(share.enable)</script>&nbsp;<input class="spaceradio" type="radio" value="0" name="usb_ses_umount" checked="checked" /><script type="text/javascript">Capture(share.disable)</script></div><fieldset class="dark_fs_bg" style="padding: 5px 10px;"><legend><script type="text/javascript">Capture(usb.usb_diskinfo)</script></legend><span id="disk_status"></span>&nbsp;</fieldset><br /></div></div></div></fieldset><br/><div id="footer" class="submitFooter"><script type="text/javascript">
+//<![CDATA[
+var autoref = sbutton.autorefresh;submitFooterButton(1,1,0,autoref);
+//]]>
+</script></div></form></div></div><div id="helpContainer"><div id="help"><h2><script type="text/javascript">Capture(share.help)</script></h2><br /><a href="javascript:openHelpWindow('HUSB.asp')"><script type="text/javascript">Capture(share.more)</script></a></div></div><div id="floatKiller"></div><div id="statusInfo"><div class="info"><script type="text/javascript">Capture(share.firmware)</script>:&nbsp;<script type="text/javascript">
+//<![CDATA[
+document.write("<a title=\"" + share.about + "\" href=\"javascript:openAboutWindow()\">DD-WRT v3.0-r65498 std (07/02/26)</a>");
+//]]>
+</script></div><div class="info"><script type="text/javascript">Capture(share.time)</script>:  <span id="uptime"> 01:09:37 up 9 min,  load average: 0.00, 0.01, 0.00</span></div><div class="info">WAN<span id="ipinfo">: Disabled</span></div></div></div></div></body></html>
