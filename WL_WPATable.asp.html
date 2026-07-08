@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+<meta name="robots" content="noindex" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link type="text/css" rel="stylesheet" href="style/common.css" />
+<link type="text/css" rel="stylesheet" href="style/elegant/style.css" />
+<!--[if IE]><link type="text/css" rel="stylesheet" href="style/common_style_ie.css" /><![endif]-->
+<link type="text/css" rel="stylesheet" href="style/elegant/fresh.css" />
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript" src="lang_pack/english.js"></script>
+<link type="text/css" rel="stylesheet" href="style/pwc/ddwrt.css" />
+<script type="text/javascript" src="js/prototype.js"></script>
+<script type="text/javascript" src="js/effects.js"></script>
+<script type="text/javascript" src="js/window.js"></script>
+<script type="text/javascript" src="js/window_effects.js"></script>
+<title>DD-WRT (build 65498) - Wireless Security</title>
+<script type="text/javascript">history.pushState({urlPath:'WL_WPATable.html'}, "DD-WRT (build 65498) - Wireless Security", 'WL_WPATable.html')
+</script><script type="text/javascript">
+//<![CDATA[
+function SelMode(prefix, varname, num, F) {F.change_action.value = "gozila_cgi";F.submit_type.value = "security";F.security_varname.value = varname;F.ifname.value = prefix;F.submit();}function keyMode(F) {F.change_action.value = "gozila_cgi";F.submit_type.value = "keysize";F.submit();}function generateKey(F, PREFIX) {F.change_action.value = "gozila_cgi";F.security_varname.value = PREFIX;F.submit_type.value = "wep_key_generate";F.submit();}var wpa_psk_error = 0;var wep_error = 0;function check_form(F) {var security_mode = 'disabled';var element = null;for (var i = 0; i < F.elements.length; i++) {element = F.elements[i];if (element.name) {if (element.name.substr(element.name.length - 14, 14) == "_security_mode") {if (element.options[element.selectedIndex].value.substr(0, 3) == "psk" ||element.options[element.selectedIndex].value.substr(0, 3) == "wpa") {var iface = element.name.substr(0, element.name.length - 14).replace("X", ".");var wpa_psk_input = document.getElementById(iface + "_wpa_psk");if (wpa_psk_input) {result = valid_wpa_psk(wpa_psk_input, false);wpa_psk_error = 0;if (result == false) return result;}} else {if (element.options[element.selectedIndex].value.substr(0, 3) == "wep") {var iface = element.name.substr(0, element.name.length - 14).replace("X", ".");for (var j = 1; j <= 4; j++) {if (F.elements[iface + '_key'][j - 1].checked) {aaa = eval(F.elements[iface + "_key" + j]).value;if (aaa == "") {alert(errmsg.err40 + j);return false;} else {result = valid_wep(F.elements[iface + "_key" + j]);wep_error = 0;if (result == false) return result;}} else {result = valid_wep(F.elements[iface + "_key" + j]);wep_error = 0;if (result == false) return result;}}}}}}}if (wpa_psk_error) return false;return true;}function to_submit(F) {if (!check_form(F)) return false;F.change_action.value = "gozila_cgi";F.submit_type.value = "save";F.save_button.value = sbutton.saving;apply(F);}function to_apply(F) {if (!check_form(F)) return false;F.change_action.value = "gozila_cgi";F.submit_type.value = "save";F.save_button.value = sbutton.saving;applytake(F);}function valid_radius(F) {if (F.security_mode.value == "radius" || F.security_mode.value == "wpa" || F.security_mode.value == "wpa2" || F.security_mode.value == "wpa wpa2") {if (F.wl_radius_key.value == "") {alert(errmsg.err38);F.wl_radius_key.focus();return false;}}return true;}function valid_wpa_psk(F, blur) {if (F.nodeName == 'INPUT') {var value = F.value;if (F.value.length == 64) {if (!isxdigit(F, F.value)) {wpa_psk_error = 1;setTimeout("wpa_psk_error=0", 1000);return false;}} else {if (F.value.length >= 8 && F.value.length <= 63) {if (!isascii(F, F.value)) {F.value = value;wpa_psk_error = 1;setTimeout("wpa_psk_error=0", 1000);return false;}} else {if (blur) {if (!isascii(F, F.value)) {F.value = value;wpa_psk_error = 1;setTimeout("wpa_psk_error=0", 1000);return false;}} else {if (!wpa_psk_error) {alert(errmsg.err39);wpa_psk_error = 1;setTimeout("wpa_psk_error=0", 1000);}return false;}}}} else {if (F.security_mode.value == "psk" || F.security_mode.value == "psk2" || F.security_mode.value == "psk psk2") {if (F.wl_wpa_psk.value.length == 64) {if (!isxdigit(F.wl_wpa_psk, F.wl_wpa_psk.value)) {return false;}} else {if (F.wl_wpa_psk.value.length >= 8 && F.wl_wpa_psk.value.length <= 63) {if (!isascii(F.wl_wpa_psk, F.wl_wpa_psk.value)) {return false;}} else {alert(errmsg.err39);return false;}}}}wpa_psk_error = 0;return true;}function valid_wep(F, blur) {if (F.nodeName == 'INPUT') {var iface = F.name.substr(0, F.name.length - 5).replace(".", "X");if (document.forms[0].elements[iface + '_security_mode'].value != "wep")return true;if (wep_error) {wep_error = 0;return false;}var value = F.value;var bitselect = document.forms[0].elements[iface.replace("X", ".") + '_wep_bit'];if (ValidateKey(F, bitselect.options[bitselect.selectedIndex].value, 1) == false) {wep_error = 1;setTimeout("wep_error=0", 1000);return false;}} else {if (F.security_mode.value == "psk" || F.security_mode.value == "wpa" || F.security_mode.value == "psk2" || F.security_mode.value == "wpa2" || F.security_mode.value == "psk psk2" || F.security_mode.value == "wpa wpa2")return true;if (ValidateKey(F.wl_key1, F.wl_wep_bit.options[F.wl_wep_bit.selectedIndex].value, 1) == false)return false;if (ValidateKey(F.wl_key2, F.wl_wep_bit.options[F.wl_wep_bit.selectedIndex].value, 2) == false)return false;if (ValidateKey(F.wl_key3, F.wl_wep_bit.options[F.wl_wep_bit.selectedIndex].value, 3) == false)return false;if (ValidateKey(F.wl_key4, F.wl_wep_bit.options[F.wl_wep_bit.selectedIndex].value, 4) == false)return false;for (var i = 1; i <= 4; i++) {if (F.wl_key[i - 1].checked) {aaa = eval("F.wl_key" + i).value;if (aaa == "") {alert(errmsg.err40 + i);return false;}break;}}}wep_error = 0;return true;}function ValidateKey(key, bit, index) {var value = key.value;if (!isxdigit(key, key.value)) {key.value = value;return false;}if (bit == 64) {switch (key.value.length) {case 0:break;case 10:break;default:alert(errmsg.err41 + key.value);return false;}} else {switch (key.value.length) {case 0:break;case 26:if (!isxdigit(key, key.value)) {return false;}break;default:alert(errmsg.err41 + key.value);return false;}}return true;}function enable_idttls(ifname) {show_layer_ext(this, 'idttls' + ifname, true);show_layer_ext(this, 'idtls' + ifname, false);show_layer_ext(this, 'idpeap' + ifname, false);show_layer_ext(this, 'idleap' + ifname, false);}function enable_idpeap(ifname) {show_layer_ext(this, 'idttls' + ifname, false);show_layer_ext(this, 'idtls' + ifname, false);show_layer_ext(this, 'idpeap' + ifname, true);show_layer_ext(this, 'idleap' + ifname, false);}function enable_idleap(ifname) {show_layer_ext(this, 'idttls' + ifname, false);show_layer_ext(this, 'idtls' + ifname, false);show_layer_ext(this, 'idpeap' + ifname, false);show_layer_ext(this, 'idleap' + ifname, true);}function enable_idtls(ifname) {show_layer_ext(this, 'idttls' + ifname, false);show_layer_ext(this, 'idtls' + ifname, true);show_layer_ext(this, 'idpeap' + ifname, false);show_layer_ext(this, 'idleap' + ifname, false);}var update;addEvent(window, "load", function() {stickControl(1);var F = document.forms[0];if (F.security_mode && F.wl_wep_bit) {if (F.security_mode.value == "wep" || F.security_mode.value == "radius") {keyMode(F.wl_wep_bit.value, F);}}update = new StatusbarUpdate();update.start();});addEvent(window, "unload", function() {update.stop();});
+//]]>
+</script></head><body class="gui"><div id="wrapper"><div id="content"><div id="header"><div id="logo"><h1>DD-WRT Control Panel</h1></div><div id="menu">
+<div id="menuMain">
+<ul id="menuMainList">
+<li><a href="index.html.html"><script type="text/javascript">Capture(bmenu.setup)</script></a></li>
+<li class="current"><span><script type="text/javascript">Capture(bmenu.wireless)</script></span>
+<div id="menuSub">
+<ul id="menuSubList">
+<script type="text/javascript">
+//<![CDATA[
+ document.write("<a id=\"logout\" title=\"" + share.logout + "\" aria-label=\"" + share.logout + "\" href=\"dologout.html\">");
+//]]>
+</script>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="logout" viewBox="0 0 16 16">
+<path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"></path>
+<path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"></path></svg></a><li><a href="Wireless_Basic.html.html"><script type="text/javascript">Capture(bmenu.wirelessBasic)</script></a></li>
+<li><span><script type="text/javascript">Capture(bmenu.wirelessSecurity)</script></span></li>
+<li><a href="Roaming.html.html"><script type="text/javascript">Capture(bmenu.wirelessRoaming)</script></a></li>
+<li><a href="Wireless_MAC.html.html"><script type="text/javascript">Capture(bmenu.wirelessMac)</script></a></li>
+</ul>
+</div>
+</li>
+<li><a href="Services.html.html"><script type="text/javascript">Capture(bmenu.services)</script></a></li>
+<li><a href="Firewall.html.html"><script type="text/javascript">Capture(bmenu.security)</script></a></li>
+<li><a href="Filters.html.html"><script type="text/javascript">Capture(bmenu.accrestriction)</script></a></li>
+<li><a href="ForwardSpec.html.html"><script type="text/javascript">Capture(bmenu.applications)</script></a></li>
+<li><a href="Management.html.html"><script type="text/javascript">Capture(bmenu.admin)</script></a></li>
+<li><a href="Status_Router.html.html"><script type="text/javascript">Capture(bmenu.statu)</script></a></li>
+</ul>
+</div>
+</div>
+</div><div id="main"><div id="contents"><form name="wpa" action="apply.cgi" method="post" autocomplete="new-password"><input type="hidden" name="submit_button" value="WL_WPATable" /><input type="hidden" name="action" value="Apply" /><input type="hidden" name="change_action" value="gozila_cgi" /><input type="hidden" name="submit_type" value="save" /><input type="hidden" name="security_varname" /><input type="hidden" name="ifname" /><input type="hidden" name="security_mode_last" /><input type="hidden" name="wl_wep_last" /><input type="hidden" name="filter_mac_value" /><h2><script type="text/javascript">Capture(wpa.h2)</script> wlan0</h2>
+<fieldset>
+<legend><script type="text/javascript">Capture(share.pintrface)</script> wlan0 SSID [admin ] HWAddr [E8:9F:80:78:55:18]</legend>
+<fieldset>
+<div class="setting">
+<div class="label"><script type="text/javascript">Capture(wpa.secmode)</script></div>
+<select name="wlan0_security_mode" onchange="SelMode('wlan0', 'wlan0_security_mode',this.form.wlan0_security_mode.selectedIndex,this.form)">
+<option value="disabled" ><script type="text/javascript">Capture(share.disabled)</script></option>
+<option value="wpa" selected="selected">WPA</option>
+<option value="radius" >RADIUS</option>
+<option value="wep" >WEP</option>
+</select></div>
+<div class="setting">
+<table class="table" summary="WPA Algorithms">
+<tr><th><script type="text/javascript">Capture(wpa.auth_mode)</script></th><th><script type="text/javascript">Capture(wpa.algorithms)</script></th></tr>
+<tr>
+<td><input type="checkbox" name="wlan0_psk" value="1" onclick="SelMode('wlan0', 'wlan0_security_mode',this.form.wlan0_security_mode.selectedIndex,this.form)"   /><script type="text/javascript">Capture(wpa.psk)</script></td>
+<td><input type="checkbox" name="wlan0_ccmp" value="1" checked="checked"  /><script type="text/javascript">Capture(wpa.ccmp)</script></td>
+</tr>
+<tr>
+<td><input type="checkbox" name="wlan0_psk2" value="1" onclick="SelMode('wlan0', 'wlan0_security_mode',this.form.wlan0_security_mode.selectedIndex,this.form)"   /><script type="text/javascript">Capture(wpa.psk2)</script></td>
+<td><input type="checkbox" name="wlan0_ccmp-256" value="1"   /><script type="text/javascript">Capture(wpa.ccmp_256)</script></td>
+</tr>
+<tr>
+<td><input type="checkbox" name="wlan0_psk2-sha256" value="1" onclick="SelMode('wlan0', 'wlan0_security_mode',this.form.wlan0_security_mode.selectedIndex,this.form)"   /><script type="text/javascript">Capture(wpa.psk2_sha256)</script></td>
+<td><input type="checkbox" name="wlan0_gcmp" value="1"   /><script type="text/javascript">Capture(wpa.gcmp_128)</script></td>
+</tr>
+<tr>
+<td><input type="checkbox" name="wlan0_psk3" value="1" onclick="SelMode('wlan0', 'wlan0_security_mode',this.form.wlan0_security_mode.selectedIndex,this.form)" checked="checked"  /><script type="text/javascript">Capture(wpa.psk3)</script></td>
+<td><input type="checkbox" name="wlan0_gcmp-256" value="1"   /><script type="text/javascript">Capture(wpa.gcmp_256)</script></td>
+</tr>
+<tr>
+<td><input type="checkbox" name="wlan0_wpa" value="1" onclick="SelMode('wlan0', 'wlan0_security_mode',this.form.wlan0_security_mode.selectedIndex,this.form)"   /><script type="text/javascript">Capture(wpa.wpa)</script></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><input type="checkbox" name="wlan0_wpa2" value="1" onclick="SelMode('wlan0', 'wlan0_security_mode',this.form.wlan0_security_mode.selectedIndex,this.form)"   /><script type="text/javascript">Capture(wpa.wpa2)</script></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><input type="checkbox" name="wlan0_wpa2-sha256" value="1" onclick="SelMode('wlan0', 'wlan0_security_mode',this.form.wlan0_security_mode.selectedIndex,this.form)"   /><script type="text/javascript">Capture(wpa.wpa2_sha256)</script></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><input type="checkbox" name="wlan0_wpa2-sha384" value="1" onclick="SelMode('wlan0', 'wlan0_security_mode',this.form.wlan0_security_mode.selectedIndex,this.form)"   /><script type="text/javascript">Capture(wpa.wpa2_sha384)</script></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><input type="checkbox" name="wlan0_wpa3" value="1" onclick="SelMode('wlan0', 'wlan0_security_mode',this.form.wlan0_security_mode.selectedIndex,this.form)"   /><script type="text/javascript">Capture(wpa.wpa3)</script></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><input type="checkbox" name="wlan0_wpa3-128" value="1" onclick="SelMode('wlan0', 'wlan0_security_mode',this.form.wlan0_security_mode.selectedIndex,this.form)"   /><script type="text/javascript">Capture(wpa.wpa3_128)</script></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><input type="checkbox" name="wlan0_wpa3-192" value="1" onclick="SelMode('wlan0', 'wlan0_security_mode',this.form.wlan0_security_mode.selectedIndex,this.form)"   /><script type="text/javascript">Capture(wpa.wpa3_192)</script></td>
+<td>&nbsp;</td>
+</tr>
+</table>
+</div>
+</fieldset><br />
+<fieldset>
+<div class="setting">
+<div class="label"><script type="text/javascript">Capture(wpa.sae_key)</script></div>
+<input type="password" id="wlan0_sae_key" name="wlan0_sae_key" class="no-check" autocomplete="new-password" size="32" value="admin" />&nbsp;&nbsp;&nbsp;
+<input type="checkbox" name="wlan0_wl_unmask" value="0" onclick="setElementMask('wlan0_sae_key', this.checked)" >&nbsp;<script type="text/javascript">Capture(share.unmask)</script></input>
+</div>
+<div class="setting">
+<div class="label"><script type="text/javascript">Capture(wpa.rekey)</script></div>
+<input name="wlan0_wpa_gtk_rekey" maxlength="5" size="10" onblur="valid_range(this,0,99999,wpa.rekey)" value="3600" />&nbsp;<script type="text/javascript">Capture(share.seconds)</script></div>
+<div class="setting">
+<div class="label"><script type="text/javascript">Capture(wpa.wpa_strict_rekey)</script></div>
+<input class="spaceradio" type="radio" value="1" name="wlan0_wpa_strict_rekey" ><script type="text/javascript">Capture(share.enable)</script></input>&nbsp;
+<input class="spaceradio" type="radio" value="0" name="wlan0_wpa_strict_rekey" checked="checked"><script type="text/javascript">Capture(share.disable)</script></input>&nbsp;
+</div>
+<div class="setting">
+<div class="label"><script type="text/javascript">Capture(wpa.eapol_key_retries)</script></div>
+<input class="spaceradio" type="radio" value="1" name="wlan0_disable_eapol_key_retries" ><script type="text/javascript">Capture(share.enable)</script></input>&nbsp;
+<input class="spaceradio" type="radio" value="0" name="wlan0_disable_eapol_key_retries" checked="checked"><script type="text/javascript">Capture(share.disable)</script></input>&nbsp;
+</div>
+<div class="setting">
+<div class="label"><script type="text/javascript">Capture(wpa.ssid_protection)</script></div>
+<input class="spaceradio" type="radio" value="1" name="wlan0_ssid_protection" ><script type="text/javascript">Capture(share.enable)</script></input>&nbsp;
+<input class="spaceradio" type="radio" value="0" name="wlan0_ssid_protection" checked="checked"><script type="text/javascript">Capture(share.disable)</script></input>&nbsp;
+</div>
+<div class="setting">
+<div class="label">Custom Config</div>
+<textarea cols="60" rows="4" id="wlan0_config" name="wlan0_config"></textarea>
+<script type="text/javascript">
+//<![CDATA[
+var wlan0_config = fix_cr( '' );
+document.getElementById("wlan0_config").value = wlan0_config;
+//]]>
+</script>
+</div>
+</fieldset><br />
+</fieldset>
+<br />
+<h2><script type="text/javascript">Capture(wpa.h2)</script> wlan1</h2>
+<fieldset>
+<legend><script type="text/javascript">Capture(share.pintrface)</script> wlan1 SSID [admin ] HWAddr [E8:9F:80:78:55:19]</legend>
+<fieldset>
+<div class="setting">
+<div class="label"><script type="text/javascript">Capture(wpa.secmode)</script></div>
+<select name="wlan1_security_mode" onchange="SelMode('wlan1', 'wlan1_security_mode',this.form.wlan1_security_mode.selectedIndex,this.form)">
+<option value="disabled" ><script type="text/javascript">Capture(share.disabled)</script></option>
+<option value="wpa" selected="selected">WPA</option>
+<option value="radius" >RADIUS</option>
+<option value="wep" >WEP</option>
+</select></div>
+<div class="setting">
+<table class="table" summary="WPA Algorithms">
+<tr><th><script type="text/javascript">Capture(wpa.auth_mode)</script></th><th><script type="text/javascript">Capture(wpa.algorithms)</script></th></tr>
+<tr>
+<td><input type="checkbox" name="wlan1_psk" value="1" onclick="SelMode('wlan1', 'wlan1_security_mode',this.form.wlan1_security_mode.selectedIndex,this.form)"   /><script type="text/javascript">Capture(wpa.psk)</script></td>
+<td><input type="checkbox" name="wlan1_ccmp" value="1" checked="checked"  /><script type="text/javascript">Capture(wpa.ccmp)</script></td>
+</tr>
+<tr>
+<td><input type="checkbox" name="wlan1_psk2" value="1" onclick="SelMode('wlan1', 'wlan1_security_mode',this.form.wlan1_security_mode.selectedIndex,this.form)"   /><script type="text/javascript">Capture(wpa.psk2)</script></td>
+<td><input type="checkbox" name="wlan1_ccmp-256" value="1"   /><script type="text/javascript">Capture(wpa.ccmp_256)</script></td>
+</tr>
+<tr>
+<td><input type="checkbox" name="wlan1_psk2-sha256" value="1" onclick="SelMode('wlan1', 'wlan1_security_mode',this.form.wlan1_security_mode.selectedIndex,this.form)"   /><script type="text/javascript">Capture(wpa.psk2_sha256)</script></td>
+<td><input type="checkbox" name="wlan1_gcmp" value="1"   /><script type="text/javascript">Capture(wpa.gcmp_128)</script></td>
+</tr>
+<tr>
+<td><input type="checkbox" name="wlan1_psk3" value="1" onclick="SelMode('wlan1', 'wlan1_security_mode',this.form.wlan1_security_mode.selectedIndex,this.form)" checked="checked"  /><script type="text/javascript">Capture(wpa.psk3)</script></td>
+<td><input type="checkbox" name="wlan1_gcmp-256" value="1"   /><script type="text/javascript">Capture(wpa.gcmp_256)</script></td>
+</tr>
+<tr>
+<td><input type="checkbox" name="wlan1_wpa" value="1" onclick="SelMode('wlan1', 'wlan1_security_mode',this.form.wlan1_security_mode.selectedIndex,this.form)"   /><script type="text/javascript">Capture(wpa.wpa)</script></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><input type="checkbox" name="wlan1_wpa2" value="1" onclick="SelMode('wlan1', 'wlan1_security_mode',this.form.wlan1_security_mode.selectedIndex,this.form)"   /><script type="text/javascript">Capture(wpa.wpa2)</script></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><input type="checkbox" name="wlan1_wpa2-sha256" value="1" onclick="SelMode('wlan1', 'wlan1_security_mode',this.form.wlan1_security_mode.selectedIndex,this.form)"   /><script type="text/javascript">Capture(wpa.wpa2_sha256)</script></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><input type="checkbox" name="wlan1_wpa2-sha384" value="1" onclick="SelMode('wlan1', 'wlan1_security_mode',this.form.wlan1_security_mode.selectedIndex,this.form)"   /><script type="text/javascript">Capture(wpa.wpa2_sha384)</script></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><input type="checkbox" name="wlan1_wpa3" value="1" onclick="SelMode('wlan1', 'wlan1_security_mode',this.form.wlan1_security_mode.selectedIndex,this.form)"   /><script type="text/javascript">Capture(wpa.wpa3)</script></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><input type="checkbox" name="wlan1_wpa3-128" value="1" onclick="SelMode('wlan1', 'wlan1_security_mode',this.form.wlan1_security_mode.selectedIndex,this.form)"   /><script type="text/javascript">Capture(wpa.wpa3_128)</script></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><input type="checkbox" name="wlan1_wpa3-192" value="1" onclick="SelMode('wlan1', 'wlan1_security_mode',this.form.wlan1_security_mode.selectedIndex,this.form)"   /><script type="text/javascript">Capture(wpa.wpa3_192)</script></td>
+<td>&nbsp;</td>
+</tr>
+</table>
+</div>
+</fieldset><br />
+<fieldset>
+<div class="setting">
+<div class="label"><script type="text/javascript">Capture(wpa.sae_key)</script></div>
+<input type="password" id="wlan1_sae_key" name="wlan1_sae_key" class="no-check" autocomplete="new-password" size="32" value="admin" />&nbsp;&nbsp;&nbsp;
+<input type="checkbox" name="wlan1_wl_unmask" value="0" onclick="setElementMask('wlan1_sae_key', this.checked)" >&nbsp;<script type="text/javascript">Capture(share.unmask)</script></input>
+</div>
+<div class="setting">
+<div class="label"><script type="text/javascript">Capture(wpa.rekey)</script></div>
+<input name="wlan1_wpa_gtk_rekey" maxlength="5" size="10" onblur="valid_range(this,0,99999,wpa.rekey)" value="3600" />&nbsp;<script type="text/javascript">Capture(share.seconds)</script></div>
+<div class="setting">
+<div class="label"><script type="text/javascript">Capture(wpa.wpa_strict_rekey)</script></div>
+<input class="spaceradio" type="radio" value="1" name="wlan1_wpa_strict_rekey" ><script type="text/javascript">Capture(share.enable)</script></input>&nbsp;
+<input class="spaceradio" type="radio" value="0" name="wlan1_wpa_strict_rekey" checked="checked"><script type="text/javascript">Capture(share.disable)</script></input>&nbsp;
+</div>
+<div class="setting">
+<div class="label"><script type="text/javascript">Capture(wpa.eapol_key_retries)</script></div>
+<input class="spaceradio" type="radio" value="1" name="wlan1_disable_eapol_key_retries" ><script type="text/javascript">Capture(share.enable)</script></input>&nbsp;
+<input class="spaceradio" type="radio" value="0" name="wlan1_disable_eapol_key_retries" checked="checked"><script type="text/javascript">Capture(share.disable)</script></input>&nbsp;
+</div>
+<div class="setting">
+<div class="label"><script type="text/javascript">Capture(wpa.ssid_protection)</script></div>
+<input class="spaceradio" type="radio" value="1" name="wlan1_ssid_protection" ><script type="text/javascript">Capture(share.enable)</script></input>&nbsp;
+<input class="spaceradio" type="radio" value="0" name="wlan1_ssid_protection" checked="checked"><script type="text/javascript">Capture(share.disable)</script></input>&nbsp;
+</div>
+<div class="setting">
+<div class="label">Custom Config</div>
+<textarea cols="60" rows="4" id="wlan1_config" name="wlan1_config"></textarea>
+<script type="text/javascript">
+//<![CDATA[
+var wlan1_config = fix_cr( '' );
+document.getElementById("wlan1_config").value = wlan1_config;
+//]]>
+</script>
+</div>
+</fieldset><br />
+</fieldset>
+<br />
+<div id="footer" class="submitFooter"><script type="text/javascript">
+//<![CDATA[
+submitFooterButton(1);
+//]]>
+</script></div></form></div></div><div id="helpContainer"><div id="help"><h2><script type="text/javascript">Capture(share.help)</script></h2><dl><dt class="term"><script type="text/javascript">Capture(wpa.secmode)</script>:</dt><dd class="definition"><script type="text/javascript">Capture(hwpa.right2)</script></dd></dl><br /><a href="javascript:openHelpWindow('HWPA.html')"><script type="text/javascript">Capture(share.more)</script></a></div></div><div id="floatKiller"></div><div id="statusInfo"><div class="info"><script type="text/javascript">Capture(share.firmware)</script>:&nbsp;<script type="text/javascript">
+//<![CDATA[
+document.write("<a title=\"" + share.about + "\" href=\"javascript:openAboutWindow()\">DD-WRT v3.0-r65498 std (07/02/26)</a>");
+//]]>
+</script></div><div class="info"><script type="text/javascript">Capture(share.time)</script>:  <span id="uptime"> 02:03:41 up  1:03,  load average: 0.00, 0.00, 0.00</span></div><div class="info">WAN<span id="ipinfo">: Disabled</span></div></div></div></div></body></html>
